@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="media-query.css">
+</head>
+
+<body>
+
+    <!-- ----------------------------Header-Start--------------------------- -->
+    <h1 class="top-heading">Membership Booking</h1>
+    <div class="header-bg">
+        <div class="header" id="header">
+            <div class="steps" id="stepOne">
+                <h2 class="step-number completed">1</h2>
+                <h3 class="step-heading">Plan Type</h3>
+            </div>
+            <div class="steps" id="stepTwo">
+                <h2 class="step-number active">2</h2>
+                <h3 class="step-heading">Agreement Details</h3>
+            </div>
+            <div class="steps" id="stepthree">
+                <h2 class="step-number">3</h2>
+                <h3 class="step-heading">Personal Information</h3>
+            </div>
+            <div class="steps" id="stepFour">
+                <h2 class="step-number">4</h2>
+                <h3 class="step-heading">Payment Information</h3>
+            </div>
+        </div>
+        <hr>
+        <!-- ----------------------------Plan-Info-Start-------------------------- -->
+        <div class="booking-header-info" id="bookingHeaderInfo">
+            <div class="plan-info">
+                <h3>Plan Type</h3>
+                <div class="info">
+                    <img src="assets/img/private office.png" alt="">
+                    <h2><span class="plan-type-name" id="planTypeTime">Private Office</span></h4>
+                </div>
+            </div>
+            <div class="plan-info">
+                <h3>No. of People</h3>
+                <div class="info">
+                    <img src="assets/img/group.png" alt="">
+                    <h2><span class="no-of-people" id="noOfPeople">1</span></h4>
+                </div>
+            </div>
+            <div class="plan-info">
+                <h3>Start Date</h3>
+                <div class="info">
+                    <img src="assets/img/schedule.png" alt="">
+                    <h2><span class="start-date" id="startDate">05/05/2024</span></h4>
+                </div>
+            </div>
+            <div class="plan-info">
+                <h3>Duration</h3>
+                <div class="info">
+                    <img src="assets/img/hourglass.png" alt="">
+                    <h2><span class="plan-duration" id="duration">12days</span></h4>
+                </div>
+            </div>
+            <div class="plan-info">
+                <h3>Monthly Cost</h3>
+                <div class="info">
+                    <h2><span>BDT </span><span class="plan-monthly-cost" id="monthlyCost">31000/-</span></h4>
+                </div>
+            </div>
+        </div>
+        <hr>
+    </div>
+
+    <!-- ----------------------------Plan-Info-End-------------------------- -->
+    <!-- ----------------------------Header-End--------------------------- -->
+    <!-- ---------------------------Private-Office-Start----------------------- -->
+    <div class="private-office office private-workspace" id="privateOffice">
+        <h2>Private Office</h2>
+        <p>BDT</p>
+        <hr>
+        <div class="plan-selection">
+            <div class="">
+                <input type="radio" id="chosenPlan" name="chosenPlan" value="13500">
+                  <label for="chosenPlan">8 days/m</label><br>
+                <input type="radio" id="chosenPlan" name="chosenPlan" value="18500">
+                  <label for="chosenPlan">12 days/m</label><br>
+                <input type="radio" id="chosenPlan" name="chosenPlan" value="43500">
+                  <label for="chosenPlan">Unlimited 1 month</label><br>
+            </div>
+            <div class="values">
+                <p>13500</p>
+                <p>18500</p>
+                <p>43500</p>
+            </div>
+        </div>
+        <hr>
+        <div class="services">
+            <p>- 24/7 access</p>
+            <p>- Free wifi and wired internet</p>
+            <p>- Secured lockable room with storage</p>
+            <p>- Business Address (with 1 year agreement)</p>
+            <p>- Free access to all commons</p>
+            <p>- Bookable access to meeting rooms and event space</p>
+            <p>- Front desk service including printing, copying and admin support available</p>
+            <p>- 1 free espresso of your choice per day, and more</p>
+        </div>
+        </form>
+    </div>
+    <!-- ---------------------------Private-Office-End----------------------- -->
+    <!-- ---------------------------Team-Suite-Office-Start----------------------- -->
+    <div class="team-office-suite office private-workspace" id="teamOfficeSuite">
+        <h2>Team Office Suite</h2>
+        <p>BDT</p>
+        <hr>
+        <div class="plan-selection">
+            <div class="">
+                <input type="radio" id="chosenPlan" name="chosenPlan" value="73500">
+                  <label for="chosenPlan">1 month <sub>(for 2)</sub></label><br>
+            </div>
+            <div class="values">
+                <p>73500</p>
+            </div>
+        </div>
+        <hr>
+        <div class="services">
+            <p>- 24/7 access</p>
+            <p>- Free wifi and wired internet</p>
+            <p>- Secured lockable room with storage</p>
+            <p>- Business Address (with 1 year agreement)</p>
+            <p>- Free access to all commons</p>
+            <p>- Bookable access to meeting rooms and event space</p>
+            <p>- Front desk service including printing, copying and admin support available</p>
+            <p>- 1 free espresso of your choice per day, and more</p>
+            <p>- Minimum 7 persons booking</p>
+        </div>
+        </form>
+    </div>
+    <!-- ---------------------------Team-Suite-Office-End----------------------- -->
+    <!-- ---------------------------Hybrid-Office-Start----------------------- -->
+    <div class="hybrid-office office private-workspace" id="hybridOffice">
+        <h2>Hybrid Office</h2>
+        <p>BDT</p>
+        <hr>
+        <div class="plan-selection">
+            <div class="">
+                <input type="radio" id="chosenPlan" name="chosenPlan" value="21000">
+                  <label for="chosenPlan">12 days/m</label><br>
+                <input type="radio" id="chosenPlan" name="chosenPlan" value="49000">
+                  <label for="chosenPlan">Unlimited 1 month</label><br>
+            </div>
+            <div class="values">
+                <p>21000</p>
+                <p>49000</p>
+            </div>
+        </div>
+        <hr>
+        <div class="services">
+            <p>- 24/7 access</p>
+            <p>- Free wifi and wired internet</p>
+            <p>- Secured lockable room with storage</p>
+            <p>- Business Address (with 1 year agreement)</p>
+            <p>- Free access to all commons</p>
+            <p>- Bookable access to meeting rooms and event space</p>
+            <p>- Front desk service including printing, copying and admin support available</p>
+            <p>- 1 free espresso of your choice per day, and more</p>
+        </div>
+        </form>
+    </div>
+    <!-- ---------------------------Hybrid-Office-End----------------------- -->
+     <!-- ---------------------------Day-Office-Start----------------------- -->
+     <div class="day-office office shared-workspace" id="dayOffice">
+        <h2>Day Office</h2>
+        <p>BDT</p>
+        <hr>
+        <div class="plan-selection">
+            <div class="">
+                <input type="radio" id="chosenPlan" name="chosenPlan" value="700">
+                  <label for="chosenPlan">Per Hour</label><br>
+                <input type="radio" id="chosenPlan" name="chosenPlan" value="3450">
+                  <label for="chosenPlan">Per Day</label><br>
+            </div>
+            <div class="values">
+                <p>700</p>
+                <p>3450</p>
+            </div>
+        </div>
+        <hr>
+        <div class="services">
+            <p>- 24/7 access</p>
+            <p>- Free wifi and wired internet</p>
+            <p>- Secured lockable room with storage</p>
+            <p>- Business Address (with 1 year agreement)</p>
+            <p>- Free access to all commons</p>
+            <p>- Bookable access to meeting rooms and event space</p>
+            <p>- Front desk service including printing, copying and admin support available</p>
+            <p>- 1 free espresso of your choice per day, and more</p>
+        </div>
+        </form>
+    </div>
+    <!-- ---------------------------Day-Office-End----------------------- -->
+     <!-- ---------------------------Dedicated-Desk-Start----------------------- -->
+     <div class="dedicated-desk office shared-workspace" id="dedicatedDesk">
+        <h2>Day Office</h2>
+        <p>BDT</p>
+        <hr>
+        <div class="plan-selection">
+            <div class="">
+                <input type="radio" id="chosenPlan" name="chosenPlan" value="33000">
+                  <label for="chosenPlan">Per Month</label><br>                
+            </div>
+            <div class="values">
+                <p>33000</p>
+            </div>
+        </div>
+        <hr>
+        <div class="services">
+            <p>- 24/7 access</p>
+            <p>- Free wifi and wired internet</p>
+            <p>- Secured lockable room with storage</p>
+            <p>- Business Address (with 1 year agreement)</p>
+            <p>- Free access to all commons</p>
+            <p>- Bookable access to meeting rooms and event space</p>
+            <p>- Front desk service including printing, copying and admin support available</p>
+            <p>- 1 free espresso of your choice per day, and more</p>
+        </div>
+        </form>
+    </div>
+    <!-- ---------------------------Dedicated-Desk-End----------------------- -->
+     <!-- ---------------------------Day-Pass-Start----------------------- -->
+     <div class="day-pass office shared-workspace" id="dayPass">
+        <h2>Day Office</h2>
+        <p>BDT</p>
+        <hr>
+        <div class="plan-selection">
+            <div class="">
+                <input type="radio" id="chosenPlan" name="chosenPlan" value="350">
+                  <label for="chosenPlan">Per Hour</label><br>
+                <input type="radio" id="chosenPlan" name="chosenPlan" value="1700">
+                  <label for="chosenPlan">Per Day</label><br>                
+            </div>
+            <div class="values">
+                <p>350</p>
+                <p>1700</p>
+            </div>
+        </div>
+        <hr>
+        <div class="services">
+            <p>- 24/7 access</p>
+            <p>- Free wifi and wired internet</p>
+            <p>- Secured lockable room with storage</p>
+            <p>- Business Address (with 1 year agreement)</p>
+            <p>- Free access to all commons</p>
+            <p>- Bookable access to meeting rooms and event space</p>
+            <p>- Front desk service including printing, copying and admin support available</p>
+            <p>- 1 free espresso of your choice per day, and more</p>
+        </div>
+        </form>
+    </div>
+    <!-- ---------------------------Day-Pass-End----------------------- -->
+     <!-- ---------------------------Flexible-Desk-Start----------------------- -->
+     <div class="flexible-desk office shared-workspace" id="flexibleDesk">
+        <h2>Private Office</h2>
+        <p>BDT</p>
+        <hr>
+        <div class="plan-selection">
+            <div class="">
+                <input type="radio" id="chosenPlan" name="chosenPlan" value="6500">
+                  <label for="chosenPlan">5 Days</label><br>
+                <input type="radio" id="chosenPlan" name="chosenPlan" value="12000">
+                  <label for="chosenPlan">10 Days</label><br>
+                <input type="radio" id="chosenPlan" name="chosenPlan" value="17000">
+                  <label for="chosenPlan">15 Days</label><br>
+            </div>
+            <div class="values">
+                <p>6500</p>
+                <p>12000</p>
+                <p>17000</p>
+            </div>
+        </div>
+        <hr>
+        <div class="services">
+            <p>- 24/7 access</p>
+            <p>- Free wifi and wired internet</p>
+            <p>- Secured lockable room with storage</p>
+            <p>- Business Address (with 1 year agreement)</p>
+            <p>- Free access to all commons</p>
+            <p>- Bookable access to meeting rooms and event space</p>
+            <p>- Front desk service including printing, copying and admin support available</p>
+            <p>- 1 free espresso of your choice per day, and more</p>
+        </div>
+        </form>
+    </div>
+    <!-- ---------------------------Flexible-Desk-End----------------------- -->
+          <!-- ---------------------------Virtual-Office-Start----------------------- -->
+          <div class="virtual-office office shared-workspace" id="virtualOffice">
+            <h2>Day Office</h2>
+            <p>BDT</p>
+            <hr>
+            <div class="plan-selection">
+                <div class="">
+                    <input type="radio" id="chosenPlan" name="chosenPlan" value="15000">
+                      <label for="chosenPlan">Per Month</label><br>                
+                </div>
+                <div class="values">
+                    <p>15000</p>
+                </div>
+            </div>
+            <hr>
+            <div class="services">
+                <p>- 24/7 access</p>
+                <p>- Free wifi and wired internet</p>
+                <p>- Secured lockable room with storage</p>
+                <p>- Business Address (with 1 year agreement)</p>
+                <p>- Free access to all commons</p>
+                <p>- Bookable access to meeting rooms and event space</p>
+                <p>- Front desk service including printing, copying and admin support available</p>
+                <p>- 1 free espresso of your choice per day, and more</p>
+            </div>
+            </form>
+        </div>
+    <!-- ---------------------------Virtual-Office-End----------------------- -->
+      <!-- ---------------------------Conference-Room-Start----------------------- -->
+      <div class="conference-room office collaborative-workspace" id="conferenceRoom">
+        <h2>1 Hour</h2>
+        <p>BDT</p>
+        <hr>
+        <div class="plan-selection">
+            <div class="">
+                <input type="radio" id="chosenPlan" name="chosenPlan" value="1700">
+                  <label for="chosenPlan">Per Month</label><br>                
+            </div>
+            <div class="values">
+                <p>1700</p>
+            </div>
+        </div>
+        <hr>
+        <div class="services">
+            <p>- 24/7 access</p>
+            <p>- Free wifi and wired internet</p>
+            <p>- Secured lockable room with storage</p>
+            <p>- Business Address (with 1 year agreement)</p>
+            <p>- Free access to all commons</p>
+            <p>- Bookable access to meeting rooms and event space</p>
+            <p>- Front desk service including printing, copying and admin support available</p>
+            <p>- 1 free espresso of your choice per day, and more</p>
+        </div>
+        </form>
+    </div>
+    <!-- ---------------------------Conference-Room-End----------------------- -->
+     <!-- ---------------------------Event-Space-Start----------------------- -->
+     <div class="event-space office collaborative-workspace" id="eventSpace">
+        <h2>1 Hour</h2>
+        <p>BDT</p>
+        <hr>
+        <div class="plan-selection">
+            <div class="">
+                <input type="radio" id="chosenPlan" name="chosenPlan" value="6000">
+                  <label for="chosenPlan">1 Hour</label><br>                
+            </div>
+            <div class="values">
+                <p>6000</p>
+            </div>
+        </div>
+        <hr>
+        <div class="services">
+            <p>- 24/7 access</p>
+            <p>- Free wifi and wired internet</p>
+            <p>- Secured lockable room with storage</p>
+            <p>- Business Address (with 1 year agreement)</p>
+            <p>- Free access to all commons</p>
+            <p>- Bookable access to meeting rooms and event space</p>
+            <p>- Front desk service including printing, copying and admin support available</p>
+            <p>- 1 free espresso of your choice per day, and more</p>
+        </div>
+        </form>
+    </div>
+    <!-- ---------------------------Event-Space-End----------------------- -->
+     <!-- ---------------------------Podcast-Studio-Start----------------------- -->
+     <div class="podcast-studio office collaborative-workspace" id="podcastStudio">
+        <h2>1 Hour</h2>
+        <p>BDT</p>
+        <hr>
+        <div class="plan-selection">
+            <div class="">
+                <input type="radio" id="chosenPlan" name="chosenPlan" value="1500">
+                  <label for="chosenPlan">1 Hour</label><br>                
+            </div>
+            <div class="values">
+                <p>1500</p>
+            </div>
+        </div>
+        <hr>
+        <div class="services">
+            <p>- 24/7 access</p>
+            <p>- Free wifi and wired internet</p>
+            <p>- Secured lockable room with storage</p>
+            <p>- Business Address (with 1 year agreement)</p>
+            <p>- Free access to all commons</p>
+            <p>- Bookable access to meeting rooms and event space</p>
+            <p>- Front desk service including printing, copying and admin support available</p>
+            <p>- 1 free espresso of your choice per day, and more</p>
+        </div>
+        </form>
+    </div>
+    <!-- ---------------------------Podcast-Studio-End----------------------- -->
+     <!-- ---------------------------Zoom-Call-Room-Start----------------------- -->
+     <div class="zoom-call-room office collaborative-workspace" id="zoomCallRoom">
+        <h2>1 Hour</h2>
+        <p>BDT</p>
+        <hr>
+        <div class="plan-selection">
+            <div class="">
+                <input type="radio" id="chosenPlan" name="chosenPlan" value="700">
+                  <label for="chosenPlan">1 Hour</label><br>                
+            </div>
+            <div class="values">
+                <p>700</p>
+            </div>
+        </div>
+        <hr>
+        <div class="services">
+            <p>- 24/7 access</p>
+            <p>- Free wifi and wired internet</p>
+            <p>- Secured lockable room with storage</p>
+            <p>- Business Address (with 1 year agreement)</p>
+            <p>- Free access to all commons</p>
+            <p>- Bookable access to meeting rooms and event space</p>
+            <p>- Front desk service including printing, copying and admin support available</p>
+            <p>- 1 free espresso of your choice per day, and more</p>
+        </div>
+        </form>
+    </div>
+    <!-- ---------------------------Zoom-Call-Room-End----------------------- -->
+      <!-- ---------------------------Color-Burst-Room-Start----------------------- -->
+      <div class="color-burst-room office collaborative-workspace" id="colorBurstRoom">
+        <h2>1 Hour</h2>
+        <p>BDT</p>
+        <hr>
+        <div class="plan-selection">
+            <div class="">
+                <input type="radio" id="chosenPlan" name="chosenPlan" value="1000">
+                  <label for="chosenPlan">1 Hour</label><br>                
+            </div>
+            <div class="values">
+                <p>1000</p>
+            </div>
+        </div>
+        <hr>
+        <div class="services">
+            <p>- 24/7 access</p>
+            <p>- Free wifi and wired internet</p>
+            <p>- Secured lockable room with storage</p>
+            <p>- Business Address (with 1 year agreement)</p>
+            <p>- Free access to all commons</p>
+            <p>- Bookable access to meeting rooms and event space</p>
+            <p>- Front desk service including printing, copying and admin support available</p>
+            <p>- 1 free espresso of your choice per day, and more</p>
+        </div>
+        </form>
+    </div>
+    <!-- ---------------------------Color-Burst-Room-End----------------------- -->
+     <!-- ---------------------------Alap-Room-Start----------------------- -->
+     <div class="alap-room office collaborative-workspace" id="alapRoom">
+        <h2>1 Hour</h2>
+        <p>BDT</p>
+        <hr>
+        <div class="plan-selection">
+            <div class="">
+                <input type="radio" id="chosenPlan" name="chosenPlan" value="1000">
+                  <label for="chosenPlan">1 Hour</label><br>                
+            </div>
+            <div class="values">
+                <p>1000</p>
+            </div>
+        </div>
+        <hr>
+        <div class="services">
+            <p>- 24/7 access</p>
+            <p>- Free wifi and wired internet</p>
+            <p>- Secured lockable room with storage</p>
+            <p>- Business Address (with 1 year agreement)</p>
+            <p>- Free access to all commons</p>
+            <p>- Bookable access to meeting rooms and event space</p>
+            <p>- Front desk service including printing, copying and admin support available</p>
+            <p>- 1 free espresso of your choice per day, and more</p>
+        </div>
+        </form>
+    </div>
+    <!-- ---------------------------Alap-Room-End----------------------- -->
+     <!-- ---------------------------Alochona-Room-Start----------------------- -->
+     <div class="alochona-room office collaborative-workspace" id="alochonaRoom">
+        <h2>1 Hour</h2>
+        <p>BDT</p>
+        <hr>
+        <div class="plan-selection">
+            <div class="">
+                <input type="radio" id="chosenPlan" name="chosenPlan" value="1000">
+                  <label for="chosenPlan">1 Hour</label><br>                
+            </div>
+            <div class="values">
+                <p>1000</p>
+            </div>
+        </div>
+        <hr>
+        <div class="services">
+            <p>- 24/7 access</p>
+            <p>- Free wifi and wired internet</p>
+            <p>- Secured lockable room with storage</p>
+            <p>- Business Address (with 1 year agreement)</p>
+            <p>- Free access to all commons</p>
+            <p>- Bookable access to meeting rooms and event space</p>
+            <p>- Front desk service including printing, copying and admin support available</p>
+            <p>- 1 free espresso of your choice per day, and more</p>
+        </div>
+        </form>
+    </div>
+    <!-- ---------------------------Alochona-Room-End----------------------- -->
+</body>
+</body>
+
+</html>
