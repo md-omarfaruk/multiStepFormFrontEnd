@@ -164,7 +164,7 @@ body {
 }
 
 /* ---------------------Header-End------------------ */
-/* ----------------------Workspace-Start------------------ */
+/* ----------------------Workspace-Plans-Start------------------ */
 .private-workspace, .shared-workspace, .collaborative-workspace{
   max-width: 350px;
   font-family: Helvetica Light, sans-serif;
@@ -214,8 +214,6 @@ body {
   border: 0;
 }
 
-/* ----------------------Workspace-End------------------ */
-
 .office>p {
   font-family: Helvetica Light, sans-serif;
   font-weight: 600;
@@ -248,4 +246,5 @@ body {
 .services>p{
   margin-top: 10px;
 }
+
 /* ----------------------Workspace-Plans-End------------------ */
