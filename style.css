@@ -317,6 +317,29 @@ select.selected-plan-overview {
   min-width: 183px;
 }
 /* --------------------Chosen-Plan-Overview-End----------------------- */
+ /* ------------------------------Choose-a-Duraton-Start------------------- */
+ .choose-duration{
+   font-family: Helvetica Light, sans-serif;
+   letter-spacing: .5px;
+ }
+ .choose-duration h2{
+  font-family: Helvetica Bold, sans-serif;
+}
+      /* ------------------------------Choose-a-Duraton-End------------------- */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* -------------Frontend-Interact-Css-Start------------------------------- */
 .private-office, .team-office-suite, .hybrid-office, .day-office, .dedicated-desk, .day-pass, .flexible-desk, .virtual-office, .conference-room, .event-space, .podcast-studio, .zoom-call-room, .color-burst-room, .alap-room, .alochona-room{
   display: none;
