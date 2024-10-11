@@ -287,7 +287,7 @@ select.selected-plan-overview {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  min-width: 183px;
+  width: 183px;
   padding: 5px;
   margin: 14px 0;
   border: 1px solid #9A9A9A;
@@ -324,6 +324,36 @@ select.selected-plan-overview {
  }
  .choose-duration h2{
   font-family: Helvetica Bold, sans-serif;
+}
+.monthly-durations{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 50px 100px;
+}
+.monthly-durations h4{
+  border: 2px solid #231F20;
+  border-radius: 100%;
+  padding: 50px 43px;
+  line-height: 26px;
+  margin-top: 15px;
+}
+.monthly-durations h4:nth-child(2){
+  background-color: #F9BA15;
+}
+.conditions-checkbox{
+  display: flex;
+  align-items: center;
+}
+.terms-and-conditions{
+  width: 28px;
+  height: 28px;
+  margin-right: 10px;
+}
+.term-and-conditons-label{
+  font-family: Helvetica Light, sans-serif;
+  font-size: 24px;
+  align-content: center;
 }
       /* ------------------------------Choose-a-Duraton-End------------------- */
 

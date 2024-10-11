@@ -1,42 +1,70 @@
-@media only screen and (min-width: 1200px) {
-    
-}
+@media only screen and (min-width: 1200px) {}
+
 @media only screen and (max-width: 576px) {
   .top-heading {
     font-size: 45px;
   }
-  .header-bg{
+
+  .header-bg {
     max-width: 400px;
   }
-      .header{
-        text-align: center;
-      }
-    .booking-header-info{
-        display: flex;
-        flex: 50%;
-      }
-      .step-heading{
-        font-size: 11px;
-      }
-      .step-number{
-        max-width: 36px;
-        padding: 5px 0;
-        margin: 8px auto;
-      }
-      .plan-info{
-        border: none;
-      }
-      .plan-info h3 {
-        margin: 24px 0 6px 0;
-        font-size: 13px;
-      }
-      .info h2 {
-        font-size: 13px;
-      }
-      .plan-info img {
-        width: 13px;
-        height: auto;
-        margin-right: 16px;
-      }
-      
+
+  .header {
+    text-align: center;
+  }
+
+  .booking-header-info {
+    display: flex;
+    flex: 50%;
+  }
+
+  .step-heading {
+    font-size: 11px;
+  }
+
+  .step-number {
+    max-width: 36px;
+    padding: 5px 0;
+    margin: 8px auto;
+  }
+
+  .plan-info {
+    border: none;
+  }
+
+  .plan-info h3 {
+    margin: 24px 0 6px 0;
+    font-size: 13px;
+  }
+
+  .info h2 {
+    font-size: 13px;
+  }
+
+  .plan-info img {
+    width: 13px;
+    height: auto;
+    margin-right: 16px;
+  }
+
+  .others-plan-info {
+    flex-direction: column;
+    margin-bottom: 30px;
+  }
+
+  .monthly-durations {
+    flex: 50%;
+    padding: 10px 0;
+  }
+  .conditions-checkbox{
+    margin-top: 35px;
+  }
+  .terms-and-conditions{
+    margin-top: -10px;
+  }
+  .term-and-conditons-label{
+    font-family: Helvetica Light, sans-serif;
+    font-size: 18px;
+  }
+
 }
