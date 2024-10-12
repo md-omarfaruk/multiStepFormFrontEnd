@@ -53,8 +53,8 @@
 /* ---------------------Body------------------- */
 body {
   max-width: 1200px;
-  padding: 100px 40px;
-  margin: 0 auto;
+  padding: 100px 40px 50px 40px;
+  margin: 100px auto;
 }
 
 /* ---------------------Header-Start------------------ */
@@ -362,7 +362,7 @@ select.selected-plan-overview {
   font-size: 21px;
         color: white;
         background-color: #000102;
-        border: none;
+        border: 1px solid #000102;
         border-radius: 8px;
         padding: 15px 100px;
         margin: 60px 0;
@@ -386,6 +386,118 @@ select.selected-plan-overview {
               background-color: #231F20;
             }
       /* ----------------------Continue-Back-button-End----------------------------- */
+      /* ---------------------Personal-Detials-Start----------------------------- */
+      .personal-details{
+        font-family: Helvetica Light, sans-serif;
+      }
+      .personal-details h1{
+        color: #231F20;
+        font-family: Helvetica Bold, sans-serif;
+        font-size: 48px;
+        margin: 80px 0 40px 0;
+      }
+      .required-fields-text{
+        color: #231F20;
+        font-size: 24px;
+        font-weight: 700;
+        margin-bottom: 10px;
+      }
+      .required-inputs{
+        min-width: 650px;
+        padding: 20px 0 20px 20px;
+        font-size: 22px;
+        border: 1px solid #8D8D8D;
+        border-radius: 5px;
+        margin: 10px;
+      }
+      .personal-details .conditions-checkbox{
+        margin-top: 60px;
+      }
+      /* ---------------------Personal-Details-End----------------------------- */
+      /* ---------------------Review-Payment-Details-Start----------------------------- */
+      .review-payment-details{
+        font-family: Helvetica Light, sans-serif;
+        max-width: 1010px;
+      }
+      .review-payment-details h1{
+        color: #231F20;
+        font-family: Helvetica Bold, sans-serif;
+        font-size: 48px;
+        margin-top: 80px;
+      }
+      .review-payment-details p{
+        color: #231F20;
+        font-size: 22px;
+        margin-top: 40px;
+      }
+      .review-payment-details h2{
+        margin: 60px 0 30px;
+      }
+
+      .first-monthly-payment, .ongoing-monthly-payment{
+        max-width: 600px;
+        padding: 25px 40px 25px 40px;
+        background-color: #E3E3E3;
+      }
+
+      .first-monthly-payment h4{
+        text-align: end;
+        margin-bottom: 15px;
+      }
+      .first-monthly-payment div{
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 30px;
+      }
+      .first-monthly-payment div:last-child{
+        margin-top: 30px;
+      }
+     .first-monthly-payment h5{
+      font-size: 22px;
+      font-weight: 400;
+     }
+     .ongoing-monthly-payment h4{
+      text-align: end;
+      margin-bottom: 15px;
+    }
+    .ongoing-monthly-payment div{
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 30px;
+    }
+    .ongoing-monthly-payment hr{
+      margin-bottom: 30px;
+    }
+   .ongoing-monthly-payment h5{
+    font-size: 22px;
+    font-weight: 400;
+   }
+   .ongoing-monthly-payment h6{
+    font-size: 18px;
+    font-weight: 400;
+   }
+   .review-payment-details h3{
+    font-size: 20px;
+    font-weight: 400;
+    margin: 50px 0 30px 40px;
+   }
+   .review-payment-details hr{
+    max-width: 600px;
+   }
+   .review-payment-details input{
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    margin-top: 30px;
+   }
+   .payment-radio{
+    font-family: Helvetica Light, sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    letter-spacing: 1px;
+   }
+      /* ---------------------Review-Payment-Details-End----------------------------- */
+
 
 
 
@@ -402,7 +514,7 @@ select.selected-plan-overview {
 
 
 /* -------------Frontend-Interact-Css-Start------------------------------- */
-.private-office, .team-office-suite, .hybrid-office, .day-office, .dedicated-desk, .day-pass, .flexible-desk, .virtual-office, .conference-room, .event-space, .podcast-studio, .zoom-call-room, .color-burst-room, .alap-room, .alochona-room{
+.display{
   display: none;
 }
 /* -------------Frontend-Interact-Css-End------------------------------- */
