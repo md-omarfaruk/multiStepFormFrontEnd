@@ -356,6 +356,37 @@ select.selected-plan-overview {
   align-content: center;
 }
       /* ------------------------------Choose-a-Duraton-End------------------- */
+      /* ----------------------Continue-Back-button-Start----------------------------- */
+      .continue{
+  font-family: Helvetica Light, sans-serif;
+  font-size: 21px;
+        color: white;
+        background-color: #000102;
+        border: none;
+        border-radius: 8px;
+        padding: 15px 100px;
+        margin: 60px 0;
+      }
+      .continue:hover{
+        color:#231F20;
+        background-color: white;
+        border: 1px solid #231F20;
+      }
+      .back{
+        font-family: Helvetica Light, sans-serif;
+        font-size: 21px;
+              color: #231F20;
+              background-color: white;
+              border: 1px solid #231F20;
+        border-radius: 8px;
+              padding: 15px 50px;
+            }
+            .back:hover{
+              color: #ffffff;
+              background-color: #231F20;
+            }
+      /* ----------------------Continue-Back-button-End----------------------------- */
+
 
 
 
