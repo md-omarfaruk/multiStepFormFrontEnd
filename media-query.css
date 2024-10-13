@@ -14,7 +14,6 @@
   }
 
   .booking-header-info {
-    display: flex;
     flex: 50%;
   }
 
@@ -66,16 +65,23 @@
     font-size: 18px;
   }
   .continue{
-    margin: 40px 0;
+    padding: 15px 58px;
+  }
+  .back{
+    padding: 15px 75px;
+  }
+  .personal-details-form{
+    padding: 0 0;
+    flex: 50%;
   }
   .personal-details h1{
-    margin: 40px 0;
+    margin: 20px 0;
   }
   .required-inputs{
-    min-width: 100%;
+  width: 380px;
   }
   .personal-details .conditions-checkbox{
-    margin-top: 30px;
+    margin-top: 20px;
   }
   .review-payment-details{
     font-family: Helvetica Light, sans-serif;

@@ -323,7 +323,9 @@ select.selected-plan-overview {
    letter-spacing: .5px;
  }
  .choose-duration h2{
-  font-family: Helvetica Bold, sans-serif;
+  font-family: Helvetica Light, sans-serif;
+  font-size: 26px;
+  font-weight: 600;
 }
 .monthly-durations{
   display: flex;
@@ -345,15 +347,16 @@ select.selected-plan-overview {
   display: flex;
   align-items: center;
   margin-top: 50px;
+  margin-bottom: 30px;
 }
 .terms-and-conditions{
-  width: 28px;
-  height: 28px;
+  width: 24px;
+  height: 24px;
   margin-right: 10px;
 }
 .term-and-conditons-label{
   font-family: Helvetica Light, sans-serif;
-  font-size: 24px;
+  font-size: 21px;
   align-content: center;
 }
       /* ------------------------------Choose-a-Duraton-End------------------- */
@@ -365,8 +368,7 @@ select.selected-plan-overview {
         background-color: #000102;
         border: 1px solid #000102;
         border-radius: 8px;
-        padding: 15px 100px;
-        margin: 28px 0;
+        padding: 15px 83px;
       }
       .continue:hover{
         color:#231F20;
@@ -391,28 +393,36 @@ select.selected-plan-overview {
       .personal-details{
         font-family: Helvetica Light, sans-serif;
       }
-      .personal-details h1{
+      .personal-details-form{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 0 60px;
+      }
+      .personal-details-form h1{
         color: #231F20;
-        font-family: Helvetica Bold, sans-serif;
-        font-size: 48px;
-        margin: 80px 0 40px 0;
+        font-family: Helvetica Light, sans-serif;
+        font-weight: 500;
+        font-size: 24px;
+        margin: 30px 0 10px 0;
       }
       .required-fields-text{
         color: #231F20;
-        font-size: 24px;
+        font-size: 16px;
         font-weight: 700;
+        letter-spacing: 1px;
         margin-bottom: 10px;
       }
       .required-inputs{
-        min-width: 650px;
-        padding: 20px 0 20px 20px;
-        font-size: 22px;
+        width: 500px;
+        padding: 10px 0 10px 20px;
+        font-size: 16px;
         border: 1px solid #8D8D8D;
         border-radius: 5px;
         margin: 10px;
       }
       .personal-details .conditions-checkbox{
-        margin-top: 60px;
+        margin-top: 30px;
       }
       /* ---------------------Personal-Details-End----------------------------- */
       /* ---------------------Review-Payment-Details-Start----------------------------- */

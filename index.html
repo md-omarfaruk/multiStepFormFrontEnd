@@ -520,7 +520,7 @@
 
     <!-- ----------------------Selected-Office-or-Room-overview-Start---------------------- -->
 
-    <div class="chosen-plan-overview " id="chosenPlanOverview">
+    <div class="chosen-plan-overview view" id="chosenPlanOverview">
         <h1 id="selectedOfficeOrRoom">Private Office</h1>
         <h3><span id="planSelected">12 days</span> booking</h3>
         <div class="others-plan-info">
@@ -582,7 +582,9 @@
     </div>
     <!-- ----------------------Selected-Office-or-Room-overview-End---------------------- -->
     <!-- ---------------------Personal-Details-Start-------------------- -->
-    <div class="personal-details view" id="personalDetails">
+    <div class="personal-details" id="personalDetails">
+        <div class="personal-details-form">
+        <div class="">
         <h1>Enter Your Personal Details</h1>
         <p class="required-fields-text">*Required Fields</p>
 
@@ -595,6 +597,8 @@
         <br>
         <input type="tel" class="required-inputs" id="phone" name="phone" placeholder="Phone: +880" required>
         <br>
+        </div>
+        <div class="">
         <h1>Enter Your Business Details</h1>
         <p class="required-fields-text">*Required Fields</p>
         <input type="text" class="required-inputs" id="country" name="country" placeholder="Country*: e.g. 'Bangladesh'"
@@ -611,17 +615,18 @@
         <br>
         <input type="text" class="required-inputs" id="postcode" name="postcode" placeholder="Postcode*" required>
         <br>
-        <div class="conditions-checkbox">
-            <input type="checkbox" class="terms-and-conditions" id="termsAndConditions" name="termsAndConditions"
-                value="agreed">
-            <label for="termsAndConditions" class="term-and-conditons-label">By selecting this you agree to our Terms &
-                Conditions and Privacy Policy</label>
         </div>
-        <!-- ---------------------Choose-a-Duraton-End------------------- -->
-        <button class="continue">Continue</button>
-        <br>
-        <button class="back">Back</button>
     </div>
+    <div class="conditions-checkbox">
+        <input type="checkbox" class="terms-and-conditions" id="termsAndConditions" name="termsAndConditions"
+            value="agreed">
+        <label for="termsAndConditions" class="term-and-conditons-label">By selecting this you agree to our Terms &
+            Conditions and Privacy Policy</label>
+    </div>
+    <!-- ---------------------Choose-a-Duraton-End------------------- -->
+    <button class="back">Back</button>
+    <button class="continue">Continue</button>
+</div>
     <!-- ---------------------Personal-Details-End-------------------- -->
     <!-- ---------------------Review-Payment-Details-Start-------------------- -->
     <div class="review-payment-details view" id="reviewPaymentDetails">
