@@ -13,10 +13,6 @@
     text-align: center;
   }
 
-  .booking-header-info {
-    flex: 50%;
-  }
-
   .step-heading {
     font-size: 11px;
   }
@@ -47,13 +43,11 @@
   }
 
   .others-plan-info {
-    flex-direction: column;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
   }
 
   .monthly-durations {
-    flex: 50%;
-    padding: 10px 0;
+    padding: 0 0;
   }
   .conditions-checkbox{
     margin-top: 35px;
@@ -85,21 +79,23 @@
   }
   .review-payment-details{
     font-family: Helvetica Light, sans-serif;
-    max-width: 1010px;
   }
   .review-payment-details h1{
     color: #231F20;
     font-family: Helvetica Bold, sans-serif;
-    font-size: 48px;
-    margin-top: 40px;
+    font-size: 39px;
+    margin-top: 20px;
   }
   .review-payment-details p{
     color: #231F20;
     font-size: 18px;
     margin-top: 20px;
   }
-  .review-payment-details h2{
-    margin: 40px 0 20px;
+  .first-monthly-payment, .ongoing-monthly-payment{
+    min-width: 400px;
+    padding: 0 20px 15px 20px;
+    background-color: #E3E3E3;
+    margin-top: 15px;
   }
 
   .first-monthly-payment div{
@@ -124,15 +120,15 @@ font-size: 20px;
 font-size: 16px;
 }
 .review-payment-details h3{
-margin: 30px 0 30px 40px;
+margin: 20px 0 20px 20px;
 }
 
 .review-payment-details input{
-width: 18px;
-height: 18px;
+width: 14px;
+height: 14px;
 }
 .payment-radio{
-font-size: 22px;
+font-size: 18px;
 }
 
 }
