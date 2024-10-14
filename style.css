@@ -165,35 +165,43 @@ body {
 
 /* ---------------------Header-End------------------ */
 /* ----------------------Workspace-Plans-Start------------------ */
-.private-workspace, .shared-workspace, .collaborative-workspace{
+.private-workspace,
+.shared-workspace,
+.collaborative-workspace {
   max-width: 350px;
   font-family: Helvetica Light, sans-serif;
   margin: 50px auto;
 }
-.private-workspace{
+
+.private-workspace {
   border: 2px solid #E41E1E;
 }
-.shared-workspace{
+
+.shared-workspace {
   border: 2px solid #FF7439;
 }
-.collaborative-workspace{
+
+.collaborative-workspace {
   border: 2px solid #3E79E2;
 }
-.private-workspace>h2{
+
+.private-workspace>h2 {
   color: #F30010;
   font-size: 26px;
   font-family: Helvetica Bold, sans-serif;
   padding: 30px 30px 0 30px;
 }
-.shared-workspace>h2{
+
+.shared-workspace>h2 {
   color: #FF7439;
-    font-size: 26px;
+  font-size: 26px;
   font-family: Helvetica Bold, sans-serif;
   padding: 30px 30px 0 30px;
 }
-.collaborative-workspace>h2{
+
+.collaborative-workspace>h2 {
   color: #3E79E2;
-    font-size: 26px;
+  font-size: 26px;
   font-family: Helvetica Bold, sans-serif;
   padding: 30px 30px 0 30px;
 }
@@ -203,11 +211,13 @@ body {
   height: 1px;
   border: 0;
 }
+
 .shared-workspace>hr {
   background-color: #FF7439;
   height: 1px;
   border: 0;
 }
+
 .collaborative-workspace>hr {
   background-color: #3E79E2;
   height: 1px;
@@ -218,32 +228,37 @@ body {
   font-family: Helvetica Light, sans-serif;
   font-weight: 600;
   text-align: end;
-  padding: 0 30px 15px 30px;       
+  padding: 0 30px 15px 30px;
 }
 
-.plan-selection{
+.plan-selection {
   display: flex;
   justify-content: space-between;
   padding: 0 30px 16px 30px;
 }
-.plan-selection div>input{
+
+.plan-selection div>input {
   margin-top: 16px;
   width: 18px;
   height: 18px;
 }
-.plan-selection div>label{
+
+.plan-selection div>label {
   font-size: 20px;
 }
-.values>p{
+
+.values>p {
   font-family: Helvetica Light, sans-serif;
   font-weight: 400;
   margin-top: 15px;
   font-size: 20px;
 }
-.services{
+
+.services {
   padding: 14px 15px 34px 15px;
 }
-.services>p{
+
+.services>p {
   margin-top: 10px;
 }
 
@@ -253,29 +268,34 @@ body {
 .chosen-plan-overview {
   font-family: Helvetica Light, sans-serif;
 }
-.chosen-plan-overview h1{
+
+.chosen-plan-overview h1 {
   font-family: Helvetica Bold, sans-serif;
   margin: 24px 0 5px 0;
   color: #E41E1E;
   font-size: 48px;
   letter-spacing: 1px;
 }
-.chosen-plan-overview h3{
+
+.chosen-plan-overview h3 {
   font-family: Helvetica Light, sans-serif;
   margin-bottom: 20px;
   font-size: 24px;
   font-weight: 500;
   letter-spacing: 1px;
 }
-.chosen-plan-overview h4{
+
+.chosen-plan-overview h4 {
   font-family: Helvetica Light, sans-serif;
 }
-.others-plan-info{
+
+.others-plan-info {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   margin-bottom: 10px;
 }
+
 select.selected-plan-overview {
   padding: 11px 7px;
   margin: 14px 0;
@@ -283,7 +303,8 @@ select.selected-plan-overview {
   border-radius: 5px;
   font-size: 18px;
 }
-.people-quantity{
+
+.people-quantity {
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -295,20 +316,25 @@ select.selected-plan-overview {
   font-size: 18px;
   text-align: center;
 }
-.decrement, .increment{
+
+.decrement,
+.increment {
   padding: 4px 12px;
   cursor: pointer;
   font-size: 24px;
   border-radius: 5px;
   width: 38px;
 }
-.decrement:hover{
+
+.decrement:hover {
   background-color: #fcb7b7;
 }
-.increment:hover{
+
+.increment:hover {
   background-color: #fcb7b7;
 }
-.date{
+
+.date {
   padding: 9px 7px;
   margin: 14px 0;
   border: 1px solid #9A9A9A;
@@ -316,212 +342,352 @@ select.selected-plan-overview {
   font-size: 18px;
   min-width: 183px;
 }
+
 /* --------------------Chosen-Plan-Overview-End----------------------- */
- /* ------------------------------Choose-a-Duraton-Start------------------- */
- .choose-duration{
-   font-family: Helvetica Light, sans-serif;
-   letter-spacing: .5px;
- }
- .choose-duration h2{
+/* ------------------------------Choose-a-Duraton-Start------------------- */
+.choose-duration {
+  font-family: Helvetica Light, sans-serif;
+  letter-spacing: .5px;
+}
+
+.choose-duration h2 {
   font-family: Helvetica Light, sans-serif;
   font-size: 26px;
   font-weight: 600;
 }
-.monthly-durations{
+
+.monthly-durations {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   padding: 10px 100px;
 }
-.monthly-durations h4{
+
+.monthly-durations h4 {
   border: 2px solid #231F20;
   border-radius: 100%;
   padding: 50px 43px;
   line-height: 26px;
   margin-top: 15px;
 }
-.monthly-durations h4:nth-child(2){
+
+.monthly-durations h4:nth-child(2) {
   background-color: #F9BA15;
 }
-.conditions-checkbox{
+
+.conditions-checkbox {
   display: flex;
   align-items: center;
   margin-top: 50px;
   margin-bottom: 30px;
 }
-.terms-and-conditions{
+
+.terms-and-conditions {
   width: 24px;
   height: 24px;
   margin-right: 10px;
 }
-.term-and-conditons-label{
+
+.term-and-conditons-label {
   font-family: Helvetica Light, sans-serif;
   font-size: 21px;
   align-content: center;
 }
-      /* ------------------------------Choose-a-Duraton-End------------------- */
-      /* ----------------------Continue-Back-button-Start----------------------------- */
-      .continue{
+
+/* ------------------------------Choose-a-Duraton-End------------------- */
+/* ----------------------Continue-Back-button-Start----------------------------- */
+.continue {
   font-family: Helvetica Light, sans-serif;
   font-size: 21px;
-        color: white;
-        background-color: #000102;
-        border: 1px solid #000102;
-        border-radius: 8px;
-        padding: 15px 83px;
-      }
-      .continue:hover{
-        color:#231F20;
-        background-color: white;
-        border: 1px solid #231F20;
-      }
-      .back{
-        font-family: Helvetica Light, sans-serif;
-        font-size: 21px;
-              color: #000102;
-              background-color: white;
-              border: 1px solid #000102;
-        border-radius: 8px;
-              padding: 15px 100px;
-            }
-            .back:hover{
-              color: #ffffff;
-              background-color: #000102;
-            }
-      /* ----------------------Continue-Back-button-End----------------------------- */
-      /* ---------------------Personal-Detials-Start----------------------------- */
-      .personal-details{
-        font-family: Helvetica Light, sans-serif;
-      }
-      .personal-details-form{
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        padding: 0 60px;
-      }
-      .personal-details-form h1{
-        color: #231F20;
-        font-family: Helvetica Light, sans-serif;
-        font-weight: 500;
-        font-size: 24px;
-        margin: 30px 0 10px 0;
-      }
-      .required-fields-text{
-        color: #231F20;
-        font-size: 16px;
-        font-weight: 700;
-        letter-spacing: 1px;
-        margin-bottom: 10px;
-      }
-      .required-inputs{
-        width: 500px;
-        padding: 10px 0 10px 20px;
-        font-size: 16px;
-        border: 1px solid #8D8D8D;
-        border-radius: 5px;
-        margin: 10px;
-      }
-      .personal-details .conditions-checkbox{
-        margin-top: 30px;
-      }
-      /* ---------------------Personal-Details-End----------------------------- */
-      /* ---------------------Review-Payment-Details-Start----------------------------- */
-      .review-payment-details{
-        font-family: Helvetica Light, sans-serif;
-      }
-      .review-payment-details h1{
-        color: #231F20;
-        font-family: Helvetica Bold, sans-serif;
-        font-size: 32px;
-        margin-top: 30px;
-      }
-      .review-payment-details p{
-        color: #231F20;
-        font-size: 18px;
-        margin-top: 10px;
-      }
-      .monthly-payment{
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-      }
-      .first-monthly-payment h2{
-        margin: 30px 0 20px;
-        font-family: Helvetica Light, sans-serif;
-        font-weight: 500;
-        color: #007946;
-      }
-      
-      .first-monthly-payment, .ongoing-monthly-payment{
-        min-width: 600px;
-        padding: 0 40px 15px 40px;
-        background-color: #E3E3E3;
-        margin-top: 30px;
-      }
+  color: white;
+  background-color: #000102;
+  border: 1px solid #000102;
+  border-radius: 8px;
+  padding: 15px 83px;
+}
 
-      .first-monthly-payment h4{
-        text-align: end;
-        margin-bottom: 15px;
-      }
-      .first-monthly-payment div{
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 30px;
-      }
-      .first-monthly-payment div:last-child{
-        margin-top: 30px;
-      }
-     .first-monthly-payment h5{
-      font-size: 22px;
-      font-weight: 400;
-     }
-     .ongoing-monthly-payment h2{
-      margin: 30px 0 20px;
-      font-family: Helvetica Light, sans-serif;
-        font-weight: 500;
-        color: #007946;
-    }
-     .ongoing-monthly-payment h4{
-      text-align: end;
-      margin-bottom: 15px;
-    }
-    .ongoing-monthly-payment div{
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 30px;
-    }
-    .ongoing-monthly-payment hr{
-      margin-bottom: 30px;
-    }
-   .ongoing-monthly-payment h5{
-    font-size: 22px;
-    font-weight: 400;
-   }
-   .ongoing-monthly-payment h6{
-    font-size: 18px;
-    font-weight: 400;
-   }
-   .review-payment-details h3{
-    font-size: 20px;
-    font-weight: 400;
-    margin: 30px 0 15px 40px;
-   }
-   .review-payment-details hr{
-    max-width: 600px;
-   }
-   .review-payment-details input{
-    width: 16px;
-    height: 16px;
-    margin-right: 5px;
-    margin-top: 30px;
-   }
-   .payment-radio{
-    font-family: Helvetica Light, sans-serif;
-    font-weight: 600;
-    font-size: 20px;
-    letter-spacing: 1px;
-   }
-      /* ---------------------Review-Payment-Details-End----------------------------- */
+.continue:hover {
+  color: #231F20;
+  background-color: white;
+  border: 1px solid #231F20;
+}
+
+.back {
+  font-family: Helvetica Light, sans-serif;
+  font-size: 21px;
+  color: #000102;
+  background-color: white;
+  border: 1px solid #000102;
+  border-radius: 8px;
+  padding: 15px 100px;
+}
+
+.back:hover {
+  color: #ffffff;
+  background-color: #000102;
+}
+
+/* ----------------------Continue-Back-button-End----------------------------- */
+/* ---------------------Personal-Detials-Start----------------------------- */
+.personal-details {
+  font-family: Helvetica Light, sans-serif;
+}
+
+.personal-details-form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0 60px;
+}
+
+.personal-details-form h1 {
+  color: #231F20;
+  font-family: Helvetica Light, sans-serif;
+  font-weight: 500;
+  font-size: 24px;
+  margin: 30px 0 10px 0;
+}
+
+.required-fields-text {
+  color: #231F20;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+.required-inputs {
+  width: 500px;
+  padding: 10px 0 10px 20px;
+  font-size: 16px;
+  border: 1px solid #8D8D8D;
+  border-radius: 5px;
+  margin: 10px;
+}
+
+.personal-details .conditions-checkbox {
+  margin-top: 30px;
+}
+
+/* ---------------------Personal-Details-End----------------------------- */
+/* ---------------------Review-Payment-Details-Start----------------------------- */
+.review-payment-details {
+  font-family: Helvetica Light, sans-serif;
+}
+
+.review-payment-details h1 {
+  color: #231F20;
+  font-family: Helvetica Bold, sans-serif;
+  font-size: 32px;
+  margin-top: 30px;
+}
+
+.review-payment-details p {
+  color: #231F20;
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+.monthly-payment {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.first-monthly-payment h2 {
+  margin: 30px 0 20px;
+  font-family: Helvetica Light, sans-serif;
+  font-weight: 500;
+  color: #007946;
+}
+
+.first-monthly-payment,
+.ongoing-monthly-payment {
+  min-width: 600px;
+  padding: 0 40px 15px 40px;
+  background-color: #E3E3E3;
+  margin-top: 30px;
+}
+
+.first-monthly-payment h4 {
+  text-align: end;
+  margin-bottom: 15px;
+}
+
+.first-monthly-payment div {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.first-monthly-payment div:last-child {
+  margin-top: 30px;
+}
+
+.first-monthly-payment h5 {
+  font-size: 22px;
+  font-weight: 400;
+}
+
+.ongoing-monthly-payment h2 {
+  margin: 30px 0 20px;
+  font-family: Helvetica Light, sans-serif;
+  font-weight: 500;
+  color: #007946;
+}
+
+.ongoing-monthly-payment h4 {
+  text-align: end;
+  margin-bottom: 15px;
+}
+
+.ongoing-monthly-payment div {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.ongoing-monthly-payment hr {
+  margin-bottom: 30px;
+}
+
+.ongoing-monthly-payment h5 {
+  font-size: 22px;
+  font-weight: 400;
+}
+
+.ongoing-monthly-payment h6 {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.review-payment-details h3 {
+  font-size: 20px;
+  font-weight: 400;
+  margin: 30px 0 15px 40px;
+}
+
+.review-payment-details hr {
+  max-width: 600px;
+}
+
+.review-payment-details input {
+  width: 16px;
+  height: 16px;
+  margin-right: 5px;
+  margin-top: 30px;
+}
+
+.payment-radio {
+  font-family: Helvetica Light, sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  letter-spacing: 1px;
+}
+
+/* ---------------------Review-Payment-Details-End----------------------------- */
+/* --------------------Booking-details-overview-Start----------------------- */
+.booking-details-overview {
+  font-family: Helvetica Light, sans-serif;
+}
+
+.booking-details-overview h1 {
+  font-size: 32px;
+  text-align: center;
+  color: #002516;
+}
+.booking-details-overview h2, h4 {
+  font-family: Helvetica Light, sans-serif;
+  font-weight: 500;
+  color: #002516;
+}
+.booking-details-overview h2 {
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+.booking-details-overview h4 {
+  font-size: 18px;
+}
+.booking-details {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0 80px;
+}
+
+.booking-details img {
+  max-width: 20px;
+  max-height: 20px;
+  margin-right: 8px;
+}
+.booking-details p {
+  line-height: 23px;
+}
+
+.booking-confirmation,
+.booking-plan-details,
+.booking-payment-details,
+.booking-information {
+  max-width: 50%;
+}
+
+.booking-confirmation h3 {
+  margin-top: 30px;
+  margin-bottom: 15px;
+}
+
+.booking-confirmation div {
+  display: flex;
+  margin: 15px 0;
+}
+.booking-email{
+  color: #09AD66;
+}
+.booking-id{
+  color: #1873D6;
+}
+.booking-plan-details h3 {
+  margin-top: 30px;
+  margin-bottom: 15px;
+}
+
+.booking-plan-details div {
+  display: flex;
+  margin: 15px 0;
+}
+
+.booking-payment-details h3 {
+  margin-top: 30px;
+  margin-bottom: 15px;
+}
+
+.booking-payment-details div {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 15px 0;
+}
+.bold-text{
+  font-family: Helvetica Bold, sans-serif;
+}
+.booking-condition{
+  color: #FC0606;
+}
+.go-to-email {
+  font-family: Helvetica Light, sans-serif;
+  font-size: 21px;
+  color: #ffffff;
+  background-color: #000102;
+  border-radius: 8px;
+  padding: 15px 100px;
+  margin-top: 20px;
+}
+
+.go-to-email:hover {
+  color: #000102;
+  background-color: #ffffff;
+  border: 1px solid #000102;
+}
+/* --------------------Booking-details-overview-End----------------------- */
 
 
 
@@ -539,7 +705,8 @@ select.selected-plan-overview {
 
 
 /* -------------Frontend-Interact-Css-Start------------------------------- */
-.view{
+.view-none {
   display: none;
 }
+
 /* -------------Frontend-Interact-Css-End------------------------------- */

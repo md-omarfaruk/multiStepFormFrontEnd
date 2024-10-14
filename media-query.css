@@ -41,7 +41,9 @@
     height: auto;
     margin-right: 16px;
   }
-
+  .chosen-plan-overview h1{
+    font-size: 39px;
+  }
   .others-plan-info {
     margin-bottom: 10px;
   }
@@ -66,7 +68,6 @@
   }
   .personal-details-form{
     padding: 0 0;
-    flex: 50%;
   }
   .personal-details h1{
     margin: 20px 0;
@@ -130,5 +131,16 @@ height: 14px;
 .payment-radio{
 font-size: 18px;
 }
-
+.booking-details {
+  padding: 0 0;
+}
+.booking-confirmation,
+.booking-plan-details,
+.booking-payment-details,
+.booking-information {
+  max-width: 100%;
+}
+.go-to-email {
+  padding: 15px 146px;
+}
 }
