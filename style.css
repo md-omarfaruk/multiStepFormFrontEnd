@@ -672,7 +672,7 @@ select.selected-plan-overview {
 .booking-condition{
   color: #FC0606;
 }
-.go-to-email {
+.check-email {
   font-family: Helvetica Light, sans-serif;
   font-size: 21px;
   color: #ffffff;
@@ -683,7 +683,7 @@ select.selected-plan-overview {
   margin-top: 20px;
 }
 
-.go-to-email:hover {
+.check-email:hover {
   color: #000102;
   background-color: #ffffff;
   border: 1px solid #000102;
