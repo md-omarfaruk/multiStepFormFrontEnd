@@ -1,5 +1,3 @@
-@media only screen and (min-width: 1200px) {}
-
 @media only screen and (max-width: 576px) {
   .top-heading {
     font-size: 45px;
@@ -51,6 +49,10 @@
   .monthly-durations {
     padding: 0 0;
   }
+  .monthly-durations h4 {
+    padding: 40px 35px;
+
+  }
   .conditions-checkbox{
     margin-top: 35px;
   }
@@ -61,10 +63,10 @@
     font-size: 18px;
   }
   .continue{
-    padding: 15px 58px;
+    padding: 15px 44px;
   }
   .back{
-    padding: 15px 75px;
+    padding: 15px 61px;
   }
   .personal-details-form{
     padding: 0 0;
@@ -73,7 +75,7 @@
     margin: 20px 0;
   }
   .required-inputs{
-  width: 380px;
+  width: 320px;
   }
   .personal-details .conditions-checkbox{
     margin-top: 20px;
@@ -93,7 +95,7 @@
     margin-top: 20px;
   }
   .first-monthly-payment, .ongoing-monthly-payment{
-    min-width: 400px;
+    min-width: 100%;
     padding: 0 20px 15px 20px;
     background-color: #E3E3E3;
     margin-top: 15px;
