@@ -98,16 +98,6 @@ body {
   border-radius: 100%;
 }
 
-.step-number.active {
-  color: white;
-  background-color: #020202;
-}
-
-.step-number.completed {
-  color: white;
-  background-color: #CCCCCC;
-}
-
 .booking-header-info {
   display: flex;
   flex-wrap: wrap;
@@ -690,24 +680,19 @@ select.selected-plan-overview {
 }
 /* --------------------Booking-details-overview-End----------------------- */
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* -------------Frontend-Interact-Css-Start------------------------------- */
 .view-none {
   display: none;
+}
+
+.step-number.active {
+  color: white;
+  background-color: #020202;
+}
+
+.step-number.completed {
+  color: white;
+  background-color: #CCCCCC;
 }
 
 /* -------------Frontend-Interact-Css-End------------------------------- */

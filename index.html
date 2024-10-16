@@ -15,20 +15,20 @@
     <h1 class="top-heading">Membership Booking</h1>
     <div class="header-bg">
         <div class="header" id="header">
-            <div class="steps" id="stepOne">
-                <h2 class="step-number completed">1</h2>
+            <div class="steps">
+                <h2 class="step-number completed" id="stepOne">1</h2>
                 <h3 class="step-heading">Plan Type</h3>
             </div>
-            <div class="steps" id="stepTwo">
-                <h2 class="step-number active">2</h2>
+            <div class="steps">
+                <h2 class="step-number active" id="stepTwo">2</h2>
                 <h3 class="step-heading">Agreement Details</h3>
             </div>
-            <div class="steps" id="stepthree">
-                <h2 class="step-number">3</h2>
+            <div class="steps">
+                <h2 class="step-number" id="stepthree">3</h2>
                 <h3 class="step-heading">Personal Information</h3>
             </div>
-            <div class="steps" id="stepFour">
-                <h2 class="step-number">4</h2>
+            <div class="steps">
+                <h2 class="step-number" id="stepFour">4</h2>
                 <h3 class="step-heading">Payment Information</h3>
             </div>
         </div>
@@ -39,7 +39,7 @@
                 <h3>Plan Type</h3>
                 <div class="info">
                     <img src="assets/img/private office.png" alt="">
-                    <h2><span class="plan-type-name" id="planTypeTime">Private Office</span></h4>
+                    <h2><span class="plan-type-name" id="planTypeName">Private Office</span></h4>
                 </div>
             </div>
             <div class="plan-info">
@@ -66,7 +66,7 @@
             <div class="plan-info">
                 <h3>Monthly Cost</h3>
                 <div class="info">
-                    <h2><span>BDT </span><span class="plan-monthly-cost" id="monthlyCost">31000/-</span></h4>
+                    <h2><span>BDT </span><span class="plan-monthly-cost" id="monthlyCost">31000</span>/-</h4>
                 </div>
             </div>
         </div>
@@ -84,11 +84,11 @@
         <hr>
         <div class="plan-selection">
             <div class="">
-                <input type="radio" id="privateOfficePlanOne" name="chosenPlan" value="13500">
+                <input type="radio" id="privateOfficePlanOne" name="chosen_plan" value="13500">
                   <label for="privateOfficePlanOne">8 days/m</label><br>
-                <input type="radio" id="privateOfficePlanTwo" name="chosenPlan" value="18500">
+                <input type="radio" id="privateOfficePlanTwo" name="chosen_plan" value="18500">
                   <label for="privateOfficePlanTwo">12 days/m</label><br>
-                <input type="radio" id="privateOfficePlanThree" name="chosenPlan" value="43500">
+                <input type="radio" id="privateOfficePlanThree" name="chosen_plan" value="43500">
                   <label for="privateOfficePlanThree">Unlimited 1 month</label><br>
             </div>
             <div class="values">
@@ -108,7 +108,6 @@
             <p>- Front desk service including printing, copying and admin support available</p>
             <p>- 1 free espresso of your choice per day, and more</p>
         </div>
-        </form>
     </div>
     <!-- ----------------------Private-Office-End----------------------- -->
     <!-- ----------------------Team-Suite-Office-Start----------------------- -->
@@ -118,7 +117,7 @@
         <hr>
         <div class="plan-selection">
             <div class="">
-                <input type="radio" id="timeOfficeSuitePlan" name="chosenPlan" value="73500">
+                <input type="radio" id="timeOfficeSuitePlan" name="chosen_plan" value="73500">
                   <label for="timeOfficeSuitePlan">1 month <sub>(for 2)</sub></label><br>
             </div>
             <div class="values">
@@ -137,7 +136,6 @@
             <p>- 1 free espresso of your choice per day, and more</p>
             <p>- Minimum 7 persons booking</p>
         </div>
-        </form>
     </div>
     <!-- ----------------------Team-Suite-Office-End----------------------- -->
     <!-- ----------------------Hybrid-Office-Start----------------------- -->
@@ -147,9 +145,9 @@
         <hr>
         <div class="plan-selection">
             <div class="">
-                <input type="radio" id="hybridOfficePlanOne" name="chosenPlan" value="21000">
+                <input type="radio" id="hybridOfficePlanOne" name="chosen_plan" value="21000">
                   <label for="hybridOfficePlanOne">12 days/m</label><br>
-                <input type="radio" id="hybridOfficePlanTwo" name="chosenPlan" value="49000">
+                <input type="radio" id="hybridOfficePlanTwo" name="chosen_plan" value="49000">
                   <label for="hybridOfficePlanTwo">Unlimited 1 month</label><br>
             </div>
             <div class="values">
@@ -168,7 +166,6 @@
             <p>- Front desk service including printing, copying and admin support available</p>
             <p>- 1 free espresso of your choice per day, and more</p>
         </div>
-        </form>
     </div>
     <!-- ----------------------Hybrid-Office-End----------------------- -->
     <!-- ----------------------Day-Office-Start----------------------- -->
@@ -178,9 +175,9 @@
         <hr>
         <div class="plan-selection">
             <div class="">
-                <input type="radio" id="dayOfficePlanOne" name="chosenPlan" value="700">
+                <input type="radio" id="dayOfficePlanOne" name="chosen_plan" value="700">
                   <label for="dayOfficePlanOne">Per Hour</label><br>
-                <input type="radio" id="dayOfficePlanTwo" name="chosenPlan" value="3450">
+                <input type="radio" id="dayOfficePlanTwo" name="chosen_plan" value="3450">
                   <label for="dayOfficePlanTwo">Per Day</label><br>
             </div>
             <div class="values">
@@ -199,7 +196,6 @@
             <p>- Front desk service including printing, copying and admin support available</p>
             <p>- 1 free espresso of your choice per day, and more</p>
         </div>
-        </form>
     </div>
     <!-- ----------------------Day-Office-End----------------------- -->
     <!-- ----------------------Dedicated-Desk-Start----------------------- -->
@@ -209,7 +205,7 @@
         <hr>
         <div class="plan-selection">
             <div class="">
-                <input type="radio" id="dedicatedDeskPlan" name="chosenPlan" value="33000">
+                <input type="radio" id="dedicatedDeskPlan" name="chosen_plan" value="33000">
                   <label for="dedicatedDeskPlan">Per Month</label><br>
             </div>
             <div class="values">
@@ -227,7 +223,6 @@
             <p>- Front desk service including printing, copying and admin support available</p>
             <p>- 1 free espresso of your choice per day, and more</p>
         </div>
-        </form>
     </div>
     <!-- ----------------------Dedicated-Desk-End----------------------- -->
     <!-- ----------------------Day-Pass-Start----------------------- -->
@@ -237,9 +232,9 @@
         <hr>
         <div class="plan-selection">
             <div class="">
-                <input type="radio" id="dayPassPlanOne" name="chosenPlan" value="350">
+                <input type="radio" id="dayPassPlanOne" name="chosen_plan" value="350">
                   <label for="dayPassPlanOne">Per Hour</label><br>
-                <input type="radio" id="dayPassPlanTwo" name="chosenPlan" value="1700">
+                <input type="radio" id="dayPassPlanTwo" name="chosen_plan" value="1700">
                   <label for="dayPassPlanTwo">Per Day</label><br>
             </div>
             <div class="values">
@@ -258,7 +253,6 @@
             <p>- Front desk service including printing, copying and admin support available</p>
             <p>- 1 free espresso of your choice per day, and more</p>
         </div>
-        </form>
     </div>
     <!-- ----------------------Day-Pass-End----------------------- -->
     <!-- ----------------------Flexible-Desk-Start----------------------- -->
@@ -268,11 +262,11 @@
         <hr>
         <div class="plan-selection">
             <div class="">
-                <input type="radio" id="flexibleDeskPlanOne" name="chosenPlan" value="6500">
+                <input type="radio" id="flexibleDeskPlanOne" name="chosen_plan" value="6500">
                   <label for="flexibleDeskPlanOne">5 Days</label><br>
-                <input type="radio" id="flexibleDeskPlanTwo" name="chosenPlan" value="12000">
+                <input type="radio" id="flexibleDeskPlanTwo" name="chosen_plan" value="12000">
                   <label for="flexibleDeskPlanTwo">10 Days</label><br>
-                <input type="radio" id="flexibleDeskPlanThree" name="chosenPlan" value="17000">
+                <input type="radio" id="flexibleDeskPlanThree" name="chosen_plan" value="17000">
                   <label for="flexibleDeskPlanThree">15 Days</label><br>
             </div>
             <div class="values">
@@ -292,7 +286,6 @@
             <p>- Front desk service including printing, copying and admin support available</p>
             <p>- 1 free espresso of your choice per day, and more</p>
         </div>
-        </form>
     </div>
     <!-- ----------------------Flexible-Desk-End----------------------- -->
     <!-- ----------------------Virtual-Office-Start----------------------- -->
@@ -302,7 +295,7 @@
         <hr>
         <div class="plan-selection">
             <div class="">
-                <input type="radio" id="virtualOfficePlan" name="chosenPlan" value="15000">
+                <input type="radio" id="virtualOfficePlan" name="chosen_plan" value="15000">
                   <label for="virtualOfficePlan">Per Month</label><br>
             </div>
             <div class="values">
@@ -320,7 +313,6 @@
             <p>- Front desk service including printing, copying and admin support available</p>
             <p>- 1 free espresso of your choice per day, and more</p>
         </div>
-        </form>
     </div>
     <!-- ----------------------Virtual-Office-End----------------------- -->
     <!-- ----------------------Conference-Room-Start----------------------- -->
@@ -330,7 +322,7 @@
         <hr>
         <div class="plan-selection">
             <div class="">
-                <input type="radio" id="conferenceRoomPlan" name="chosenPlan" value="1700">
+                <input type="radio" id="conferenceRoomPlan" name="chosen_plan" value="1700">
                   <label for="conferenceRoomPlan">1 Hour</label><br>
             </div>
             <div class="values">
@@ -348,7 +340,6 @@
             <p>- Front desk service including printing, copying and admin support available</p>
             <p>- 1 free espresso of your choice per day, and more</p>
         </div>
-        </form>
     </div>
     <!-- ----------------------Conference-Room-End----------------------- -->
     <!-- ----------------------Event-Space-Start----------------------- -->
@@ -358,7 +349,7 @@
         <hr>
         <div class="plan-selection">
             <div class="">
-                <input type="radio" id="eventSpacePlan" name="chosenPlan" value="6000">
+                <input type="radio" id="eventSpacePlan" name="chosen_plan" value="6000">
                   <label for="eventSpacePlan">1 Hour</label><br>
             </div>
             <div class="values">
@@ -376,7 +367,6 @@
             <p>- Front desk service including printing, copying and admin support available</p>
             <p>- 1 free espresso of your choice per day, and more</p>
         </div>
-        </form>
     </div>
     <!-- ----------------------Event-Space-End----------------------- -->
     <!-- ----------------------Podcast-Studio-Start----------------------- -->
@@ -386,7 +376,7 @@
         <hr>
         <div class="plan-selection">
             <div class="">
-                <input type="radio" id="podcastStudioPlan" name="chosenPlan" value="1500">
+                <input type="radio" id="podcastStudioPlan" name="chosen_plan" value="1500">
                   <label for="podcastStudioPlan">1 Hour</label><br>
             </div>
             <div class="values">
@@ -404,7 +394,6 @@
             <p>- Front desk service including printing, copying and admin support available</p>
             <p>- 1 free espresso of your choice per day, and more</p>
         </div>
-        </form>
     </div>
     <!-- ----------------------Podcast-Studio-End----------------------- -->
     <!-- ----------------------Zoom-Call-Room-Start----------------------- -->
@@ -414,7 +403,7 @@
         <hr>
         <div class="plan-selection">
             <div class="">
-                <input type="radio" id="zoomCallRoomPlan" name="chosenPlan" value="700">
+                <input type="radio" id="zoomCallRoomPlan" name="chosen_plan" value="700">
                   <label for="zoomCallRoomPlan">1 Hour</label><br>
             </div>
             <div class="values">
@@ -432,7 +421,6 @@
             <p>- Front desk service including printing, copying and admin support available</p>
             <p>- 1 free espresso of your choice per day, and more</p>
         </div>
-        </form>
     </div>
     <!-- ----------------------Zoom-Call-Room-End----------------------- -->
     <!-- ----------------------Color-Burst-Room-Start----------------------- -->
@@ -442,7 +430,7 @@
         <hr>
         <div class="plan-selection">
             <div class="">
-                <input type="radio" id="colorBurstRoomPlan" name="chosenPlan" value="1000">
+                <input type="radio" id="colorBurstRoomPlan" name="chosen_plan" value="1000">
                   <label for="colorBurstRoomPlan">1 Hour</label><br>
             </div>
             <div class="values">
@@ -460,7 +448,6 @@
             <p>- Front desk service including printing, copying and admin support available</p>
             <p>- 1 free espresso of your choice per day, and more</p>
         </div>
-        </form>
     </div>
     <!-- ----------------------Color-Burst-Room-End----------------------- -->
     <!-- ----------------------Alap-Room-Start----------------------- -->
@@ -470,7 +457,7 @@
         <hr>
         <div class="plan-selection">
             <div class="">
-                <input type="radio" id="alapRoomPlan" name="chosenPlan" value="1000">
+                <input type="radio" id="alapRoomPlan" name="chosen_plan" value="1000">
                   <label for="alapRoomPlan">1 Hour</label><br>
             </div>
             <div class="values">
@@ -488,7 +475,6 @@
             <p>- Front desk service including printing, copying and admin support available</p>
             <p>- 1 free espresso of your choice per day, and more</p>
         </div>
-        </form>
     </div>
     <!-- ----------------------Alap-Room-End----------------------- -->
     <!-- ----------------------Alochona-Room-Start----------------------- -->
@@ -498,7 +484,7 @@
         <hr>
         <div class="plan-selection">
             <div class="">
-                <input type="radio" id="alochonaRoomPlan" name="chosenPlan" value="1000">
+                <input type="radio" id="alochonaRoomPlan" name="chosen_plan" value="1000">
                   <label for="alochonaRoomPlan">1 Hour</label><br>
             </div>
             <div class="values">
@@ -516,7 +502,6 @@
             <p>- Front desk service including printing, copying and admin support available</p>
             <p>- 1 free espresso of your choice per day, and more</p>
         </div>
-        </form>
     </div>
     <!-- ----------------------Alochona-Room-End----------------------- -->
 
@@ -530,16 +515,21 @@
                 <h4>Type Of Workspace*</h4>
                 <select class="selected-plan-overview" id="selectedPlanOverview" name="selectedPlanOverview">
                     <!-- ---------For-Private-Workspace---------- -->
+                     <div id="privateWorkspaceOptions">
                     <option id="optionPrivateOffice" value="Private Office">Private Office</option>
                     <option id="optionTeamOfficeSuite" value="Team Office Suite">Team Office Suite</option>
                     <option id="optionHybridOffice" value="Hybrid Office">Hybrid Office</option>
+                    </div>
                     <!-- ---------For-Shared-Workspace---------- -->
+                     <div id="sharedWorkspaceOptions">
                     <option id="optionDayOffice" value="Day Office">Day Office</option>
                     <option id="optionDedicatedDesk" value="Dedicated Desk">Dedicated Desk</option>
                     <option id="optionDayPass" value="Day Pass">Day Pass</option>
                     <option id="optionFlexibleDesk" value="Flexible Desk">Flexible Desk</option>
                     <option id="optionVirtualOffice" value="Virtual Office">Virtual Office</option>
+                </div>
                     <!-- ---------For-Collaborative-Workspace---------- -->
+                     <div id="collaborativeWorkspaceOptions">
                     <option id="optionConferenceRoom" value="Conference Room">Conference Room</option>
                     <option id="optionEventRoom" value="Event Room">Event Room</option>
                     <option id="optionPodcastRoom" value="Podcast Room">Podcast Room</option>
@@ -547,6 +537,7 @@
                     <option id="optionColorBurstRoom" value="Color Burst Room">Color Burst Room</option>
                     <option id="optionAlapRoom" value="Alap Room">Alap Room</option>
                     <option id="optionAlochonaRoom" value="Alochona Room">Alochona Room</option>
+                    </div>
                 </select>
             </div>
             <div class="">
@@ -767,18 +758,7 @@
 
 
     <!-- ------------Js-Script-------------------------------- -->
-    <script>
-        window.onload = function () {
-            // Get the current date
-            const today = new Date();
-
-            // Format the date to YYYY-MM-DD for the date input
-            const formattedDate = today.toISOString().split('T')[0];
-
-            // Set the value of the input field to the current date
-            document.getElementById('date').value = formattedDate;
-        };
-    </script>
+    <script src="assets/js/main.js"></script>
 </body>
 
 </html>
