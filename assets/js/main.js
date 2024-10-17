@@ -44,10 +44,31 @@ const increment = document.getElementsByName('increment');
 // -------------------------------requiredDomOfDate-----------------------------
 const date = document.getElementsByName('date');
 // -------------------------------requiredDomOfcheckBoxNBackNContinueBtn-------
-const  = document.getElementsByName('');
-
+const chosenPlanBackBtn = document.getElementsByName('chosenPlanBackBtn');
+const chosenPlanContinueBtn = document.getElementsByName('chosenPlanContinueBtn');
 
 // ----------------------------requiredDomOfSelectedPlanEnd-----------------------------
+
+// ----------------------------requiredDomOfPersonalDetailsStart-----------------------------
+const personalDetails = document.getElementsByName('personalDetails');
+const termsAndConditions = document.getElementsByName('termsAndConditions');
+const personalDetailsBackBtn = document.getElementsByName('personalDetailsBackBtn');
+const personalDetailsContinueBtn = document.getElementsByName('personalDetailsContinueBtn');
+// ----------------------------requiredDomOfPersonalDetailsEnd-----------------------------
+
+// ----------------------------requiredDomOfReviewPaymentDetailsStart-----------------------------
+const reviewPaymentDetails = document.getElementsByName('reviewPaymentDetails');
+const reviewPaymentDetailsBackBtn = document.getElementsByName('reviewPaymentDetailsBackBtn');
+const submit = document.getElementsByName('submit');
+// ----------------------------requiredDomOfPaymentMethodsStart----------
+const payNow = document.getElementsByName('payNow');
+const payOnArrival = document.getElementsByName('payOnArrival');
+// ----------------------------requiredDomOfPaymentMethodsEnd----------
+
+// ----------------------------requiredDomOfReviewPaymentDetailsEnd-----------------------------
+
+
+
 
 
 

@@ -122,6 +122,9 @@ font-size: 20px;
 .ongoing-monthly-payment h6{
 font-size: 16px;
 }
+.review-payment-details{
+  padding-bottom: 15px;
+}
 .review-payment-details h3{
 margin: 20px 0 20px 20px;
 }
@@ -132,6 +135,10 @@ height: 14px;
 }
 .payment-radio{
 font-size: 18px;
+}
+input#submit {
+  padding: 15px 7px;
+  border-radius: 8px;
 }
 .booking-details {
   padding: 0 0;

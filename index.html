@@ -563,15 +563,9 @@
                 <h4>12 Months<br>BDT 42,000<br>per month</h4>
             </div>
         </div>
-        <div class="conditions-checkbox">
-            <input type="checkbox" class="terms-and-conditions" id="termsAndConditions" name="termsAndConditions"
-                value="agreed">
-            <label for="termsAndConditions" class="term-and-conditons-label">By selecting this you agree to our Terms &
-                Conditions and Privacy Policy</label>
-        </div>
         <!-- ---------------------Choose-a-Duraton-End------------------- -->
-        <button class="back">Back</button>
-        <button class="continue">Continue</button>
+        <button class="back" id="chosenPlanBackBtn">Back</button>
+        <button class="continue" id="chosenPlanContinueBtn">Continue</button>
     </div>
     <!-- ----------------------Selected-Office-or-Room-overview-End---------------------- -->
     <!-- ---------------------Personal-Details-Start-------------------- -->
@@ -611,18 +605,18 @@
         </div>
     </div>
     <div class="conditions-checkbox">
-        <input type="checkbox" class="terms-and-conditions" id="termsAndConditions" name="termsAndConditions"
+        <input type="checkbox" class="terms-and-conditions" id="termsAndConditions" name="terms_conditions"
             value="agreed">
         <label for="termsAndConditions" class="term-and-conditons-label">By selecting this you agree to our Terms &
             Conditions and Privacy Policy</label>
     </div>
     <!-- ---------------------Choose-a-Duraton-End------------------- -->
-    <button class="back">Back</button>
-    <button class="continue">Continue</button>
+    <button class="back" id="personalDetailsBackBtn">Back</button>
+    <button class="continue" id="personalDetailsContinueBtn">Continue</button>
 </div>
     <!-- ---------------------Personal-Details-End-------------------- -->
     <!-- ---------------------Review-Payment-Details-Start-------------------- -->
-    <div class="review-payment-details " id="reviewPaymentDetails">
+    <div class="review-payment-details" id="reviewPaymentDetails">
         <h1>Review Your Payment Details</h1>
         <p>Your payment is calculated pro rata from your start date to the end of the month.
             <br> you will be charged in BDT.
@@ -671,16 +665,17 @@
         <h3>*Excluding services</h3>
         <hr>
         
-            <input type="radio" name="option" value="paid" onclick=""><label class="payment-radio">Pay now</label><br>
-            <input type="radio" name="option" value="2" onclick=""><label class="payment-radio">Pay on arrival</label><br>
+            <input type="radio" id="payNow" name="option" value="paid" onclick=""><label class="payment-radio">Pay now</label><br>
+            <input type="radio" id="payOnArrival" name="option" value="2" onclick=""><label class="payment-radio">Pay on arrival</label><br>
     </div>
     <!-- ---------------------Review-Payment-Details-End-------------------- -->
-    <input type="submit" value="Submit">
+    <button class="back" id="reviewPaymentDetailsBackBtn">Back</button>
+    <input type="submit" id="submit" value="Confirm Booking">
      </form>
      <!-- -------------------------Multi-Step-Form-End------------------------ -->
      <!-- --------------------Booking-details-overview-Start----------------------- -->
-      <div class="booking-details-overview">
-        <h1>Congratulations, Member name! Your booking is now complete.</h1>
+      <div class="booking-details-overview" id="bookingDetailsOverview">
+        <h1>Congratulations, Member name! <br> Your booking is now complete.</h1>
         <div class="booking-details">
             <div class="booking-confirmation">
                 <h3>Booking confirmation</h3>
