@@ -1,4 +1,4 @@
-// -----------------------requiredDomOfHeader-----------------------------
+// -----------------------requiredDomOfHeaderStart-----------------------------
 const stepOne = document.getElementById("stepOne");
 const stepTwo = document.getElementById("stepTwo");
 const stepThree = document.getElementById("stepThree");
@@ -8,8 +8,9 @@ const noOfPeople = document.getElementById("noOfPeople");
 const startDate = document.getElementById("startDate");
 const duration = document.getElementById("duration");
 const monthlyCost = document.getElementById("monthlyCost");
+// -----------------------requiredDomOfHeaderEnd-----------------------------
 
-// -------------------------------requiredDomOfWorkSpace-----------------------------
+// -------------------------------requiredDomOfWorkSpaceStart-----------------------------
 const privateOffice = document.getElementById("privateOffice");
 const teamOfficeSuite = document.getElementById("teamOfficeSuite");
 const hybridOffice = document.getElementById("hybridOffice");
@@ -25,11 +26,32 @@ const zoomCallRoom = document.getElementById("zoomCallRoom");
 const colorBurstRoom = document.getElementById("colorBurstRoom");
 const alapRoom = document.getElementById("alapRoom");
 const alochonaRoom = document.getElementById("alochonaRoom");
+// -------------------------------requiredDomOfWorkSpaceEnd-----------------------------
 
-// ----------------------------requiredDomOfSelectedPlan-----------------------------
+// ----------------------------requiredDomOfSelectedPlanStart-----------------------------
 const checkedRadio = document.getElementsByName('chosen_plan');
 
+// -------------------------------requiredDomOfChosenPlanOverview-----------------------------
 // -------------------------------requiredDomOfWorkspaceOptions-----------------------------
+const privateWorkspaceOptions = document.getElementsByName('privateWorkspaceOptions');
+const sharedWorkspaceOptions = document.getElementsByName('sharedWorkspaceOptions');
+const collaborativeWorkspaceOptions = document.getElementsByName('collaborativeWorkspaceOptions');
+// -------------------------------requiredDomOfNumberOfPeople-----------------------------
+const people = document.getElementsByName('people');
+const zero = document.getElementsByName('zero');
+const decrement = document.getElementsByName('decrement');
+const increment = document.getElementsByName('increment');
+// -------------------------------requiredDomOfDate-----------------------------
+const date = document.getElementsByName('date');
+// -------------------------------requiredDomOfcheckBoxNBackNContinueBtn-------
+const  = document.getElementsByName('');
+
+
+// ----------------------------requiredDomOfSelectedPlanEnd-----------------------------
+
+
+
+
 
 
 
