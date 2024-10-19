@@ -11,21 +11,21 @@ const monthlyCost = document.getElementById("monthlyCost").innerText;
 // -----------------------requiredDomOfHeaderEnd-----------------------------
 
 // -------------------------------requiredDomOfWorkSpaceStart-----------------------------
-const privateOffice = document.getElementById("privateOffice");
-const teamOfficeSuite = document.getElementById("teamOfficeSuite");
-const hybridOffice = document.getElementById("hybridOffice");
-const dayOffice = document.getElementById("dayOffice");
-const dedicatedDesk = document.getElementById("dedicatedDesk");
-const dayPass = document.getElementById("dayPass");
-const flexibleDesk = document.getElementById("flexibleDesk");
-const virtualOffice = document.getElementById("virtualOffice");
-const conferenceRoom = document.getElementById("conferenceRoom");
-const eventSpace = document.getElementById("eventSpace");
-const podcastStudio = document.getElementById("podcastStudio");
-const zoomCallRoom = document.getElementById("zoomCallRoom");
-const colorBurstRoom = document.getElementById("colorBurstRoom");
-const alapRoom = document.getElementById("alapRoom");
-const alochonaRoom = document.getElementById("alochonaRoom");
+const privateOffice = document.getElementById("privateOfficePopUp");
+const teamOfficeSuite = document.getElementById("teamOfficeSuitePopUp");
+const hybridOffice = document.getElementById("hybridOfficePopUp");
+const dayOffice = document.getElementById("dayOfficePopUp");
+const dedicatedDesk = document.getElementById("dedicatedDeskPopUp");
+const dayPass = document.getElementById("dayPassPopUp");
+const flexibleDesk = document.getElementById("flexibleDeskPopUp");
+const virtualOffice = document.getElementById("virtualOfficePopUp");
+const conferenceRoom = document.getElementById("conferenceRoomPopUp");
+const eventSpace = document.getElementById("eventSpacePopUp");
+const podcastStudio = document.getElementById("podcastStudioPopUp");
+const zoomCallRoom = document.getElementById("zoomCallRoomPopUp");
+const colorBurstRoom = document.getElementById("colorBurstRoomPopUp");
+const alapRoom = document.getElementById("alapRoomPopUp");
+const alochonaRoom = document.getElementById("alochonaRoomPopUp");
 // -------------------------------requiredDomOfWorkSpaceEnd-----------------------------
 
 // ----------------------------requiredDomOfSelectedOfficeOrRoomOverviewStart-----------------------------
@@ -79,6 +79,11 @@ const pvOffice = document.getElementById('pvOffice');
     pvOffice.addEventListener('click', () => {
         element = document.getElementById("bookingPopUp");
         element.classList.remove("view-none");
+    });
+    const closePopUp = document.getElementById('closePopUp');
+    closePopUp.addEventListener('click', () => {
+        element = document.getElementById("bookingPopUp");
+        element.classList.add("view-none");
     });
 
 
