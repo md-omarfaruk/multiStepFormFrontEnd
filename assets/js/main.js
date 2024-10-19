@@ -3,11 +3,11 @@ const stepOne = document.getElementById("stepOne");
 const stepTwo = document.getElementById("stepTwo");
 const stepThree = document.getElementById("stepThree");
 const stepFour = document.getElementById("stepFour");
-const planTypeName = document.getElementById("planTypeName");
-const noOfPeople = document.getElementById("noOfPeople");
-const startDate = document.getElementById("startDate");
-const duration = document.getElementById("duration");
-const monthlyCost = document.getElementById("monthlyCost");
+const planTypeName = document.getElementById("planTypeName").innerText;
+const noOfPeople = document.getElementById("noOfPeople").innerText;
+const startDate = document.getElementById("startDate").innerText;
+const duration = document.getElementById("duration").innerText;
+const monthlyCost = document.getElementById("monthlyCost").innerText;
 // -----------------------requiredDomOfHeaderEnd-----------------------------
 
 // -------------------------------requiredDomOfWorkSpaceStart-----------------------------
@@ -30,16 +30,13 @@ const alochonaRoom = document.getElementById("alochonaRoom");
 
 // ----------------------------requiredDomOfSelectedOfficeOrRoomOverviewStart-----------------------------
 const checkedRadio = document.getElementsByName('chosen_plan');
-const selectedOfficeOrRoom = document.getElementById('selectedOfficeOrRoom');
-const selectedPlanTime = document.getElementById('selectedPlanTime');
+const selectedOfficeOrRoom = document.getElementById('selectedOfficeOrRoomType').innerText;
+const selectedPlanTime = document.getElementById('selectedPlanDuration').innerText;
 const selectedPlanOverview = document.getElementById('selectedPlanOverview');
-// -------------------------------requiredDomOfWorkspaceOptions-----------------------------
-const privateWorkspaceOptions = document.getElementById('privateWorkspaceOptions');
-const sharedWorkspaceOptions = document.getElementById('sharedWorkspaceOptions');
-const collaborativeWorkspaceOptions = document.getElementById('collaborativeWorkspaceOptions');
+
 // -------------------------------requiredDomOfNumberOfPeople-----------------------------
-const people = document.getElementById('people');
-const zero = document.getElementById('zero');
+const people = document.getElementById('people').innerText;
+const zero = document.getElementById('zero').innerText;
 const decrement = document.getElementById('decrement');
 const increment = document.getElementById('increment');
 // -------------------------------requiredDomOfDate-----------------------------
@@ -78,7 +75,11 @@ const payOnArrival = document.getElementById('payOnArrival');
 
 // ----------------------------requiredDomOfReviewPaymentDetailsEnd-----------------------------
 
-
+const pvOffice = document.getElementById('pvOffice');
+    pvOffice.addEventListener('click', () => {
+        element = document.getElementById("bookingPopUp");
+        element.classList.remove("view-none");
+    });
 
 
 
@@ -100,5 +101,5 @@ window.onload = function () {
     const formattedDate = today.toISOString().split('T')[0];
 
     // Set the value of the input field to the current date
-    document.getElementById('date').value = formattedDate;
+    date.value = formattedDate;
 };

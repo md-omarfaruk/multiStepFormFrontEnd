@@ -51,13 +51,32 @@
 
 /* ---------------------Fonts-End------------------- */
 /* ---------------------Body------------------- */
-body {
-  max-width: 1300px;
-  padding: 0 40px 50px 40px;
-  margin: 0 auto;
+.roomBtn{
+  color: #E41E1E;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  padding: 10px 20px;
 }
 
+.booking-pop-up{
+  max-width: 1200px;
+  background-color: white;
+  border-radius: 20px;
+  position: absolute;
+  top: 0;
+  left: 13%;
+  display: block;
+    margin: 20px auto;
+  padding: 20px 30px;
+  z-index: 9999;
+  box-shadow: 0 5px 200px 0 rgba(0, 0, 0, 1), 0 5px 200px 0 rgba(0, 0, 0, 1);
+}
 /* ---------------------Header-Start------------------ */
+.close-pop-up{
+  max-width: 40px;
+  float: right;
+  cursor: pointer;
+}
 .top-heading {
   color: #231F20;
   text-align: center;
@@ -427,7 +446,7 @@ select.selected-plan-overview {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding: 0 60px;
+  padding: 0 50px;
 }
 
 .personal-details-form h1 {
@@ -494,7 +513,7 @@ select.selected-plan-overview {
 
 .first-monthly-payment,
 .ongoing-monthly-payment {
-  min-width: 600px;
+  min-width: 550px;
   padding: 0 40px 15px 40px;
   background-color: #E3E3E3;
   margin-top: 30px;

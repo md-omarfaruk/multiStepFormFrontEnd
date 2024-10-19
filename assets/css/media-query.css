@@ -1,4 +1,11 @@
 @media only screen and (max-width: 576px) {
+  .booking-pop-up{
+    left: 0;
+    margin: 20px 10px;
+  }
+  .close-pop-up{
+    max-width: 20px;
+  }
   .top-heading {
     font-size: 45px;
   }
