@@ -1,3 +1,6 @@
+// -----------------------requiredDomOfFullPopUpBodyStart----------------------------
+const bookingPopUp = document.getElementById("bookingPopUp");
+// -----------------------requiredDomOfFullPopUpBodyEnd----------------------------
 // -----------------------requiredDomOfHeaderStart-----------------------------
 const stepOne = document.getElementById("stepOne");
 const stepTwo = document.getElementById("stepTwo");
@@ -11,21 +14,21 @@ const monthlyCost = document.getElementById("monthlyCost").innerText;
 // -----------------------requiredDomOfHeaderEnd-----------------------------
 
 // -------------------------------requiredDomOfWorkSpaceStart-----------------------------
-const privateOffice = document.getElementById("privateOfficePopUp");
-const teamOfficeSuite = document.getElementById("teamOfficeSuitePopUp");
-const hybridOffice = document.getElementById("hybridOfficePopUp");
-const dayOffice = document.getElementById("dayOfficePopUp");
-const dedicatedDesk = document.getElementById("dedicatedDeskPopUp");
-const dayPass = document.getElementById("dayPassPopUp");
-const flexibleDesk = document.getElementById("flexibleDeskPopUp");
-const virtualOffice = document.getElementById("virtualOfficePopUp");
-const conferenceRoom = document.getElementById("conferenceRoomPopUp");
-const eventSpace = document.getElementById("eventSpacePopUp");
-const podcastStudio = document.getElementById("podcastStudioPopUp");
-const zoomCallRoom = document.getElementById("zoomCallRoomPopUp");
-const colorBurstRoom = document.getElementById("colorBurstRoomPopUp");
-const alapRoom = document.getElementById("alapRoomPopUp");
-const alochonaRoom = document.getElementById("alochonaRoomPopUp");
+const privateOfficePopUp = document.getElementById("privateOfficePopUp");
+const teamOfficeSuitePopUp = document.getElementById("teamOfficeSuitePopUp");
+const hybridOfficePopUp = document.getElementById("hybridOfficePopUp");
+const dayOfficePopUp = document.getElementById("dayOfficePopUp");
+const dedicatedDeskPopUp = document.getElementById("dedicatedDeskPopUp");
+const dayPassPopUp = document.getElementById("dayPassPopUp");
+const flexibleDeskPopUp = document.getElementById("flexibleDeskPopUp");
+const virtualOfficePopUp = document.getElementById("virtualOfficePopUp");
+const conferenceRoomPopUp = document.getElementById("conferenceRoomPopUp");
+const eventSpacePopUp = document.getElementById("eventSpacePopUp");
+const podcastStudioPopUp = document.getElementById("podcastStudioPopUp");
+const zoomCallRoomPopUp = document.getElementById("zoomCallRoomPopUp");
+const colorBurstRoomPopUp = document.getElementById("colorBurstRoomPopUp");
+const alapRoomPopUp = document.getElementById("alapRoomPopUp");
+const alochonaRoomPopUp = document.getElementById("alochonaRoomPopUp");
 // -------------------------------requiredDomOfWorkSpaceEnd-----------------------------
 
 // ----------------------------requiredDomOfSelectedOfficeOrRoomOverviewStart-----------------------------
@@ -75,16 +78,71 @@ const payOnArrival = document.getElementById('payOnArrival');
 
 // ----------------------------requiredDomOfReviewPaymentDetailsEnd-----------------------------
 
-const pvOffice = document.getElementById('pvOffice');
-    pvOffice.addEventListener('click', () => {
-        element = document.getElementById("bookingPopUp");
-        element.classList.remove("view-none");
-    });
-    const closePopUp = document.getElementById('closePopUp');
-    closePopUp.addEventListener('click', () => {
-        element = document.getElementById("bookingPopUp");
-        element.classList.add("view-none");
-    });
+// ---------------functionOfShowingPopUp--------------------------------
+document.getElementById("privateOffice").addEventListener("click", function (event) {
+    // Check if the clicked element is a button
+    if (event.target.tagName === "BUTTON") {
+        const buttonId = event.target.id;
+        if (buttonId === "privateOffice") {
+            bookingPopUp.classList.remove("view-none");
+            privateOfficePopUp.classList.remove("view-none");
+        }
+        else {
+            bookingPopUp.classList.add("view-none");
+            privateOfficePopUp.classList.add("view-none");
+        }
+    }
+});
+
+document.getElementById("teamOfficeSuite").addEventListener("click", function (event) {
+    // Check if the clicked element is a button
+    if (event.target.tagName === "BUTTON") {
+        const buttonId = event.target.id;
+        if (buttonId === "teamOfficeSuite") {
+            bookingPopUp.classList.remove("view-none");
+            teamOfficeSuitePopUp.classList.remove("view-none");
+        }
+        else {
+            bookingPopUp.classList.add("view-none");
+            teamOfficeSuitePopUp.classList.add("view-none");
+        }
+    }
+});
+
+
+// document.addEventListener("click", function (event) {
+//     // Check if the clicked element is a button
+//     if (event.target.tagName === "BUTTON") {
+//         const buttonId = event.target.id;
+//         if (buttonId === "teamOfficeSuite") {
+//             bookingPopUp.classList.remove("view-none");
+//             teamOfficeSuitePopUp.classList.remove("view-none");           
+//         }
+//         else {
+//             bookingPopUp.classList.add("view-none");
+//             teamOfficeSuitePopUp.classList.add("view-none");            
+//         }
+//     }
+// });
+// document.addEventListener("click", function (event) {
+//     // Check if the clicked element is a button
+//     if (event.target.tagName === "BUTTON") {
+//         const buttonId = event.target.id;
+//         if (buttonId === "privateOffice") {
+//             bookingPopUp.classList.remove("view-none");
+//             privateOfficePopUp.classList.remove("view-none");            
+//         }
+//         else {
+//             bookingPopUp.classList.add("view-none");
+//             privateOfficePopUp.classList.add("view-none");            
+//         }
+//     }
+// });
+// ---------------functionOfClosePopUp--------------------------------
+const closePopUp = document.getElementById('closePopUp');
+closePopUp.addEventListener('click', () => {
+    bookingPopUp.classList.add("view-none");
+});
 
 
 
