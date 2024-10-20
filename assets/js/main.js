@@ -79,65 +79,123 @@ const payOnArrival = document.getElementById('payOnArrival');
 // ----------------------------requiredDomOfReviewPaymentDetailsEnd-----------------------------
 
 // ---------------functionOfShowingPopUp--------------------------------
-document.getElementById("privateOffice").addEventListener("click", function (event) {
+
+document.addEventListener("click", function(event) {
     // Check if the clicked element is a button
     if (event.target.tagName === "BUTTON") {
         const buttonId = event.target.id;
+
+        // Hide both popups initially
+        bookingPopUp.classList.remove("view-none");
+        // --------------PrivateOfficePopUpPlanScript--------------------------------
+        privateOfficePopUp.classList.add("view-none");
+        privateOfficePopUp.classList.remove("view");
+        // --------------TeamOfficeSuitePopUpPlanScript--------------------------------
+        teamOfficeSuitePopUp.classList.add("view-none");
+        teamOfficeSuitePopUp.classList.remove("view");
+        // --------------HybridOfficePopUpPlanScript--------------------------------
+        hybridOfficePopUp.classList.add("view-none");
+        hybridOfficePopUp.classList.remove("view");
+        // --------------DayOfficePopUpPlanScript--------------------------------
+        dayOfficePopUp.classList.add("view-none");
+        dayOfficePopUp.classList.remove("view");
+        // --------------DedicatedDeskPopUpPlanScript--------------------------------
+        dedicatedDeskPopUp.classList.add("view-none");
+        dedicatedDeskPopUp.classList.remove("view");
+        // --------------DayPassPopUpPlanScript--------------------------------
+        dayPassPopUp.classList.add("view-none");
+        dayPassPopUp.classList.remove("view");
+        // --------------FlexibleDeskPopUpPlanScript--------------------------------
+        flexibleDeskPopUp.classList.add("view-none");
+        flexibleDeskPopUp.classList.remove("view");
+        // --------------VirtualOfficePopUpPlanScript--------------------------------
+        virtualOfficePopUp.classList.add("view-none");
+        virtualOfficePopUp.classList.remove("view");
+        // --------------ConferenceRoomPopUpPlanScript--------------------------------
+        conferenceRoomPopUp.classList.add("view-none");
+        conferenceRoomPopUp.classList.remove("view");
+        // --------------EventSpacePopUpPlanScript--------------------------------
+        eventSpacePopUp.classList.add("view-none");
+        eventSpacePopUp.classList.remove("view");
+        // --------------PodcastStudioPopUpPlanScript--------------------------------
+        podcastStudioPopUp.classList.add("view-none");
+        podcastStudioPopUp.classList.remove("view");
+        // --------------ZoomCallRoomPopUpPlanScript--------------------------------
+        zoomCallRoomPopUp.classList.add("view-none");
+        zoomCallRoomPopUp.classList.remove("view");
+        // --------------ColorBurstRoomPopUpPlanScript--------------------------------
+        colorBurstRoomPopUp.classList.add("view-none");
+        colorBurstRoomPopUp.classList.remove("view");
+        // --------------AlapRoomPopUpPlanScript--------------------------------
+        alapRoomPopUp.classList.add("view-none");
+        alapRoomPopUp.classList.remove("view");
+        // --------------AlochonaRoomPopUpPlanScript--------------------------------
+        alochonaRoomPopUp.classList.add("view-none");
+        alochonaRoomPopUp.classList.remove("view");
+
+        // Show only the relevant popup based on button clicked
         if (buttonId === "privateOffice") {
-            bookingPopUp.classList.remove("view-none");
             privateOfficePopUp.classList.remove("view-none");
-        }
-        else {
-            bookingPopUp.classList.add("view-none");
-            privateOfficePopUp.classList.add("view-none");
-        }
-    }
-});
-
-document.getElementById("teamOfficeSuite").addEventListener("click", function (event) {
-    // Check if the clicked element is a button
-    if (event.target.tagName === "BUTTON") {
-        const buttonId = event.target.id;
-        if (buttonId === "teamOfficeSuite") {
-            bookingPopUp.classList.remove("view-none");
+            privateOfficePopUp.classList.add("view");
+        } else if (buttonId === "teamOfficeSuite") {
             teamOfficeSuitePopUp.classList.remove("view-none");
+            teamOfficeSuitePopUp.classList.add("view");
         }
-        else {
-            bookingPopUp.classList.add("view-none");
-            teamOfficeSuitePopUp.classList.add("view-none");
+        else if (buttonId === "hybridOffice") {
+            hybridOfficePopUp.classList.remove("view-none");
+            hybridOfficePopUp.classList.add("view");
+        }
+        else if (buttonId === "dayOffice") {
+            dayOfficePopUp.classList.remove("view-none");
+            dayOfficePopUp.classList.add("view");
+        }
+        else if (buttonId === "dedicatedDesk") {
+            dedicatedDeskPopUp.classList.remove("view-none");
+            dedicatedDeskPopUp.classList.add("view");
+        }
+        else if (buttonId === "dayPass") {
+            dayPassPopUp.classList.remove("view-none");
+            dayPassPopUp.classList.add("view");
+        }
+        else if (buttonId === "flexibleDesk") {
+            flexibleDeskPopUp.classList.remove("view-none");
+            flexibleDeskPopUp.classList.add("view");
+        }
+        else if (buttonId === "virtualOffice") {
+            virtualOfficePopUp.classList.remove("view-none");
+            virtualOfficePopUp.classList.add("view");
+        }
+        else if (buttonId === "conferenceRoom") {
+            conferenceRoomPopUp.classList.remove("view-none");
+            conferenceRoomPopUp.classList.add("view");
+        }
+        else if (buttonId === "eventSpace") {
+            eventSpacePopUp.classList.remove("view-none");
+            eventSpacePopUp.classList.add("view");
+        }
+        else if (buttonId === "podcastStudio") {
+            podcastStudioPopUp.classList.remove("view-none");
+            podcastStudioPopUp.classList.add("view");
+        }
+        else if (buttonId === "zoomCallRoom") {
+            zoomCallRoomPopUp.classList.remove("view-none");
+            zoomCallRoomPopUp.classList.add("view");
+        }
+        else if (buttonId === "colorBurstRoom") {
+            colorBurstRoomPopUp.classList.remove("view-none");
+            colorBurstRoomPopUp.classList.add("view");
+        }
+        else if (buttonId === "alapRoom") {
+            alapRoomPopUp.classList.remove("view-none");
+            alapRoomPopUp.classList.add("view");
+        }
+        else if (buttonId === "alochonaRoom") {
+            alochonaRoomPopUp.classList.remove("view-none");
+            alochonaRoomPopUp.classList.add("view");
         }
     }
 });
 
-
-// document.addEventListener("click", function (event) {
-//     // Check if the clicked element is a button
-//     if (event.target.tagName === "BUTTON") {
-//         const buttonId = event.target.id;
-//         if (buttonId === "teamOfficeSuite") {
-//             bookingPopUp.classList.remove("view-none");
-//             teamOfficeSuitePopUp.classList.remove("view-none");           
-//         }
-//         else {
-//             bookingPopUp.classList.add("view-none");
-//             teamOfficeSuitePopUp.classList.add("view-none");            
-//         }
-//     }
-// });
-// document.addEventListener("click", function (event) {
-//     // Check if the clicked element is a button
-//     if (event.target.tagName === "BUTTON") {
-//         const buttonId = event.target.id;
-//         if (buttonId === "privateOffice") {
-//             bookingPopUp.classList.remove("view-none");
-//             privateOfficePopUp.classList.remove("view-none");            
-//         }
-//         else {
-//             bookingPopUp.classList.add("view-none");
-//             privateOfficePopUp.classList.add("view-none");            
-//         }
-//     }
-// });
 // ---------------functionOfClosePopUp--------------------------------
 const closePopUp = document.getElementById('closePopUp');
 closePopUp.addEventListener('click', () => {
