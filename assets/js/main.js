@@ -208,8 +208,10 @@ document.addEventListener("click", function (event) {
     checkedRadio.forEach(function (radio) {
         radio.addEventListener("change", function () {
             console.log(this.value);
+            this.closest(".office").classList.remove("view");
             this.closest(".office").classList.add("view-none");
-            chosenPlanOverview.classList.remove("view");
+            chosenPlanOverview.classList.add("view");
+            chosenPlanOverview.classList.remove("view-none");
         });
     });
 });
