@@ -1,7 +1,12 @@
 @media only screen and (max-width: 576px) {
   .booking-pop-up{
-    left: 0;
-    margin: 20px 10px;
+    max-width: 420px;
+    top: 0%;
+  left: 50%;
+  transform: translate(-50%, 0%);
+    margin: 20px 0px;
+  box-shadow:none;
+
   }
   .close-pop-up{
     max-width: 20px;

@@ -29,10 +29,12 @@ const zoomCallRoomPopUp = document.getElementById("zoomCallRoomPopUp");
 const colorBurstRoomPopUp = document.getElementById("colorBurstRoomPopUp");
 const alapRoomPopUp = document.getElementById("alapRoomPopUp");
 const alochonaRoomPopUp = document.getElementById("alochonaRoomPopUp");
+// ---------------------------chosenPlan------------------------
+const checkedRadio = document.getElementsByName('chosen_plan');
 // -------------------------------requiredDomOfWorkSpaceEnd-----------------------------
 
-// ----------------------------requiredDomOfSelectedOfficeOrRoomOverviewStart-----------------------------
-const checkedRadio = document.getElementsByName('chosen_plan');
+// -------------------------------requiredDomOfChosenPlanOverviewStart------------------
+const chosenPlanOverview = document.getElementById('chosenPlanOverview');
 const selectedOfficeOrRoom = document.getElementById('selectedOfficeOrRoomType').innerText;
 const selectedPlanTime = document.getElementById('selectedPlanDuration').innerText;
 const selectedPlanOverview = document.getElementById('selectedPlanOverview');
@@ -44,11 +46,10 @@ const decrement = document.getElementById('decrement');
 const increment = document.getElementById('increment');
 // -------------------------------requiredDomOfDate-----------------------------
 const date = document.getElementById('date');
-// -------------------------------requiredDomOfcheckBoxNBackNContinueBtn-------
+// -------------------------------requiredDomOfChosenPlanOverviewBoxNBackNContinueBtn-------
 const chosenPlanBackBtn = document.getElementById('chosenPlanBackBtn');
 const chosenPlanContinueBtn = document.getElementById('chosenPlanContinueBtn');
-
-// ----------------------------requiredDomOfSelectedOfficeOrRoomOverviewEnd-----------------------------
+// -------------------------------requiredDomOfChosenPlanOverviewEnd------------------
 
 // ----------------------------requiredDomOfPersonalDetailsStart-----------------------------
 const personalDetails = document.getElementById('personalDetails');
@@ -80,13 +81,22 @@ const payOnArrival = document.getElementById('payOnArrival');
 
 // ---------------functionOfShowingPopUp--------------------------------
 
-document.addEventListener("click", function(event) {
+
+document.addEventListener("click", function (event) {
     // Check if the clicked element is a button
     if (event.target.tagName === "BUTTON") {
         const buttonId = event.target.id;
+        // Show only the relevant popup based on button clicked
 
-        // Hide both popups initially
+// Hide both popups initially
+        // ------FullPopUpBody-------------
         bookingPopUp.classList.remove("view-none");
+        // ----------chosenPlanOverview---------
+        chosenPlanOverview.classList.add("view-none");
+        chosenPlanOverview.classList.remove("view");
+        // ---------reviewPaymentDetailsBackBtnNSubmitBtn--------------------------------
+        reviewPaymentDetailsBackBtn.classList.add("view-none");
+        submit.classList.add("view-none");
         // --------------PrivateOfficePopUpPlanScript--------------------------------
         privateOfficePopUp.classList.add("view-none");
         privateOfficePopUp.classList.remove("view");
@@ -133,7 +143,7 @@ document.addEventListener("click", function(event) {
         alochonaRoomPopUp.classList.add("view-none");
         alochonaRoomPopUp.classList.remove("view");
 
-        // Show only the relevant popup based on button clicked
+
         if (buttonId === "privateOffice") {
             privateOfficePopUp.classList.remove("view-none");
             privateOfficePopUp.classList.add("view");
@@ -192,13 +202,23 @@ document.addEventListener("click", function(event) {
         else if (buttonId === "alochonaRoom") {
             alochonaRoomPopUp.classList.remove("view-none");
             alochonaRoomPopUp.classList.add("view");
+
         }
     }
+    checkedRadio.forEach(function (radio) {
+        radio.addEventListener("change", function () {
+            console.log(this.value);
+            this.closest(".office").classList.add("view-none");
+            chosenPlanOverview.classList.remove("view");
+        });
+    });
 });
+
 
 // ---------------functionOfClosePopUp--------------------------------
 const closePopUp = document.getElementById('closePopUp');
 closePopUp.addEventListener('click', () => {
+    bookingPopUp.classList.remove("view");
     bookingPopUp.classList.add("view-none");
 });
 
