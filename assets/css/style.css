@@ -358,6 +358,7 @@ select.selected-plan-overview {
 .choose-duration {
   font-family: Helvetica Light, sans-serif;
   letter-spacing: .5px;
+  margin-bottom: 30px;
 }
 
 .choose-duration h2 {

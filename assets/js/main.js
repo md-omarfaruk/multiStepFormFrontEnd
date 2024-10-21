@@ -30,7 +30,7 @@ const colorBurstRoomPopUp = document.getElementById("colorBurstRoomPopUp");
 const alapRoomPopUp = document.getElementById("alapRoomPopUp");
 const alochonaRoomPopUp = document.getElementById("alochonaRoomPopUp");
 // ---------------------------chosenPlan------------------------
-const checkedRadio = document.getElementsByName('chosen_plan');
+let checkedRadio = document.querySelectorAll('input[type="radio"][name="chosen_plan"]');
 // -------------------------------requiredDomOfWorkSpaceEnd-----------------------------
 
 // -------------------------------requiredDomOfChosenPlanOverviewStart------------------
@@ -88,7 +88,7 @@ document.addEventListener("click", function (event) {
         const buttonId = event.target.id;
         // Show only the relevant popup based on button clicked
 
-// Hide both popups initially
+        // Hide both popups initially
         // ------FullPopUpBody-------------
         bookingPopUp.classList.remove("view-none");
         // ----------chosenPlanOverview---------
@@ -205,16 +205,31 @@ document.addEventListener("click", function (event) {
 
         }
     }
-    checkedRadio.forEach(function (radio) {
-        radio.addEventListener("change", function () {
-            console.log(this.value);
-            this.closest(".office").classList.remove("view");
-            this.closest(".office").classList.add("view-none");
-            chosenPlanOverview.classList.add("view");
-            chosenPlanOverview.classList.remove("view-none");
-        });
+
+});
+
+// ------------------scriptForGoToNextChosenPlanOverviewAfterPlanSelectionStart------------------------
+checkedRadio.forEach(function (radio) {
+    radio.addEventListener("change", function () {
+        console.log(this.value);    
+        this.closest(".office").classList.remove("view");
+        this.closest(".office").classList.add("view-none");
+        chosenPlanOverview.classList.add("view");
+        chosenPlanOverview.classList.remove("view-none");
+        chosenPlanBackBtn.onclick = () => {
+            chosenPlanOverview.classList.remove("view");
+            chosenPlanOverview.classList.add("view-none");
+            this.closest(".office").classList.remove("view-none");
+            this.closest(".office").classList.add("view");
+        };
+
     });
 });
+// ------------------scriptForGoToNextChosenPlanOverviewAfterPlanSelectionEnd------------------------
+// ------------------scriptForChosenPlanOverviewStart------------------------
+
+// ------------------scriptForChosenPlanOverviewEnd------------------------
+
 
 
 // ---------------functionOfClosePopUp--------------------------------
