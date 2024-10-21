@@ -35,15 +35,15 @@ let checkedRadio = document.querySelectorAll('input[type="radio"][name="chosen_p
 
 // -------------------------------requiredDomOfChosenPlanOverviewStart------------------
 const chosenPlanOverview = document.getElementById('chosenPlanOverview');
-const selectedOfficeOrRoom = document.getElementById('selectedOfficeOrRoomType');
-const selectedPlanTime = document.getElementById('selectedPlanDuration');
+const selectedOfficeOrRoomType = document.getElementById('selectedOfficeOrRoomType');
+const selectedPlanDuration = document.getElementById('selectedPlanDuration');
 const selectedPlanOverview = document.getElementById('selectedPlanOverview');
 
 // -------------------------------requiredDomOfNumberOfPeople-----------------------------
 const people = document.getElementById('people');
 const zero = document.getElementById('zero');
-const decrement = document.getElementById('decrement');
-const increment = document.getElementById('increment');
+let decrement = document.getElementById('decrement');
+let increment = document.getElementById('increment');
 // -------------------------------requiredDomOfDate-----------------------------
 const date = document.getElementById('date');
 // -------------------------------requiredDomOfChosenPlanOverviewBoxNBackNContinueBtn-------
@@ -92,7 +92,7 @@ const elementInnerText = (element, text) => {
 
 let tk = [700, 900, 800];
 let me = 900;
-if (me === 900){
+if (me === 900) {
     console.log(me);
 }
 
@@ -146,75 +146,90 @@ document.onclick = (event) => {
             addNRemoveClass(privateOfficePopup, "view", "view-none");
             addNRemoveClass(stepOne, "active", null);
             elementInnerText(planTypeName, "Private Office");
+            elementInnerText(selectedOfficeOrRoomType, "Private Office");
         } else if (buttonId === "teamOfficeSuite") {
             addNRemoveClass(teamOfficeSuitePopup, "view", "view-none");
             addNRemoveClass(stepOne, "active", null);
             elementInnerText(planTypeName, "Team Office Suite");
+            elementInnerText(selectedOfficeOrRoomType, "Team Office Suite");
         }
         else if (buttonId === "hybridOffice") {
             addNRemoveClass(hybridOfficePopup, "view", "view-none");
             addNRemoveClass(stepOne, "active", null);
             elementInnerText(planTypeName, "Hybrid Office");
+            elementInnerText(selectedOfficeOrRoomType, "Hybrid Office");
         }
         else if (buttonId === "dayOffice") {
             addNRemoveClass(dayOfficePopup, "view", "view-none");
             addNRemoveClass(stepOne, "active", null);
             elementInnerText(planTypeName, "Day Office");
+            elementInnerText(selectedOfficeOrRoomType, "Day Office");
         }
         else if (buttonId === "dedicatedDesk") {
             addNRemoveClass(dedicatedDeskPopup, "view", "view-none");
             addNRemoveClass(stepOne, "active", null);
             elementInnerText(planTypeName, "Dedicated Desk");
+            elementInnerText(selectedOfficeOrRoomType, "Dedicated Desk");
         }
         else if (buttonId === "dayPass") {
             addNRemoveClass(dayPassPopup, "view", "view-none");
             addNRemoveClass(stepOne, "active", null);
             elementInnerText(planTypeName, "Day Pass");
+            elementInnerText(selectedOfficeOrRoomType, "Day Pass");
         }
         else if (buttonId === "flexibleDesk") {
             addNRemoveClass(flexibleDeskPopup, "view", "view-none");
             addNRemoveClass(stepOne, "active", null);
             elementInnerText(planTypeName, "Flexible Desk");
+            elementInnerText(selectedOfficeOrRoomType, "Flexible Desk");
         }
         else if (buttonId === "virtualOffice") {
             addNRemoveClass(virtualOfficePopup, "view", "view-none");
             addNRemoveClass(stepOne, "active", null);
             elementInnerText(planTypeName, "Virtual Office");
+            elementInnerText(selectedOfficeOrRoomType, "Virtual Office");
         }
         else if (buttonId === "conferenceRoom") {
             addNRemoveClass(conferenceRoomPopup, "view", "view-none");
             addNRemoveClass(stepOne, "active", null);
             elementInnerText(planTypeName, "Conference Room");
+            elementInnerText(selectedOfficeOrRoomType, "Conference Room");
         }
         else if (buttonId === "eventSpace") {
             addNRemoveClass(eventSpacePopup, "view", "view-none");
             addNRemoveClass(stepOne, "active", null);
             elementInnerText(planTypeName, "Event Space");
+            elementInnerText(selectedOfficeOrRoomType, "Event Space");
         }
         else if (buttonId === "podcastStudio") {
             addNRemoveClass(podcastStudioPopup, "view", "view-none");
             addNRemoveClass(stepOne, "active", null);
             elementInnerText(planTypeName, "Podcast Studio");
+            elementInnerText(selectedOfficeOrRoomType, "Podcast Studio");
         }
         else if (buttonId === "zoomCallRoom") {
             addNRemoveClass(zoomCallRoomPopup, "view", "view-none");
             addNRemoveClass(stepOne, "active", null);
             elementInnerText(planTypeName, "Zoom Call Room");
+            elementInnerText(selectedOfficeOrRoomType, "Zoom Call Room");
         }
         else if (buttonId === "colorBurstRoom") {
             addNRemoveClass(colorBurstRoomPopup, "view", "view-none");
             addNRemoveClass(stepOne, "active", null);
             elementInnerText(planTypeName, "Color Burst Room");
+            elementInnerText(selectedOfficeOrRoomType, "Color Burst Room");
         }
         else if (buttonId === "alapRoom") {
             addNRemoveClass(alapRoomPopup, "view", "view-none");
             addNRemoveClass(stepOne, "active", null);
             elementInnerText(planTypeName, "Alap Room");
+            elementInnerText(selectedOfficeOrRoomType, "Alap Room");
         }
         else if (buttonId === "alochonaRoom") {
             addNRemoveClass(alochonaRoomPopup, "view", "view-none");
             addNRemoveClass(stepOne, "active", null);
             elementInnerText(planTypeName, "Alochona Room");
+            elementInnerText(selectedOfficeOrRoomType, "Alochona Room");
         }
     }
 };
@@ -223,14 +238,26 @@ document.onclick = (event) => {
 checkedRadio.forEach(function (radio) {
     radio.addEventListener("change", function () {
         console.log(this.value);
-        addNRemoveClass(this.closest(".office"), "view-none", "view"); 
+        console.log(this.id);
+        var label = document.querySelector('label[for=' + this.id + ']');
+        var text = label.innerHTML;
+        elementInnerText(duration, text);
+        elementInnerText(selectedPlanDuration, text);
+        addNRemoveClass(this.closest(".office"), "view-none", "view");
         addNRemoveClass(chosenPlanOverview, "view", "view-none");
-        addNRemoveClass(stepTwo, "active", null);
+        addNRemoveClass(stepTwo, "active", "completed");
         addNRemoveClass(stepOne, "completed", null);
-        noOfPeople.innerText = 1;
+        noOfPeople.innerHTML = 1;
+        increment.onclick = () => {
+            let noOfPeopleParseInt = parseInt(noOfPeople.innerHTML);
+            let noOfPeopleIncrement = noOfPeopleParseInt + 1;
+            console.log(noOfPeopleIncrement);
+        };
         chosenPlanBackBtn.onclick = () => {
-        addNRemoveClass(chosenPlanOverview, "view-none", "view"); 
-        addNRemoveClass(this.closest(".office"), "view", "view-none"); 
+            addNRemoveClass(stepOne, "active", "completed");
+            addNRemoveClass(stepTwo, "completed", "active");
+            addNRemoveClass(chosenPlanOverview, "view-none", "view");
+            addNRemoveClass(this.closest(".office"), "view", "view-none");
         };
 
     });
@@ -241,8 +268,8 @@ chosenPlanContinueBtn.onclick = () => {
     addNRemoveClass(chosenPlanOverview, "view-none", "view");
     addNRemoveClass(personalDetails, "view", "view-none");
     reviewPaymentDetailsBackBtn.onclick = () => {
-    addNRemoveClass(reviewPaymentDetails, "view-none", "view");
-    addNRemoveClass(chosenPlanOverview, "view", "view-none");
+        addNRemoveClass(reviewPaymentDetails, "view-none", "view");
+        addNRemoveClass(chosenPlanOverview, "view", "view-none");
     };
 };
 // ------------------scriptForChosenPlanOverviewEnd------------------------
@@ -273,7 +300,10 @@ window.onload = function () {
 
     // Format the date to YYYY-MM-DD for the date input
     const formattedDate = today.toISOString().split('T')[0];
-
     // Set the value of the input field to the current date
     date.value = formattedDate;
+    elementInnerText(startDate, formattedDate);
+    date.addEventListener('change', () => {
+        elementInnerText(startDate, date.value);
+    });
 };
