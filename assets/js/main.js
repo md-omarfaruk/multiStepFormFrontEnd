@@ -6,11 +6,11 @@ const stepOne = document.getElementById("stepOne");
 const stepTwo = document.getElementById("stepTwo");
 const stepThree = document.getElementById("stepThree");
 const stepFour = document.getElementById("stepFour");
-const planTypeName = document.getElementById("planTypeName").innerText;
-const noOfPeople = document.getElementById("noOfPeople").innerText;
-const startDate = document.getElementById("startDate").innerText;
-const duration = document.getElementById("duration").innerText;
-const monthlyCost = document.getElementById("monthlyCost").innerText;
+const planTypeName = document.getElementById("planTypeName");
+const noOfPeople = document.getElementById("noOfPeople");
+const startDate = document.getElementById("startDate");
+const duration = document.getElementById("duration");
+const monthlyCost = document.getElementById("monthlyCost");
 // -----------------------requiredDomOfHeaderEnd-----------------------------
 
 // -------------------------------requiredDomOfWorkSpaceStart-----------------------------
@@ -81,6 +81,11 @@ const payOnArrival = document.getElementById('payOnArrival');
 
 // ---------------functionOfShowingPopUp--------------------------------
 
+let tk = [700, 900, 800];
+let me = 900;
+if (me === 900){
+    console.log(me);
+}
 
 document.addEventListener("click", function (event) {
     // Check if the clicked element is a button
@@ -147,62 +152,91 @@ document.addEventListener("click", function (event) {
         if (buttonId === "privateOffice") {
             privateOfficePopUp.classList.remove("view-none");
             privateOfficePopUp.classList.add("view");
+            stepOne.classList.add("active");
+            planTypeName.innerText = "Private Office";
         } else if (buttonId === "teamOfficeSuite") {
             teamOfficeSuitePopUp.classList.remove("view-none");
             teamOfficeSuitePopUp.classList.add("view");
+            stepOne.classList.add("active");
+            planTypeName.innerText = "Team Office Suite";
         }
         else if (buttonId === "hybridOffice") {
             hybridOfficePopUp.classList.remove("view-none");
             hybridOfficePopUp.classList.add("view");
+            stepOne.classList.add("active");
+            planTypeName.innerText = "Hybrid Office";
         }
         else if (buttonId === "dayOffice") {
             dayOfficePopUp.classList.remove("view-none");
             dayOfficePopUp.classList.add("view");
+            stepOne.classList.add("active");
+            planTypeName.innerText = "Day Office";
         }
         else if (buttonId === "dedicatedDesk") {
             dedicatedDeskPopUp.classList.remove("view-none");
             dedicatedDeskPopUp.classList.add("view");
+            stepOne.classList.add("active");
+            planTypeName.innerText = "Dedicated Desk";
         }
         else if (buttonId === "dayPass") {
             dayPassPopUp.classList.remove("view-none");
             dayPassPopUp.classList.add("view");
+            stepOne.classList.add("active");
+            planTypeName.innerText = "Day Pass";
         }
         else if (buttonId === "flexibleDesk") {
             flexibleDeskPopUp.classList.remove("view-none");
             flexibleDeskPopUp.classList.add("view");
+            stepOne.classList.add("active");
+            planTypeName.innerText = "Flexible Desk";
         }
         else if (buttonId === "virtualOffice") {
             virtualOfficePopUp.classList.remove("view-none");
             virtualOfficePopUp.classList.add("view");
+            stepOne.classList.add("active");
+            planTypeName.innerText = "Virtual Office";
         }
         else if (buttonId === "conferenceRoom") {
             conferenceRoomPopUp.classList.remove("view-none");
             conferenceRoomPopUp.classList.add("view");
+            stepOne.classList.add("active");
+            planTypeName.innerText = "Conference Room";
         }
         else if (buttonId === "eventSpace") {
             eventSpacePopUp.classList.remove("view-none");
             eventSpacePopUp.classList.add("view");
+            stepOne.classList.add("active");
+            planTypeName.innerText = "Event Space";
         }
         else if (buttonId === "podcastStudio") {
             podcastStudioPopUp.classList.remove("view-none");
             podcastStudioPopUp.classList.add("view");
+            stepOne.classList.add("active");
+            planTypeName.innerText = "Podcast Studio";
         }
         else if (buttonId === "zoomCallRoom") {
             zoomCallRoomPopUp.classList.remove("view-none");
             zoomCallRoomPopUp.classList.add("view");
+            stepOne.classList.add("active");
+            planTypeName.innerText = "Zoom Call Room";
         }
         else if (buttonId === "colorBurstRoom") {
             colorBurstRoomPopUp.classList.remove("view-none");
             colorBurstRoomPopUp.classList.add("view");
+            stepOne.classList.add("active");
+            planTypeName.innerText = "Color Burst Room";
         }
         else if (buttonId === "alapRoom") {
             alapRoomPopUp.classList.remove("view-none");
             alapRoomPopUp.classList.add("view");
+            stepOne.classList.add("active");
+            planTypeName.innerText = "Alap Room";
         }
         else if (buttonId === "alochonaRoom") {
             alochonaRoomPopUp.classList.remove("view-none");
             alochonaRoomPopUp.classList.add("view");
-
+            stepOne.classList.add("active");
+            planTypeName.innerText = "Alochona Room";
         }
     }
 
@@ -227,7 +261,18 @@ checkedRadio.forEach(function (radio) {
 });
 // ------------------scriptForGoToNextChosenPlanOverviewAfterPlanSelectionEnd------------------------
 // ------------------scriptForChosenPlanOverviewStart------------------------
-
+chosenPlanContinueBtn.onclick = () => {
+    chosenPlanOverview.classList.remove("view");
+    chosenPlanOverview.classList.add("view-none");
+    personalDetails.classList.add("view");
+    personalDetails.classList.remove("view-none");
+    reviewPaymentDetailsBackBtn.onclick = () => {
+        reviewPaymentDetails.classList.remove("view");
+        reviewPaymentDetails.classList.add("view-none");
+        chosenPlanOverview.classList.add("view");
+        chosenPlanOverview.classList.remove("view-none");
+    };
+};
 // ------------------scriptForChosenPlanOverviewEnd------------------------
 
 
