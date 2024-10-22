@@ -1,7 +1,7 @@
-// -----------------------requiredDomOfFullPopupBodyStart----------------------------
+// -----------------------DomOfFullPopupBodyStart----------------------------
 const bookingPopup = document.getElementById("bookingPopup");
-// -----------------------requiredDomOfFullPopupBodyEnd----------------------------
-// -----------------------requiredDomOfHeaderStart-----------------------------
+// -----------------------DomOfFullPopupBodyEnd----------------------------
+// -----------------------DomOfHeaderStart-----------------------------
 const stepOne = document.getElementById("stepOne");
 const stepTwo = document.getElementById("stepTwo");
 const stepThree = document.getElementById("stepThree");
@@ -11,9 +11,9 @@ const noOfPeople = document.getElementById("noOfPeople");
 const startDate = document.getElementById("startDate");
 const duration = document.getElementById("duration");
 const monthlyCost = document.getElementById("monthlyCost");
-// -----------------------requiredDomOfHeaderEnd-----------------------------
+// -----------------------DomOfHeaderEnd-----------------------------
 
-// -------------------------------requiredDomOfWorkSpaceStart-----------------------------
+// -------------------------------DomOfWorkSpaceStart-----------------------------
 const privateOfficePopup = document.getElementById("privateOfficePopup");
 const teamOfficeSuitePopup = document.getElementById("teamOfficeSuitePopup");
 const hybridOfficePopup = document.getElementById("hybridOfficePopup");
@@ -31,27 +31,27 @@ const alapRoomPopup = document.getElementById("alapRoomPopup");
 const alochonaRoomPopup = document.getElementById("alochonaRoomPopup");
 // ---------------------------chosenPlan------------------------
 let checkedRadio = document.querySelectorAll('input[type="radio"][name="chosen_plan"]');
-// -------------------------------requiredDomOfWorkSpaceEnd-----------------------------
+// -------------------------------DomOfWorkSpaceEnd-----------------------------
 
-// -------------------------------requiredDomOfChosenPlanOverviewStart------------------
+// -------------------------------DomOfChosenPlanOverviewStart------------------
 const chosenPlanOverview = document.getElementById('chosenPlanOverview');
 const selectedOfficeOrRoomType = document.getElementById('selectedOfficeOrRoomType');
 const selectedPlanDuration = document.getElementById('selectedPlanDuration');
 const selectedPlanOverview = document.getElementById('selectedPlanOverview');
 
-// -------------------------------requiredDomOfNumberOfPeople-----------------------------
+// -------------------------------DomOfNumberOfPeople-----------------------------
 const people = document.getElementById('people');
 const zero = document.getElementById('zero');
 let decrement = document.getElementById('decrement');
 let increment = document.getElementById('increment');
-// -------------------------------requiredDomOfDate-----------------------------
+// -------------------------------DomOfDate-----------------------------
 const date = document.getElementById('date');
-// -------------------------------requiredDomOfChosenPlanOverviewBoxNBackNContinueBtn-------
+// -------------------------------DomOfChosenPlanOverviewBoxNBackNContinueBtn-------
 const chosenPlanBackBtn = document.getElementById('chosenPlanBackBtn');
 const chosenPlanContinueBtn = document.getElementById('chosenPlanContinueBtn');
-// -------------------------------requiredDomOfChosenPlanOverviewEnd------------------
+// -------------------------------DomOfChosenPlanOverviewEnd------------------
 
-// ----------------------------requiredDomOfPersonalDetailsStart-----------------------------
+// ----------------------------DomOfPersonalDetailsStart-----------------------------
 const personalDetails = document.getElementById('personalDetails');
 const firstName = document.getElementById('firstName');
 const lastName = document.getElementById('lastName');
@@ -66,18 +66,18 @@ const postcode = document.getElementById('postcode');
 const termsAndConditions = document.getElementById('termsAndConditions');
 const personalDetailsBackBtn = document.getElementById('personalDetailsBackBtn');
 const personalDetailsContinueBtn = document.getElementById('personalDetailsContinueBtn');
-// ----------------------------requiredDomOfPersonalDetailsEnd-----------------------------
+// ----------------------------DomOfPersonalDetailsEnd-----------------------------
 
-// ----------------------------requiredDomOfReviewPaymentDetailsStart-----------------------------
+// ----------------------------DomOfReviewPaymentDetailsStart-----------------------------
 const reviewPaymentDetails = document.getElementById('reviewPaymentDetails');
 const reviewPaymentDetailsBackBtn = document.getElementById('reviewPaymentDetailsBackBtn');
 const submit = document.getElementById('submit');
-// ----------------------------requiredDomOfPaymentMethodsStart----------
+// ----------------------------DomOfPaymentMethodsStart----------
 const payNow = document.getElementById('payNow');
 const payOnArrival = document.getElementById('payOnArrival');
-// ----------------------------requiredDomOfPaymentMethodsEnd----------
+// ----------------------------DomOfPaymentMethodsEnd----------
 
-// ----------------------------requiredDomOfReviewPaymentDetailsEnd-----------------------------
+// ----------------------------DomOfReviewPaymentDetailsEnd-----------------------------
 // ----------------------commonFunctionsForElementClassAddNRemove--------------------------------
 const addNRemoveClass = (element, classAdd, classRemove) => {
     element.classList.add(classAdd);
@@ -88,7 +88,7 @@ const elementInnerHTML = (element, innerContents) => {
     element.innerHTML = innerContents;
 };
 
-// ---------------scriptOfShowingPopup--------------------------------
+// ---------------ShowingPopup--------------------------------
 
 let tk = [700, 900, 800];
 let me = 900;
@@ -234,7 +234,7 @@ document.onclick = (event) => {
     }
 };
 
-// ------------------scriptForGoToNextChosenPlanOverviewAfterPlanSelectionStart------------------------
+// ------------------GoToNextChosenPlanOverviewAfterPlanSelectionStart------------------------
 checkedRadio.forEach(function (radio) {
     radio.addEventListener("change", function () {
         console.log(this.value);
@@ -257,6 +257,9 @@ checkedRadio.forEach(function (radio) {
 
     });
 });
+
+// ------------------GoToNextChosenPlanOverviewAfterPlanSelectionEnd------------------------
+// ------------------ChosenPlanOverviewStart------------------------
 increment.onclick = () => {
     let noOfPeopleParseInt = parseInt(noOfPeople.innerHTML);
     noOfPeopleParseInt++;
@@ -269,18 +272,22 @@ decrement.onclick = () => {
     noOfPeople.innerHTML = noOfPeopleParseInt;
     console.log(noOfPeople.innerHTML);
 };
-// ------------------scriptForGoToNextChosenPlanOverviewAfterPlanSelectionEnd------------------------
-// ------------------scriptForChosenPlanOverviewStart------------------------
 chosenPlanContinueBtn.onclick = () => {
     addNRemoveClass(chosenPlanOverview, "view-none", "view");
     addNRemoveClass(personalDetails, "view", "view-none");
-    reviewPaymentDetailsBackBtn.onclick = () => {
-        addNRemoveClass(reviewPaymentDetails, "view-none", "view");
-        addNRemoveClass(chosenPlanOverview, "view", "view-none");
-    };
+    addNRemoveClass(stepThree, "active", null);
+    addNRemoveClass(stepTwo, "completed", "active");
 };
-// ------------------scriptForChosenPlanOverviewEnd------------------------
+// ------------------ChosenPlanOverviewEnd------------------------
 
+// ------------------PersonalDetailsStart-------------------------
+personalDetailsBackBtn.onclick = () => {
+    addNRemoveClass(stepTwo, "active", null);
+    addNRemoveClass(stepThree, null, "active");
+    addNRemoveClass(personalDetails, "view-none", "view");
+    addNRemoveClass(chosenPlanOverview, "view", "view-none");
+};
+// ------------------PersonalDetailsEnd---------------------------
 
 
 // ---------------functionOfClosePopup--------------------------------
