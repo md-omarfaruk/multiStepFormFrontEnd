@@ -7,7 +7,7 @@ const stepTwo = document.getElementById("stepTwo");
 const stepThree = document.getElementById("stepThree");
 const stepFour = document.getElementById("stepFour");
 const planTypeName = document.getElementById("planTypeName");
-const noOfPeople = document.getElementById("noOfPeople");
+const people = document.getElementById("people");
 const startDate = document.getElementById("startDate");
 const duration = document.getElementById("duration");
 const monthlyCost = document.getElementById("monthlyCost");
@@ -40,7 +40,7 @@ const selectedPlanDuration = document.getElementById('selectedPlanDuration');
 const selectedPlanOverview = document.getElementById('selectedPlanOverview');
 
 // -------------------------------DomOfNumberOfPeople-----------------------------
-const people = document.getElementById('people');
+const noOfPeople = document.getElementById('noOfPeople');
 const zero = document.getElementById('zero');
 let decrement = document.getElementById('decrement');
 let increment = document.getElementById('increment');
@@ -247,7 +247,7 @@ checkedRadio.forEach(function (radio) {
         addNRemoveClass(chosenPlanOverview, "view", "view-none");
         addNRemoveClass(stepTwo, "active", "completed");
         addNRemoveClass(stepOne, "completed", null);
-        noOfPeople.innerHTML = 1;
+        elementInnerHTML(noOfPeople, 1);
         chosenPlanBackBtn.onclick = () => {
             addNRemoveClass(stepOne, "active", "completed");
             addNRemoveClass(stepTwo, "completed", "active");
@@ -263,15 +263,30 @@ checkedRadio.forEach(function (radio) {
 increment.onclick = () => {
     let noOfPeopleParseInt = parseInt(noOfPeople.innerHTML);
     noOfPeopleParseInt++;
-    noOfPeople.innerHTML = noOfPeopleParseInt;
+    if (noOfPeopleParseInt > 9) {
+        addNRemoveClass(zero, "view-none", null);
+    }
+    console.log(typeof (noOfPeopleParseInt));
+    elementInnerHTML(noOfPeople, noOfPeopleParseInt);
+    elementInnerHTML(people, noOfPeople.innerHTML);
     console.log(noOfPeople.innerHTML);
 };
 decrement.onclick = () => {
     let noOfPeopleParseInt = parseInt(noOfPeople.innerHTML);
     noOfPeopleParseInt--;
-    noOfPeople.innerHTML = noOfPeopleParseInt;
+    if (noOfPeopleParseInt < 10) {
+        addNRemoveClass(zero, null, "view-none");
+    }
+    if (noOfPeopleParseInt < 1) {
+        elementInnerHTML(noOfPeople, 1);
+    }
+    else {
+        elementInnerHTML(noOfPeople, noOfPeopleParseInt);
+    }
+    elementInnerHTML(people, noOfPeople.innerHTML);
     console.log(noOfPeople.innerHTML);
 };
+elementInnerHTML(people, noOfPeople.innerHTML);
 chosenPlanContinueBtn.onclick = () => {
     addNRemoveClass(chosenPlanOverview, "view-none", "view");
     addNRemoveClass(personalDetails, "view", "view-none");
