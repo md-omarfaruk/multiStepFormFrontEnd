@@ -297,7 +297,7 @@ chosenPlanContinueBtn.onclick = () => {
 
 // ------------------PersonalDetailsStart-------------------------
 personalDetailsBackBtn.onclick = () => {
-    addNRemoveClass(stepTwo, "active", null);
+    addNRemoveClass(stepTwo, "active", "completed");
     addNRemoveClass(stepThree, null, "active");
     addNRemoveClass(personalDetails, "view-none", "view");
     addNRemoveClass(chosenPlanOverview, "view", "view-none");
