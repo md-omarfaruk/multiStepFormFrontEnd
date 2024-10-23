@@ -77,8 +77,11 @@ const submit = document.getElementById('submit');
 const payNow = document.getElementById('payNow');
 const payOnArrival = document.getElementById('payOnArrival');
 // ----------------------------PaymentMethodsEnd----------
-
 // ----------------------------ReviewPaymentDetailsEnd-----------------------------
+// ----------------------------formSubmitBtnStart-----------------------------
+const formSubmitBtn = document.getElementById('formSubmitBtn');
+const formRequiredText = document.getElementById('formRequiredText');
+// ----------------------------formSubmitBtnEnd-----------------------------
 // ----------------------commonFunctionsForElementClassAddNRemove--------------------------------
 const addNRemoveClass = (element, classAdd, classRemove) => {
     element.classList.add(classAdd);
@@ -316,13 +319,33 @@ personalDetailsBackBtn.onclick = () => {
     addNRemoveClass(personalDetails, "view-none", "view");
     addNRemoveClass(chosenPlanOverview, "view", "view-none");
 };
+
 personalDetailsContinueBtn.onclick = () => {
-    addNRemoveClass(personalDetails, "view-none", "view");
-    addNRemoveClass(reviewPaymentDetails, "view", "view-none");
-    addNRemoveClass(stepFour, "active", null);
-    addNRemoveClass(stepThree, "completed", "active");
+        addNRemoveClass(formRequiredText, "view-none", "view");
+        addNRemoveClass(personalDetails, "view-none", "view");
+        addNRemoveClass(reviewPaymentDetails, "view", "view-none");
+        addNRemoveClass(reviewPaymentDetailsBackBtn, "view", null);
+        addNRemoveClass(submit, "view", null);
+        addNRemoveClass(stepFour, "active", "completed");
+        addNRemoveClass(stepThree, "completed", "active");
 };
+// if (firstName.input.value = " " && lastName.input.value == " " && email.input.value == " " && phone.input.value == " " && country.input.value == " " && companyName.input.value == " " && address.input.value == " " && apartment.input.value == " " && cityTown.input.value == " " && postcode.input.value == " " && termsAndConditions.checked == false) {
+//     addNRemoveClass(formRequiredText, "view", "view-none");
+// }
 // ------------------PersonalDetailsEnd---------------------------
+
+// ---------------------FormSubmitNBackBtnStart-------------------
+reviewPaymentDetailsBackBtn.onclick = () => {
+    addNRemoveClass(reviewPaymentDetails, "view-none", "view");
+    addNRemoveClass(personalDetails, "view", "view-none");
+    addNRemoveClass(reviewPaymentDetailsBackBtn, "view-none", "view");
+    addNRemoveClass(submit, "view-none", "view");
+    addNRemoveClass(stepThree, "active", "completed");
+    addNRemoveClass(stepFour, "completed", "active");
+};
+// ---------------------FormSubmitNBackBtnEnd---------------------
+
+
 
 
 // ---------------functionOfClosePopup--------------------------------

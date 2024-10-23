@@ -584,6 +584,7 @@
 
     <!-- ---------------------Personal-Details-Start-------------------- -->
     <div class="personal-details view-none" id="personalDetails">
+        <h3 class="form-required-text view-none" id="formRequiredText">All Fields are required to fill up</h3>
         <div class="personal-details-form">
         <div class="">
         <h1>Enter Your Personal Details</h1>
@@ -681,10 +682,12 @@
             <input type="radio" id="payNow" name="option" value="paid" onclick=""><label class="payment-radio">Pay now</label><br>
             <input type="radio" id="payOnArrival" name="option" value="2" onclick=""><label class="payment-radio">Pay on arrival</label><br>
     </div>
-    <!-- ---------------------Review-Payment-Details-End-------------------- -->
-    <button class="back" id="reviewPaymentDetailsBackBtn">Back</button>
+    <div class="form-submit-btn" id="formSubmitBtn">
+    <a class="back" id="reviewPaymentDetailsBackBtn">Back</a>
     <input type="submit" id="submit" value="Confirm Booking">
+    </div>
      </form>
+    <!-- ---------------------Review-Payment-Details-End-------------------- -->    
      <!-- -------------------------Multi-Step-Form-End------------------------ -->
      <!-- --------------------Booking-details-overview-Start----------------------- -->
       <div class="booking-details-overview view-none" id="bookingDetailsOverview">
