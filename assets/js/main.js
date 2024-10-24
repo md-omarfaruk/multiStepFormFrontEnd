@@ -116,6 +116,9 @@ document.onclick = (event) => {
         // Hide both Popups initially
         // ------FullPopupBody-------------
         addNRemoveClass(bookingPopup, null, "view-none");
+        addNRemoveClass (personalDetails, "view-none", "view");
+        addNRemoveClass (reviewPaymentDetails, "view-none", "view");
+        addNRemoveClass (formSubmitBtn, "view-none", "view");
         // ----------chosenPlanOverview---------
         // addNRemoveClass(chosenPlanOverview, "view-none", "view");
         // ---------reviewPaymentDetailsBackBtnNSubmitBtn--------------------------------
