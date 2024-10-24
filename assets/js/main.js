@@ -71,8 +71,6 @@ const personalDetailsContinueBtn = document.getElementById('personalDetailsConti
 
 // ----------------------------ReviewPaymentDetailsStart-----------------------------
 const reviewPaymentDetails = document.getElementById('reviewPaymentDetails');
-const reviewPaymentDetailsBackBtn = document.getElementById('reviewPaymentDetailsBackBtn');
-const submit = document.getElementById('submit');
 // ----------------------------PaymentMethodsStart----------
 const payNow = document.getElementById('payNow');
 const payOnArrival = document.getElementById('payOnArrival');
@@ -81,7 +79,16 @@ const payOnArrival = document.getElementById('payOnArrival');
 // ----------------------------formSubmitBtnStart-----------------------------
 const formSubmitBtn = document.getElementById('formSubmitBtn');
 const formRequiredText = document.getElementById('formRequiredText');
+const reviewPaymentDetailsBackBtn = document.getElementById('reviewPaymentDetailsBackBtn');
+const submit = document.getElementById('submit');
 // ----------------------------formSubmitBtnEnd-----------------------------
+
+// ----------------------------commonScriptForAllElementStart----------------------------
+
+
+
+// ----------------------------commonScriptForAllElementEnd----------------------------
+
 // ----------------------commonFunctionsForElementClassAddNRemove--------------------------------
 const addNRemoveClass = (element, classAdd, classRemove) => {
     element.classList.add(classAdd);
@@ -110,40 +117,40 @@ document.onclick = (event) => {
         // ------FullPopupBody-------------
         addNRemoveClass(bookingPopup, null, "view-none");
         // ----------chosenPlanOverview---------
-        addNRemoveClass(chosenPlanOverview, "view-none", "view");
+        // addNRemoveClass(chosenPlanOverview, "view-none", "view");
         // ---------reviewPaymentDetailsBackBtnNSubmitBtn--------------------------------
-        addNRemoveClass(reviewPaymentDetailsBackBtn, "view-none", null)
-        addNRemoveClass(submit, "view-none", null);
+        // addNRemoveClass(reviewPaymentDetailsBackBtn, "view-none", null)
+        // addNRemoveClass(submit, "view-none", null);
         // --------------PrivateOfficePopupHide--------------------------------
-        addNRemoveClass(privateOfficePopup, "view-none", "view");
+        // addNRemoveClass(privateOfficePopup, "view-none", "view");
         // --------------TeamOfficeSuitePopupHide--------------------------------
-        addNRemoveClass(teamOfficeSuitePopup, "view-none", "view");
+        // addNRemoveClass(teamOfficeSuitePopup, "view-none", "view");
         // --------------HybridOfficePopupHide--------------------------------
-        addNRemoveClass(hybridOfficePopup, "view-none", "view");
+        // addNRemoveClass(hybridOfficePopup, "view-none", "view");
         // --------------DayOfficePopupHide--------------------------------
-        addNRemoveClass(dayOfficePopup, "view-none", "view");
+        // addNRemoveClass(dayOfficePopup, "view-none", "view");
         // --------------DedicatedDeskPopupHide--------------------------------
-        addNRemoveClass(dedicatedDeskPopup, "view-none", "view");
+        // addNRemoveClass(dedicatedDeskPopup, "view-none", "view");
         // --------------DayPassPopupHide--------------------------------
-        addNRemoveClass(dayPassPopup, "view-none", "view");
+        // addNRemoveClass(dayPassPopup, "view-none", "view");
         // --------------FlexibleDeskPopupHide--------------------------------
-        addNRemoveClass(flexibleDeskPopup, "view-none", "view");
+        // addNRemoveClass(flexibleDeskPopup, "view-none", "view");
         // --------------VirtualOfficePopupHide--------------------------------
-        addNRemoveClass(virtualOfficePopup, "view-none", "view");
+        // addNRemoveClass(virtualOfficePopup, "view-none", "view");
         // --------------ConferenceRoomPopupHide--------------------------------
-        addNRemoveClass(conferenceRoomPopup, "view-none", "view");
+        // addNRemoveClass(conferenceRoomPopup, "view-none", "view");
         // --------------EventSpacePopupHide--------------------------------
-        addNRemoveClass(eventSpacePopup, "view-none", "view");
+        // addNRemoveClass(eventSpacePopup, "view-none", "view");
         // --------------PodcastStudioPopupHide--------------------------------
-        addNRemoveClass(podcastStudioPopup, "view-none", "view");
+        // addNRemoveClass(podcastStudioPopup, "view-none", "view");
         // --------------ZoomCallRoomPopupHide--------------------------------
-        addNRemoveClass(zoomCallRoomPopup, "view-none", "view");
+        // addNRemoveClass(zoomCallRoomPopup, "view-none", "view");
         // --------------ColorBurstRoomPopupHide--------------------------------
-        addNRemoveClass(colorBurstRoomPopup, "view-none", "view");
+        // addNRemoveClass(colorBurstRoomPopup, "view-none", "view");
         // --------------AlapRoomPopupHide--------------------------------
-        addNRemoveClass(alapRoomPopup, "view-none", "view");
+        // addNRemoveClass(alapRoomPopup, "view-none", "view");
         // --------------AlochonaRoomPopupHide--------------------------------
-        addNRemoveClass(alochonaRoomPopup, "view-none", "view");
+        // addNRemoveClass(alochonaRoomPopup, "view-none", "view");
 
         // --------------showingRequiredPlanInPopup--------------------------------
         if (buttonId === "privateOffice") {
@@ -151,6 +158,7 @@ document.onclick = (event) => {
             addNRemoveClass(stepOne, "active", null);
             elementInnerHTML(planTypeName, "Private Office");
             elementInnerHTML(selectedOfficeOrRoomType, "Private Office");
+            // addNRemoveClass(personalDetails, "view-none", "view");
         } else if (buttonId === "teamOfficeSuite") {
             addNRemoveClass(teamOfficeSuitePopup, "view", "view-none");
             addNRemoveClass(stepOne, "active", null);
@@ -308,7 +316,7 @@ chosenPlanContinueBtn.onclick = () => {
     addNRemoveClass(chosenPlanOverview, "view-none", "view");
     addNRemoveClass(personalDetails, "view", "view-none");
     addNRemoveClass(stepThree, "active", null);
-    addNRemoveClass(stepTwo, "completed", "active");
+    addNRemoveClass(stepTwo, "completed", "active");    
 };
 // ------------------ChosenPlanOverviewEnd------------------------
 
@@ -321,17 +329,24 @@ personalDetailsBackBtn.onclick = () => {
 };
 
 personalDetailsContinueBtn.onclick = () => {
-        addNRemoveClass(formRequiredText, "view-none", "view");
+    if (firstName.value !== "" && lastName.value !== "" && email.value !== "" && phone.value !== "" && country.value !== "" && companyName.value !== "" && address.value !== "" && apartment.value !== "" && cityTown.value !== "" && postcode.value !== "" && termsAndConditions.checked !== false) {
         addNRemoveClass(personalDetails, "view-none", "view");
         addNRemoveClass(reviewPaymentDetails, "view", "view-none");
-        addNRemoveClass(reviewPaymentDetailsBackBtn, "view", null);
-        addNRemoveClass(submit, "view", null);
+        addNRemoveClass(formSubmitBtn, "view", "view-none");
         addNRemoveClass(stepFour, "active", "completed");
-        addNRemoveClass(stepThree, "completed", "active");
+        addNRemoveClass(stepThree, "completed", "active"); 
+    }
+    else{
+        addNRemoveClass(formRequiredText, "view", "view-none");
+        setTimeout(function () {
+            addNRemoveClass(formRequiredText, "view-none", "view");
+        }, 3000);
+    }
+   
+ 
+
 };
-// if (firstName.input.value = " " && lastName.input.value == " " && email.input.value == " " && phone.input.value == " " && country.input.value == " " && companyName.input.value == " " && address.input.value == " " && apartment.input.value == " " && cityTown.input.value == " " && postcode.input.value == " " && termsAndConditions.checked == false) {
-//     addNRemoveClass(formRequiredText, "view", "view-none");
-// }
+
 // ------------------PersonalDetailsEnd---------------------------
 
 // ---------------------FormSubmitNBackBtnStart-------------------
@@ -341,7 +356,7 @@ reviewPaymentDetailsBackBtn.onclick = () => {
     addNRemoveClass(reviewPaymentDetailsBackBtn, "view-none", "view");
     addNRemoveClass(submit, "view-none", "view");
     addNRemoveClass(stepThree, "active", "completed");
-    addNRemoveClass(stepFour, "completed", "active");
+    addNRemoveClass(stepFour, null, "active");
 };
 // ---------------------FormSubmitNBackBtnEnd---------------------
 
