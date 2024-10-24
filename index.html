@@ -584,7 +584,6 @@
 
     <!-- ---------------------Personal-Details-Start-------------------- -->
     <div class="personal-details view-none" id="personalDetails">
-        <h3 class="form-required-text view-none" id="formRequiredText">All Fields are required to fill up</h3>
         <div class="personal-details-form">
         <div class="">
         <h1>Enter Your Personal Details</h1>
@@ -645,16 +644,16 @@
             <h4>BDT</h4>
             <div class="">
                 <h5>Initial month pro-rata*</h5>
-                <h5>6321</h5>
+                <h5 id="subTotal"></h5>
             </div>
             <div class="">
-                <h5>Tax/VAT</h5>
-                <h5>1353</h5>
+                <h5>Tax/VAT<sup>15%</sup></h5>
+                <h5 id="taxVat"></h5>
             </div>
             <hr>
             <div class="">
                 <h5>Total amount due today</h5>
-                <h5>7674</h5>
+                <h5 id="total"></h5>
             </div>
         </div>
         <div class="ongoing-monthly-payment">
@@ -662,16 +661,16 @@
             <h4>BDT</h4>
             <div class="">
                 <h5>Subsequent month*</h5>
-                <h5>7970</h5>
+                <h5 id="subsequentSubTotal"></h5>
             </div>
             <div class="">
-                <h5>Tax/VAT</h5>
-                <h5>1195</h5>
+                <h5>Tax/VAT<sup>15%</sup></h5>
+                <h5 id="subsequentTaxVat"></h5>
             </div>
             <hr>
             <div class="">
                 <h5>Total subsequent month</h5>
-                <h5>7674</h5>
+                <h5 id="subsequentTotal"></h5>
             </div>
             <h6>Billed each month</h6>
         </div>
@@ -681,11 +680,11 @@
         
             <input type="radio" id="payNow" name="option" value="paid" onclick=""><label class="payment-radio">Pay now</label><br>
             <input type="radio" id="payOnArrival" name="option" value="2" onclick=""><label class="payment-radio">Pay on arrival</label><br>
-    </div>
-    <div class="form-submit-btn view-none" id="formSubmitBtn">
+            <div class="form-submit-btn" id="formSubmitBtn">
     <a class="back" id="reviewPaymentDetailsBackBtn">Back</a>
     <input type="submit" id="submit" value="Confirm Booking">
     </div>
+    </div>   
      </form>
     <!-- ---------------------Review-Payment-Details-End-------------------- -->    
      <!-- -------------------------Multi-Step-Form-End------------------------ -->

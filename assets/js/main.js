@@ -71,6 +71,12 @@ const personalDetailsContinueBtn = document.getElementById('personalDetailsConti
 
 // ----------------------------ReviewPaymentDetailsStart-----------------------------
 const reviewPaymentDetails = document.getElementById('reviewPaymentDetails');
+const subTotal = document.getElementById('subTotal');
+const taxVat = document.getElementById('taxVat');
+const total = document.getElementById('total');
+const subsequentSubTotal = document.getElementById('subsequentSubTotal');
+const subsequentTaxVat = document.getElementById('subsequentTaxVat');
+const subsequentTotal = document.getElementById('subsequentTotal');
 // ----------------------------PaymentMethodsStart----------
 const payNow = document.getElementById('payNow');
 const payOnArrival = document.getElementById('payOnArrival');
@@ -78,7 +84,6 @@ const payOnArrival = document.getElementById('payOnArrival');
 // ----------------------------ReviewPaymentDetailsEnd-----------------------------
 // ----------------------------formSubmitBtnStart-----------------------------
 const formSubmitBtn = document.getElementById('formSubmitBtn');
-const formRequiredText = document.getElementById('formRequiredText');
 const reviewPaymentDetailsBackBtn = document.getElementById('reviewPaymentDetailsBackBtn');
 const submit = document.getElementById('submit');
 // ----------------------------formSubmitBtnEnd-----------------------------
@@ -118,7 +123,6 @@ document.onclick = (event) => {
         addNRemoveClass(bookingPopup, null, "view-none");
         addNRemoveClass (personalDetails, "view-none", "view");
         addNRemoveClass (reviewPaymentDetails, "view-none", "view");
-        addNRemoveClass (formSubmitBtn, "view-none", "view");
         // ----------chosenPlanOverview---------
         // addNRemoveClass(chosenPlanOverview, "view-none", "view");
         // ---------reviewPaymentDetailsBackBtnNSubmitBtn--------------------------------
@@ -253,6 +257,17 @@ document.onclick = (event) => {
 checkedRadio.forEach(function (radio) {
     radio.addEventListener("change", function () {
         console.log(this.value);
+        let checkedRadioValue = Number(this.value);
+        let percentageOfTaxVat = Math.floor(checkedRadioValue / 100 * 15);
+        let totalValue = checkedRadioValue  + percentageOfTaxVat;
+        console.log(totalValue);    
+        elementInnerHTML(subTotal, checkedRadioValue);
+        elementInnerHTML(taxVat, percentageOfTaxVat);
+        elementInnerHTML(total, totalValue);
+        elementInnerHTML(subsequentSubTotal, checkedRadioValue);
+        elementInnerHTML(subsequentTaxVat, percentageOfTaxVat);
+        elementInnerHTML(subsequentTotal, totalValue);
+
         console.log(this.id);
         console.log(this.checked);
         var label = document.querySelector('label[for=' + this.id + ']');
@@ -345,79 +360,68 @@ function validatePhone(phone) {
 
 personalDetailsContinueBtn.onclick = (e) => {
 
-    const inputs = [firstName, lastName, email, phone, country, companyName, address, apartment, cityTown, postcode];
-    let isValid = true;
-        let errorMessage = '';
+    // const inputs = [firstName, lastName, email, phone, country, companyName, address, apartment, cityTown, postcode];
+    // let isValid = true;
+    //     let errorMessage = '';
 
-        inputs.forEach(input => {
-            const value = input.value.trim();
+    //     inputs.forEach(input => {
+    //         const value = input.value.trim();
 
-            // Check if field is empty
-            if (value === '') {
-                isValid = false;
-                errorMessage += `${input.placeholder} is required.\n`;
-                input.style.borderColor = 'red';
-            } else {
-                input.style.borderColor = '';
-            }
+    //         // Check if field is empty
+    //         if (value === '') {
+    //             isValid = false;
+    //             errorMessage += `${input.placeholder} is required.\n`;
+    //             input.style.borderColor = 'red';
+    //         } else {
+    //             input.style.borderColor = '';
+    //         }
 
-            // Additional validation for specific fields
-            if (input.type === 'email' && !validateEmail(value)) {
-                isValid = false;
-                errorMessage += 'Please enter a valid email address.\n';
-                input.style.borderColor = 'red';
-            }
+    //         // Additional validation for specific fields
+    //         if (input.type === 'email' && !validateEmail(value)) {
+    //             isValid = false;
+    //             errorMessage += 'Please enter a valid email address.\n';
+    //             input.style.borderColor = 'red';
+    //         }
 
-            if (input.type === 'tel' && !validatePhone(value)) {
-                isValid = false;
-                errorMessage += 'Please enter a valid phone number (e.g., +880...).\n';
-                input.style.borderColor = 'red';
-            }
+    //         if (input.type === 'tel' && !validatePhone(value)) {
+    //             isValid = false;
+    //             errorMessage += 'Please enter a valid phone number (e.g., +880...).\n';
+    //             input.style.borderColor = 'red';
+    //         }
               
-        });
-        
-        if(termsAndConditions.checked !== true){
-            isValid = false;
-            errorMessage += 'Please accept the Terms and Conditions.\n';
-            termsAndConditions.style.borderColor ='red';
-        }
-        if (!isValid) {
-            e.preventDefault();
-            alert(errorMessage);
-        }
-        else{
+    //     });
+
+        // if(termsAndConditions.checked !== true){
+        //     isValid = false;
+        //     errorMessage += 'Please accept the Terms and Conditions.\n';
+        //     termsAndConditions.style.borderColor ='red';
+        // }
+        // if (!isValid) {
+        //     e.preventDefault();
+        //     alert(errorMessage);
+        // }
+        // else{
             addNRemoveClass(personalDetails, "view-none", "view");
             addNRemoveClass(reviewPaymentDetails, "view", "view-none");
-            addNRemoveClass(formSubmitBtn, "view", "view-none");
             addNRemoveClass(stepFour, "active", "completed");
             addNRemoveClass(stepThree, "completed", "active"); 
-        }
-            
-
-    
-    // else{
-    //     addNRemoveClass(formRequiredText, "view", "view-none");
-    //     setTimeout(function () {
-    //         addNRemoveClass(formRequiredText, "view-none", "view");
-    //     }, 3000);
-    // }
+        // }
    
- 
-
 };
 
 // ------------------PersonalDetailsEnd---------------------------
 
-// ---------------------FormSubmitNBackBtnStart-------------------
+// ---------------------ReviewPaymentDetailsStart-----------------
+if (checkedRadioValue !== null){
+console.log(checkedRadioValue);
+}
 reviewPaymentDetailsBackBtn.onclick = () => {
     addNRemoveClass(reviewPaymentDetails, "view-none", "view");
     addNRemoveClass(personalDetails, "view", "view-none");
-    addNRemoveClass(reviewPaymentDetailsBackBtn, "view-none", "view");
-    addNRemoveClass(submit, "view-none", "view");
     addNRemoveClass(stepThree, "active", "completed");
     addNRemoveClass(stepFour, null, "active");
 };
-// ---------------------FormSubmitNBackBtnEnd---------------------
+// ---------------------ReviewPaymentDetailsEnd---------------------
 
 
 

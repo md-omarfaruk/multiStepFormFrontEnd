@@ -583,7 +583,7 @@ select.selected-plan-overview {
   max-width: 600px;
 }
 
-.review-payment-details input {
+.review-payment-details input[type="radio" i] {
   width: 16px;
   height: 16px;
   margin-right: 5px;
@@ -598,6 +598,7 @@ select.selected-plan-overview {
 }
 .form-submit-btn{
   display: flex;
+  margin-top: 30px;
 }
 input#submit {
   font-family: Helvetica Light, sans-serif;

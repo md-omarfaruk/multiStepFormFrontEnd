@@ -141,7 +141,7 @@ font-size: 16px;
 margin: 20px 0 20px 20px;
 }
 
-.review-payment-details input{
+.review-payment-details input[type="radio" i]{
 width: 14px;
 height: 14px;
 }
