@@ -276,13 +276,13 @@ checkedRadio.forEach(function (radio) {
         elementInnerHTML(selectedPlanDuration, labelText);
         addNRemoveClass(this.closest(".office"), "view-none", "view");
         addNRemoveClass(chosenPlanOverview, "view", "view-none");
-        addNRemoveClass(stepTwo, "active", "completed");
+        addNRemoveClass(stepTwo, "active", null);
         addNRemoveClass(stepOne, "completed", null);
         elementInnerHTML(people, 1);
         elementInnerHTML(noOfPeople, 1);
         chosenPlanBackBtn.onclick = () => {
             addNRemoveClass(stepOne, "active", "completed");
-            addNRemoveClass(stepTwo, "completed", "active");
+            addNRemoveClass(stepTwo, null, "active");
             addNRemoveClass(chosenPlanOverview, "view-none", "view");
             addNRemoveClass(this.closest(".office"), "view", "view-none");
         };
@@ -412,9 +412,6 @@ personalDetailsContinueBtn.onclick = (e) => {
 // ------------------PersonalDetailsEnd---------------------------
 
 // ---------------------ReviewPaymentDetailsStart-----------------
-if (checkedRadioValue !== null){
-console.log(checkedRadioValue);
-}
 reviewPaymentDetailsBackBtn.onclick = () => {
     addNRemoveClass(reviewPaymentDetails, "view-none", "view");
     addNRemoveClass(personalDetails, "view", "view-none");
@@ -428,6 +425,14 @@ reviewPaymentDetailsBackBtn.onclick = () => {
 
 // ---------------functionOfClosePopup--------------------------------
 closePopup.onclick = () => {
+    addNRemoveClass(stepOne, null, "completed");
+    addNRemoveClass(stepTwo, null, "completed");
+    addNRemoveClass(stepThree, null, "completed");
+    addNRemoveClass(stepFour, null, "completed");
+    addNRemoveClass(stepOne, null, "active");
+    addNRemoveClass(stepTwo, null, "active");
+    addNRemoveClass(stepThree, null, "active");
+    addNRemoveClass(stepFour, null, "active");
     addNRemoveClass(bookingPopup, "view-none", "view");
 };
 
