@@ -59,7 +59,7 @@
 }
 
 .booking-pop-up{
-  width: 1200px;
+  width: 80%;
   background-color: white;
   border-radius: 20px;
   position: absolute;
@@ -582,23 +582,25 @@ select.selected-plan-overview {
 .review-payment-details hr {
   max-width: 600px;
 }
-
-.review-payment-details input[type="radio" i] {
+.payment-radio{
+  margin-bottom: 30px;
+}
+.payment-radio input[type="radio"] {
   width: 16px;
   height: 16px;
   margin-right: 5px;
   margin-top: 30px;
-}
-
-.payment-radio {
   font-family: Helvetica Light, sans-serif;
   font-weight: 600;
   font-size: 20px;
   letter-spacing: 1px;
 }
-.form-submit-btn{
-  display: flex;
-  margin-top: 30px;
+.payment-radio > label{
+  font-size: 22px;
+}
+
+.continue#reviewPaymentDetailsBookingSummaryBtn{
+  padding: 15px 38px;
 }
 input#submit {
   font-family: Helvetica Light, sans-serif;
@@ -614,11 +616,6 @@ input#submit {
 input#submit:hover {
   color: #ffffff;
   background-color: #000102;
-}
-.form-required-text{
-  color: #E41E1E;
-  margin-top: 20px;
-  text-align: center;
 }
 /* ---------------------Review-Payment-Details-End----------------------------- */
 /* --------------------Booking-details-overview-Start----------------------- */
@@ -703,6 +700,7 @@ input#submit:hover {
 }
 .bold-text{
   font-family: Helvetica Bold, sans-serif;
+  font-weight: 600;
 }
 .booking-condition{
   color: #FC0606;

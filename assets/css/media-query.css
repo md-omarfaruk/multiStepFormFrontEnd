@@ -1,11 +1,11 @@
 @media only screen and (max-width: 576px) {
   .booking-pop-up{
-    max-width: 420px;
+    max-width: 90%;
     top: 0%;
   left: 50%;
   transform: translate(-50%, 0%);
+  padding: 20px 13px;
     margin: 20px 0px;
-  box-shadow:none;
 
   }
   .close-pop-up{
@@ -51,6 +51,11 @@
     height: auto;
     margin-right: 16px;
   }
+  .private-workspace,
+.shared-workspace,
+.collaborative-workspace {
+  margin: 30px auto;
+}
   .chosen-plan-overview h1{
     font-size: 39px;
   }
@@ -145,8 +150,15 @@ margin: 20px 0 20px 20px;
 width: 14px;
 height: 14px;
 }
-.payment-radio{
-font-size: 18px;
+.payment-radio input[type="radio"] {
+  font-size: 18px;
+}
+.payment-radio > label{
+  font-size: 20px;
+}
+
+.continue#reviewPaymentDetailsContinueBtn{
+  padding: 15px 5px;
 }
 input#submit {
   padding: 15px 7px;

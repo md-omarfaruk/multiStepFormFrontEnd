@@ -31,7 +31,7 @@
         <img src="assets/img/close.png" class="close-pop-up" id="closePopup" alt="">
     <!-- ---------------------Header-Start--------------------------- -->
     <h1 class="top-heading">Membership Booking</h1>
-    <div class="header-bg" id="header">
+    <div class="header-bg view-none" id="header">
         <div class="header">
             <div class="steps">
                 <h2 class="step-number" id="stepOne">1</h2>
@@ -677,20 +677,18 @@
         </div>
         <h3>*Excluding services</h3>
         <hr>
-        
-            <input type="radio" id="payNow" name="option" value="paid" onclick=""><label class="payment-radio">Pay now</label><br>
-            <input type="radio" id="payOnArrival" name="option" value="2" onclick=""><label class="payment-radio">Pay on arrival</label><br>
-            <div class="form-submit-btn" id="formSubmitBtn">
+        <div class="payment-radio">
+            <input type="radio" id="payNow" name="payment_option" value="paid" onclick=""><label class="payment-now" for="payNow">Pay now</label><br>
+            <input type="radio" id="payOnArrival" name="payment_option" value="pay arrival" onclick=""><label class="payment-arrival" for="payOnArrival">Pay on arrival</label><br>
+            </div>
     <a class="back" id="reviewPaymentDetailsBackBtn">Back</a>
-    <input type="submit" id="submit" value="Confirm Booking">
-    </div>
+    <a class="continue" id="reviewPaymentDetailsBookingSummaryBtn">Booking Summary</a>
     </div>   
-     </form>
     <!-- ---------------------Review-Payment-Details-End-------------------- -->    
      <!-- -------------------------Multi-Step-Form-End------------------------ -->
      <!-- --------------------Booking-details-overview-Start----------------------- -->
-      <div class="booking-details-overview view-none" id="bookingDetailsOverview">
-        <h1>Congratulations, Member name! <br> Your booking is now complete.</h1>
+      <div class="booking-details-overview view-none" id="bookingSummary">
+        <h1>Congratulations, <span id="bookerMemberName"></span><br> Your booking is now complete.</h1>
         <div class="booking-details">
             <div class="booking-confirmation">
                 <h3>Booking confirmation</h3>
@@ -712,7 +710,7 @@
                     </div>
                     <div class="">
                         <img src="assets/img/telephone.png" alt="">
-                        <p>Contact Details: <span class="bold-text" id="contactEmail">example@gmail.com</span> <br> <span class="bold-text" id="contactNumber">+88016809000</span></p>
+                        <p>Contact Details: <span class="bold-text" id="contactEmail"></span> <br> <span class="bold-text" id="contactNumber"></span></p>
                     </div>                   
             </div>
             <div class="booking-plan-details">
@@ -720,19 +718,19 @@
                 <hr>
                 <div class="">
                 <img src="assets/img/planning.png" alt="">
-                <p>Plan Type: <span class="bold-text" id="">Private Office</span></p>
+                <p>Plan Type: <span class="bold-text" id="bookedPlan">Private Office</span></p>
                 </div>
                 <div class="">
                     <img src="assets/img/group.png" alt="">
-                    <p>Number of People: <span class="bold-text" id="">2</span></p>
+                    <p>Number of People: <span class="bold-text" id="bookedForPeople">2</span></p>
                     </div>
                     <div class="">
                         <img src="assets/img/date.png" alt="">
-                    <p>Date: <span class="bold-text" id="">00/01/2025</span></p>
+                    <p>Date: <span class="bold-text" id="bookedDate">00/01/2025</span></p>
                         </div>
                         <div class="">
                             <img src="assets/img/clock.png" alt="">
-                            <p>Time and Duration <span class="bold-text">13:00 - 16:00</span> [3 Hours]</p>
+                            <p>Time and Duration <span class="bold-text" id="bookedForTime">13:00 - 16:00</span> [3 Hours]</p>
                         </div>
                         <div class="">
                             <img src="assets/img/maps-and-flags.png" alt="">
@@ -748,11 +746,11 @@
                 <hr>
                 <div class="">
                 <img src="assets/img/check-mark.png" alt="">
-                <p>Booking Status: <span class="bold-text" id="">Your booking is paid and confirmed</span></p>
+                <p>Booking Status: <span class="bold-text" id="bookingStatus">Your booking is paid and confirmed</span></p>
                 </div>
                 <div class="">
                     <img src="assets/img/credit-card.png" alt="">
-                    <p>Payment Method: Card holder name <span class="bold-text" id="">Member Name</span><br>Card/Payment type <span class="bold-text" id="">Master Card</span><br>Card number <span class="bold-text" id="">xxx-000-xxx-000</span></p>
+                    <p>Payment Method: Card holder name <span class="bold-text" id="bookerName">Member Name</span><br>Card/Payment type <span class="bold-text" id="paymentType">Master Card</span><br>Card number <span class="bold-text" id="cardNumber">xxx-000-xxx-000</span></p>
                     </div>
                     <div class="">
                         <img src="assets/img/access-denied.png" alt="">
@@ -762,9 +760,11 @@
         </div>
         <h2>You are now a part of our Akota Online Community</h2>
         <h4>To activate your account, check you email and build your professional space </h4>
-        <button class="check-email">Check Email</button>
+        <!-- <button class="check-email">Check Email</button> -->
+        <input type="submit" id="submit" value="Check Email">
       </div>
      <!-- --------------------Booking-details-overview-End----------------------- -->
+     </form>
 </div>
     <!-- ------------Js-Script-------------------------------- -->
     <script src="assets/js/main.js"></script>
