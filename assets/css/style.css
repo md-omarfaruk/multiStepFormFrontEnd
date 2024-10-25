@@ -277,6 +277,7 @@
 
 .chosen-plan-overview {
   font-family: Helvetica Light, sans-serif;
+  padding-bottom: 30px;
 }
 
 .chosen-plan-overview h1 {
@@ -442,6 +443,7 @@ select.selected-plan-overview {
 /* ---------------------Personal-Detials-Start----------------------------- */
 .personal-details {
   font-family: Helvetica Light, sans-serif;
+  padding-bottom: 30px;
 }
 
 .personal-details-form {

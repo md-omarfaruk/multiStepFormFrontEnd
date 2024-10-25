@@ -124,6 +124,11 @@ const clickedChosenPlan = (chosenPlan, chosenPlanTitle) => {
     addNRemoveClass(stepOne, "active", null);
     elementInnerHTML(planTypeName, chosenPlanTitle);
     elementInnerHTML(bookedPlan, chosenPlanTitle);
+    closePopup.onclick = () => {
+        addNRemoveClass(chosenPlan, "view-none", "view");
+        addNRemoveClass(bookingPopup, "view-none", "view");
+
+    };
     // addNRemoveClass(header, "view", "view-none");
 
 }
@@ -133,12 +138,6 @@ const elementInnerHTML = (element, innerContents) => {
 };
 
 // ---------------ShowingPopup--------------------------------
-
-let tk = [700, 900, 800];
-let me = 900;
-if (me === 900) {
-    console.log(me);
-}
 
 document.onclick = (event) => {
     // Check if the clicked element is a button
