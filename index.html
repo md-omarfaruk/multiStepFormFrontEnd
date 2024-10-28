@@ -679,7 +679,7 @@
         <hr>
         <div class="payment-radio">
             <input type="radio" id="payNow" name="payment_option" value="paid" onclick=""><label class="payment-now" for="payNow">Pay now</label><br>
-            <input type="radio" id="payOnArrival" name="payment_option" value="pay arrival" onclick=""><label class="payment-arrival" for="payOnArrival">Pay on arrival</label><br>
+            <input type="radio" id="payOnArrival" name="payment_option" value="pay on arrival" onclick=""><label class="payment-arrival" for="payOnArrival">Pay on arrival</label><br>
             </div>
     <a class="back" id="reviewPaymentDetailsBackBtn">Back</a>
     <a class="continue" id="reviewPaymentDetailsBookingSummaryBtn">Booking Summary</a>
@@ -722,11 +722,11 @@
                 </div>
                 <div class="">
                     <img src="assets/img/group.png" alt="">
-                    <p>Number of People: <span class="bold-text" id="bookedForPeople">2</span></p>
+                    <p>Number of People: <span class="bold-text" id="bookedForPeople"></span></p>
                     </div>
                     <div class="">
                         <img src="assets/img/date.png" alt="">
-                    <p>Date: <span class="bold-text" id="bookedDate">00/01/2025</span></p>
+                    <p>Date: <span class="bold-text" id="bookingDate"></span></p>
                         </div>
                         <div class="">
                             <img src="assets/img/clock.png" alt="">
@@ -746,7 +746,7 @@
                 <hr>
                 <div class="">
                 <img src="assets/img/check-mark.png" alt="">
-                <p>Booking Status: <span class="bold-text" id="bookingStatus">Your booking is paid and confirmed</span></p>
+                <p>Booking Status: <span class="bold-text">Your booking is <span  id="bookingStatus"></span> and confirmed</span></p>
                 </div>
                 <div class="">
                     <img src="assets/img/credit-card.png" alt="">

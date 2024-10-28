@@ -99,7 +99,7 @@ const contactEmail = document.getElementById('contactEmail');
 const contactNumber = document.getElementById('contactNumber');
 const bookedPlan = document.getElementById('bookedPlan');
 const bookedForPeople = document.getElementById('bookedForPeople');
-const bookedDate = document.getElementById('bookedDate');
+const bookingDate = document.getElementById('bookingDate');
 const bookedForTime = document.getElementById('bookedForTime');
 const bookingStatus = document.getElementById('bookingStatus');
 const bookerName = document.getElementById('bookerName');
@@ -124,6 +124,9 @@ const clickedChosenPlan = (chosenPlan, chosenPlanTitle) => {
     addNRemoveClass(stepOne, "active", null);
     elementInnerHTML(planTypeName, chosenPlanTitle);
     elementInnerHTML(bookedPlan, chosenPlanTitle);
+    elementInnerHTML(people, 0);
+    elementInnerHTML(noOfPeople, 0);
+    elementInnerHTML(startDate, "");
     closePopup.onclick = () => {
         addNRemoveClass(chosenPlan, "view-none", "view");
         addNRemoveClass(bookingPopup, "view-none", "view");
@@ -307,6 +310,7 @@ document.onclick = (event) => {
 };
 
 // ------------------GoToNextChosenPlanOverviewAfterPlanSelectionStart------------------------
+
 checkedRadio.forEach(function (radio) {
     radio.addEventListener("change", function () {
         console.log(this.value);
@@ -333,6 +337,15 @@ checkedRadio.forEach(function (radio) {
         addNRemoveClass(stepOne, "completed", null);
         elementInnerHTML(people, 1);
         elementInnerHTML(noOfPeople, 1);
+        elementInnerHTML(bookedForPeople, 1);
+        // Get the current date
+        const today = new Date();
+        // Format the date to YYYY-MM-DD for the date input
+        const formattedDate = today.toISOString().split('T')[0];
+        // Set the value of the input field to the current date
+        date.value = formattedDate;
+        elementInnerHTML(startDate, formattedDate);
+        elementInnerHTML(bookingDate, formattedDate);
         chosenPlanBackBtn.onclick = () => {
             addNRemoveClass(stepOne, "active", "completed");
             addNRemoveClass(stepTwo, null, "active");
@@ -342,6 +355,7 @@ checkedRadio.forEach(function (radio) {
         closePopup.onclick = () => {
             this.checked = false;
             elementInnerHTML(people, 0);
+            elementInnerHTML(startDate, "");
             elementInnerHTML(duration, "");
             addNRemoveClass(stepOne, null, "active");
             addNRemoveClass(stepTwo, null, "active");
@@ -350,10 +364,8 @@ checkedRadio.forEach(function (radio) {
             addNRemoveClass(bookingPopup, "view-none", "view");
             console.log(this.checked);
         };
-
     });
 });
-
 // ------------------GoToNextChosenPlanOverviewAfterPlanSelectionEnd------------------------
 // ------------------ChosenPlanOverviewStart------------------------
 increment.onclick = () => {
@@ -365,6 +377,7 @@ increment.onclick = () => {
     console.log(typeof (noOfPeopleParseInt));
     elementInnerHTML(noOfPeople, noOfPeopleParseInt);
     elementInnerHTML(people, noOfPeople.innerHTML);
+    elementInnerHTML(bookedForPeople, noOfPeople.innerHTML);
     console.log(noOfPeople.innerHTML);
 };
 decrement.onclick = () => {
@@ -380,9 +393,10 @@ decrement.onclick = () => {
         elementInnerHTML(noOfPeople, noOfPeopleParseInt);
     }
     elementInnerHTML(people, noOfPeople.innerHTML);
+    elementInnerHTML(bookedForPeople, noOfPeople.innerHTML);
     console.log(noOfPeople.innerHTML);
 };
-elementInnerHTML(people, noOfPeople.innerHTML);
+elementInnerHTML(bookedForPeople, noOfPeople.innerHTML);
 chosenPlanContinueBtn.onclick = () => {
     addNRemoveClass(chosenPlanOverview, "view-none", "view");
     addNRemoveClass(personalDetails, "view", "view-none");
@@ -413,47 +427,47 @@ function validatePhone(phone) {
 
 personalDetailsContinueBtn.onclick = (e) => {
 
-    // const inputs = [firstName, lastName, email, phone, country, companyName, address, apartment, cityTown, postcode];
-    // let isValid = true;
-    //     let errorMessage = '';
+    const inputs = [firstName, lastName, email, phone, country, companyName, address, apartment, cityTown, postcode];
+    let isValid = true;
+        let errorMessage = '';
 
-    //     inputs.forEach(input => {
-    //         const value = input.value.trim();
+        inputs.forEach(input => {
+            const value = input.value.trim();
 
-    //         // Check if field is empty
-    //         if (value === '') {
-    //             isValid = false;
-    //             errorMessage += `${input.placeholder} is required.\n`;
-    //             input.style.borderColor = 'red';
-    //         } else {
-    //             input.style.borderColor = '';
-    //         }
+            // Check if field is empty
+            if (value === '') {
+                isValid = false;
+                errorMessage += `${input.placeholder} is required.\n`;
+                input.style.borderColor = 'red';
+            } else {
+                input.style.borderColor = '';
+            }
 
-    //         // Additional validation for specific fields
-    //         if (input.type === 'email' && !validateEmail(value)) {
-    //             isValid = false;
-    //             errorMessage += 'Please enter a valid email address.\n';
-    //             input.style.borderColor = 'red';
-    //         }
+            // Additional validation for specific fields
+            if (input.type === 'email' && !validateEmail(value)) {
+                isValid = false;
+                errorMessage += 'Please enter a valid email address.\n';
+                input.style.borderColor = 'red';
+            }
 
-    //         if (input.type === 'tel' && !validatePhone(value)) {
-    //             isValid = false;
-    //             errorMessage += 'Please enter a valid phone number (e.g., +880...).\n';
-    //             input.style.borderColor = 'red';
-    //         }
+            if (input.type === 'tel' && !validatePhone(value)) {
+                isValid = false;
+                errorMessage += 'Please enter a valid phone number (e.g., +880...).\n';
+                input.style.borderColor = 'red';
+            }
 
-    //     });
+        });
 
-    //     if(termsAndConditions.checked !== true){
-    //         isValid = false;
-    //         errorMessage += 'Please accept the Terms and Conditions.\n';
-    //         termsAndConditions.style.borderColor ='red';
-    //     }
-    //     if (!isValid) {
-    //         e.preventDefault();
-    //         alert(errorMessage);
-    //     }
-    //     else{
+        if(termsAndConditions.checked !== true){
+            isValid = false;
+            errorMessage += 'Please accept the Terms and Conditions.\n';
+            termsAndConditions.style.borderColor ='red';
+        }
+        if (!isValid) {
+            e.preventDefault();
+            alert(errorMessage);
+        }
+    else{
     let memberName = firstName.value + " " + lastName.value;
     elementInnerHTML(bookerMemberName, memberName);
     elementInnerHTML(bookingEmail, email.value);
@@ -465,13 +479,62 @@ personalDetailsContinueBtn.onclick = (e) => {
     addNRemoveClass(reviewPaymentDetails, "view", "view-none");
     addNRemoveClass(stepFour, "active", "completed");
     addNRemoveClass(stepThree, "completed", "active");
-    // }
+    }
 
 };
 
 // ------------------PersonalDetailsEnd---------------------------
 
 // ---------------------ReviewPaymentDetailsStart-----------------
+
+
+
+
+// Event listener for Pay Now option
+payNow.addEventListener('click', () => {
+    console.log(payNow.value);
+    elementInnerHTML(bookingStatus, payNow.value);
+    // Create popup
+    const popup = document.createElement('div');
+    popup.classList.add('popup');
+    popup.innerHTML = '<h1>Pay Now</h1><br><h3>Click Here</h3>';
+
+    // Add popup to the body
+    bookingPopup.appendChild(popup);
+
+    // Add style to popup
+    popup.style.position = 'fixed';
+    popup.style.top = '50%';
+    popup.style.left = '50%';
+    popup.style.transform = 'translate(-50%, -50%)';
+    popup.style.padding = '50px';
+    popup.style.backgroundColor = '#fff';
+    popup.style.zIndex = '9999999';
+    popup.style.border = '2px solid #000';
+    popup.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.2)';
+
+    // Close popup on click
+    popup.addEventListener('click', () => {
+        bookingPopup.removeChild(popup);
+    });
+    closePopup.onclick = () => {
+        payNow.checked = false;
+        addNRemoveClass(bookingPopup, "view-none", "view");
+    };
+
+});
+// Event listener for Pay on Arrival option
+payOnArrival.addEventListener('click', () => {
+    elementInnerHTML(bookingStatus, payOnArrival.value);
+    console.log(payOnArrival.value);
+    closePopup.onclick = () => {
+        payOnArrival.checked = false;
+        addNRemoveClass(bookingPopup, "view-none", "view");
+    };
+});
+
+
+
 reviewPaymentDetailsBackBtn.onclick = () => {
     addNRemoveClass(reviewPaymentDetails, "view-none", "view");
     addNRemoveClass(personalDetails, "view", "view-none");
@@ -488,36 +551,20 @@ reviewPaymentDetailsBookingSummaryBtn.onclick = () => {
 
 // ---------------------BookingSummaryEnd---------------------
 
-
-
+console.log(bookedForPeople.innerHTML);
 
 // ---------------functionOfClosePopup--------------------------------
+date.addEventListener('change', () => {
+    elementInnerHTML(startDate, date.value);
+    console.log(startDate.innerHTML);
+    elementInnerHTML(bookingDate, date.value);
+});
+
+
+
 closePopup.onclick = () => {
     addNRemoveClass(bookingPopup, "view-none", "view");
 };
 
 
 
-
-
-
-
-
-
-
-
-
-
-window.onload = function () {
-    // Get the current date
-    const today = new Date();
-
-    // Format the date to YYYY-MM-DD for the date input
-    const formattedDate = today.toISOString().split('T')[0];
-    // Set the value of the input field to the current date
-    date.value = formattedDate;
-    elementInnerHTML(startDate, formattedDate);
-    date.addEventListener('change', () => {
-        elementInnerHTML(startDate, date.value);
-    });
-};
