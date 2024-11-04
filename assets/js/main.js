@@ -127,6 +127,7 @@ const clickedChosenPlan = (chosenPlan, chosenPlanTitle) => {
     elementInnerHTML(people, 0);
     elementInnerHTML(noOfPeople, 0);
     elementInnerHTML(startDate, "");
+    elementInnerHTML(monthlyCost, 0);
     closePopup.onclick = () => {
         addNRemoveClass(chosenPlan, "view-none", "view");
         addNRemoveClass(bookingPopup, "view-none", "view");
@@ -318,6 +319,7 @@ checkedRadio.forEach(function (radio) {
         let percentageOfTaxVat = Math.floor(checkedRadioValue / 100 * 15);
         let totalValue = checkedRadioValue + percentageOfTaxVat;
         console.log(totalValue);
+        elementInnerHTML(monthlyCost, checkedRadioValue);
         elementInnerHTML(subTotal, checkedRadioValue);
         elementInnerHTML(taxVat, percentageOfTaxVat);
         elementInnerHTML(total, totalValue);
