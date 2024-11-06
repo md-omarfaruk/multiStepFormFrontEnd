@@ -478,47 +478,47 @@ function validatePhone(phone) {
 
 personalDetailsContinueBtn.onclick = (e) => {
 
-    // const inputs = [firstName, lastName, email, phone, country, companyName, address, apartment, cityTown, postcode];
-    // let isValid = true;
-    //     let errorMessage = '';
+    const inputs = [firstName, lastName, email, phone, country, companyName, address, apartment, cityTown, postcode];
+    let isValid = true;
+        let errorMessage = '';
 
-    //     inputs.forEach(input => {
-    //         const value = input.value.trim();
+        inputs.forEach(input => {
+            const value = input.value.trim();
 
-    //         // Check if field is empty
-    //         if (value === '') {
-    //             isValid = false;
-    //             errorMessage += `${input.placeholder} is required.\n`;
-    //             input.style.borderColor = 'red';
-    //         } else {
-    //             input.style.borderColor = '';
-    //         }
+            // Check if field is empty
+            if (value === '') {
+                isValid = false;
+                errorMessage += `${input.placeholder} is required.\n`;
+                input.style.borderColor = 'red';
+            } else {
+                input.style.borderColor = '';
+            }
 
-    //         // Additional validation for specific fields
-    //         if (input.type === 'email' && !validateEmail(value)) {
-    //             isValid = false;
-    //             errorMessage += 'Please enter a valid email address.\n';
-    //             input.style.borderColor = 'red';
-    //         }
+            // Additional validation for specific fields
+            if (input.type === 'email' && !validateEmail(value)) {
+                isValid = false;
+                errorMessage += 'Please enter a valid email address.\n';
+                input.style.borderColor = 'red';
+            }
 
-    //         if (input.type === 'tel' && !validatePhone(value)) {
-    //             isValid = false;
-    //             errorMessage += 'Please enter a valid phone number (e.g., +880...).\n';
-    //             input.style.borderColor = 'red';
-    //         }
+            if (input.type === 'tel' && !validatePhone(value)) {
+                isValid = false;
+                errorMessage += 'Please enter a valid phone number (e.g., +880...).\n';
+                input.style.borderColor = 'red';
+            }
 
-    //     });
+        });
 
-    //     if(termsAndConditions.checked !== true){
-    //         isValid = false;
-    //         errorMessage += 'Please accept the Terms and Conditions.\n';
-    //         termsAndConditions.style.borderColor ='red';
-    //     }
-    //     if (!isValid) {
-    //         e.preventDefault();
-    //         alert(errorMessage);
-    //     }
-    // else{
+        if(termsAndConditions.checked !== true){
+            isValid = false;
+            errorMessage += 'Please accept the Terms and Conditions.\n';
+            termsAndConditions.style.borderColor ='red';
+        }
+        if (!isValid) {
+            e.preventDefault();
+            alert(errorMessage);
+        }
+    else{
     let memberName = firstName.value + " " + lastName.value;
     elementInnerHTML(bookerMemberName, memberName);
     elementInnerHTML(bookingEmail, email.value);
@@ -530,7 +530,7 @@ personalDetailsContinueBtn.onclick = (e) => {
     addNRemoveClass(reviewPaymentDetails, "view", "view-none");
     addNRemoveClass(stepFour, "active", "completed");
     addNRemoveClass(stepThree, "completed", "active");
-    // }
+    }
 
 };
 
