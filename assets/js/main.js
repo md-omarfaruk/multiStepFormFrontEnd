@@ -32,7 +32,7 @@ const colorBurstRoomPopup = document.getElementById("colorBurstRoomPopup");
 const alapRoomPopup = document.getElementById("alapRoomPopup");
 const alochonaRoomPopup = document.getElementById("alochonaRoomPopup");
 // ---------------------------DomOfchosenPlan------------------------
-let checkedRadio = document.querySelectorAll('input[type="radio"][name="chosen_plan"]');
+let allRadioInputs = document.querySelectorAll('input[name="chosen_plan"]');
 // -------------------------------DomOfWorkSpaceEnd-----------------------------
 
 // -------------------------------DomOfChosenPlanOverviewStart------------------
@@ -114,10 +114,10 @@ const cardNumber = document.getElementById('cardNumber');
 
 // ----------------------------commonScriptForAllElementEnd----------------------------
 
-// ----------------------commonFunctionsForElementClassAddNRemove--------------------------------
-const addNRemoveClass = (element, classAdd, classRemove) => {
-    element.classList.add(classAdd);
-    element.classList.remove(classRemove);
+// ----------------------commonFunctionsForElementaddClassNRemove--------------------------------
+const addNRemoveClass = (element, addClass, removeClass) => {
+    element.classList.add(addClass);
+    element.classList.remove(removeClass);
 };
 const clickedChosenPlan = (chosenPlan, chosenPlanTitle) => {
     addNRemoveClass(chosenPlan, "view", "view-none");
@@ -312,10 +312,12 @@ document.onclick = (event) => {
 
 // ------------------GoToNextChosenPlanOverviewAfterPlanSelectionStart------------------------
 
-checkedRadio.forEach(function (radio) {
+let checkedRadioValue = null;
+allRadioInputs.forEach(function (radio) {
     radio.addEventListener("change", function () {
-        console.log(this.value);
-        let checkedRadioValue = Number(this.value);
+        // console.log(this.value);
+        checkedRadioValue = Number(this.value);
+        console.log(checkedRadioValue);
         let percentageOfTaxVat = Math.floor(checkedRadioValue / 100 * 15);
         let totalValue = checkedRadioValue + percentageOfTaxVat;
         console.log(totalValue);
@@ -368,8 +370,10 @@ checkedRadio.forEach(function (radio) {
         };
     });
 });
+
 // ------------------GoToNextChosenPlanOverviewAfterPlanSelectionEnd------------------------
 // ------------------ChosenPlanOverviewStart------------------------
+
 increment.onclick = () => {
     let noOfPeopleParseInt = parseInt(noOfPeople.innerHTML);
     noOfPeopleParseInt++;
@@ -379,23 +383,65 @@ increment.onclick = () => {
     console.log(typeof (noOfPeopleParseInt));
     elementInnerHTML(noOfPeople, noOfPeopleParseInt);
     elementInnerHTML(people, noOfPeople.innerHTML);
+
+
+    console.log(checkedRadioValue);
+    const singlePersonCost = checkedRadioValue;
+    console.log(singlePersonCost);
+    let totalMonthlyCost = singlePersonCost * noOfPeopleParseInt;
+    console.log(totalMonthlyCost);
+    elementInnerHTML(monthlyCost, totalMonthlyCost);
+    let percentageOfTaxVat = Math.floor(totalMonthlyCost / 100 * 15);
+        let totalValue = totalMonthlyCost + percentageOfTaxVat;
+        console.log(totalValue);
+        elementInnerHTML(subTotal, totalMonthlyCost);
+        elementInnerHTML(taxVat, percentageOfTaxVat);
+        elementInnerHTML(total, totalValue);
+        elementInnerHTML(subsequentSubTotal, totalMonthlyCost);
+        elementInnerHTML(subsequentTaxVat, percentageOfTaxVat);
+        elementInnerHTML(subsequentTotal, totalValue);
+
+
+
     elementInnerHTML(bookedForPeople, noOfPeople.innerHTML);
     console.log(noOfPeople.innerHTML);
 };
 decrement.onclick = () => {
     let noOfPeopleParseInt = parseInt(noOfPeople.innerHTML);
+    const singlePersonCost = checkedRadioValue;
+    let totalMonthlyCost = null;
     noOfPeopleParseInt--;
     if (noOfPeopleParseInt < 10) {
         addNRemoveClass(zero, null, "view-none");
     }
     if (noOfPeopleParseInt < 1) {
         elementInnerHTML(noOfPeople, 1);
+    elementInnerHTML(monthlyCost, checkedRadioValue);
     }
     else {
         elementInnerHTML(noOfPeople, noOfPeopleParseInt);
+        totalMonthlyCost = singlePersonCost * noOfPeopleParseInt;
+    console.log(totalMonthlyCost);
+    elementInnerHTML(monthlyCost, totalMonthlyCost);
+    let percentageOfTaxVat = Math.floor(totalMonthlyCost / 100 * 15);
+        let totalValue = totalMonthlyCost + percentageOfTaxVat;
+        console.log(totalValue);
+        elementInnerHTML(subTotal, totalMonthlyCost);
+        elementInnerHTML(taxVat, percentageOfTaxVat);
+        elementInnerHTML(total, totalValue);
+        elementInnerHTML(subsequentSubTotal, totalMonthlyCost);
+        elementInnerHTML(subsequentTaxVat, percentageOfTaxVat);
+        elementInnerHTML(subsequentTotal, totalValue);
     }
     elementInnerHTML(people, noOfPeople.innerHTML);
     elementInnerHTML(bookedForPeople, noOfPeople.innerHTML);
+
+
+    console.log(checkedRadioValue);
+    console.log(singlePersonCost);
+    
+    
+
     console.log(noOfPeople.innerHTML);
 };
 elementInnerHTML(bookedForPeople, noOfPeople.innerHTML);
@@ -405,6 +451,9 @@ chosenPlanContinueBtn.onclick = () => {
     addNRemoveClass(stepThree, "active", null);
     addNRemoveClass(stepTwo, "completed", "active");
 };
+
+
+
 // ------------------ChosenPlanOverviewEnd------------------------
 
 // ------------------PersonalDetailsStart-------------------------
@@ -429,47 +478,47 @@ function validatePhone(phone) {
 
 personalDetailsContinueBtn.onclick = (e) => {
 
-    const inputs = [firstName, lastName, email, phone, country, companyName, address, apartment, cityTown, postcode];
-    let isValid = true;
-        let errorMessage = '';
+    // const inputs = [firstName, lastName, email, phone, country, companyName, address, apartment, cityTown, postcode];
+    // let isValid = true;
+    //     let errorMessage = '';
 
-        inputs.forEach(input => {
-            const value = input.value.trim();
+    //     inputs.forEach(input => {
+    //         const value = input.value.trim();
 
-            // Check if field is empty
-            if (value === '') {
-                isValid = false;
-                errorMessage += `${input.placeholder} is required.\n`;
-                input.style.borderColor = 'red';
-            } else {
-                input.style.borderColor = '';
-            }
+    //         // Check if field is empty
+    //         if (value === '') {
+    //             isValid = false;
+    //             errorMessage += `${input.placeholder} is required.\n`;
+    //             input.style.borderColor = 'red';
+    //         } else {
+    //             input.style.borderColor = '';
+    //         }
 
-            // Additional validation for specific fields
-            if (input.type === 'email' && !validateEmail(value)) {
-                isValid = false;
-                errorMessage += 'Please enter a valid email address.\n';
-                input.style.borderColor = 'red';
-            }
+    //         // Additional validation for specific fields
+    //         if (input.type === 'email' && !validateEmail(value)) {
+    //             isValid = false;
+    //             errorMessage += 'Please enter a valid email address.\n';
+    //             input.style.borderColor = 'red';
+    //         }
 
-            if (input.type === 'tel' && !validatePhone(value)) {
-                isValid = false;
-                errorMessage += 'Please enter a valid phone number (e.g., +880...).\n';
-                input.style.borderColor = 'red';
-            }
+    //         if (input.type === 'tel' && !validatePhone(value)) {
+    //             isValid = false;
+    //             errorMessage += 'Please enter a valid phone number (e.g., +880...).\n';
+    //             input.style.borderColor = 'red';
+    //         }
 
-        });
+    //     });
 
-        if(termsAndConditions.checked !== true){
-            isValid = false;
-            errorMessage += 'Please accept the Terms and Conditions.\n';
-            termsAndConditions.style.borderColor ='red';
-        }
-        if (!isValid) {
-            e.preventDefault();
-            alert(errorMessage);
-        }
-    else{
+    //     if(termsAndConditions.checked !== true){
+    //         isValid = false;
+    //         errorMessage += 'Please accept the Terms and Conditions.\n';
+    //         termsAndConditions.style.borderColor ='red';
+    //     }
+    //     if (!isValid) {
+    //         e.preventDefault();
+    //         alert(errorMessage);
+    //     }
+    // else{
     let memberName = firstName.value + " " + lastName.value;
     elementInnerHTML(bookerMemberName, memberName);
     elementInnerHTML(bookingEmail, email.value);
@@ -481,7 +530,7 @@ personalDetailsContinueBtn.onclick = (e) => {
     addNRemoveClass(reviewPaymentDetails, "view", "view-none");
     addNRemoveClass(stepFour, "active", "completed");
     addNRemoveClass(stepThree, "completed", "active");
-    }
+    // }
 
 };
 
