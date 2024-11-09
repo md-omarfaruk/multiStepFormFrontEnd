@@ -587,11 +587,15 @@ select.selected-plan-overview {
 .payment-radio{
   margin-bottom: 30px;
 }
+.payment-radio h3{
+  color: red;
+  margin: 15px 0 0 0;
+}
 .payment-radio input[type="radio"] {
   width: 16px;
   height: 16px;
   margin-right: 5px;
-  margin-top: 30px;
+  margin-top: 20px;
   font-family: Helvetica Light, sans-serif;
   font-weight: 600;
   font-size: 20px;

@@ -79,6 +79,7 @@ const subsequentSubTotal = document.getElementById('subsequentSubTotal');
 const subsequentTaxVat = document.getElementById('subsequentTaxVat');
 const subsequentTotal = document.getElementById('subsequentTotal');
 // ----------------------------DomOfPaymentMethodsStart----------
+const paymentRadioInput = document.getElementById('paymentRadioInput');
 const payNow = document.getElementById('payNow');
 const payOnArrival = document.getElementById('payOnArrival');
 // ----------------------------DomOfPaymentMethodsEnd----------
@@ -107,40 +108,32 @@ const paymentType = document.getElementById('paymentType');
 const cardNumber = document.getElementById('cardNumber');
 // ----------------------------DomOfBookingSummaryEnd----------------------------
 
-
 // ----------------------------commonScriptForAllElementStart----------------------------
-
-
 
 // ----------------------------commonScriptForAllElementEnd----------------------------
 
-// ----------------------commonFunctionsForElementaddClassNRemove--------------------------------
+// ----------------------commonFunctionsForElementAddClassNRemove--------------------------------
 const addNRemoveClass = (element, addClass, removeClass) => {
     element.classList.add(addClass);
     element.classList.remove(removeClass);
 };
+let clickedPlan;
 const clickedChosenPlan = (chosenPlan, chosenPlanTitle) => {
     addNRemoveClass(chosenPlan, "view", "view-none");
     addNRemoveClass(stepOne, "active", null);
     elementInnerHTML(planTypeName, chosenPlanTitle);
     elementInnerHTML(bookedPlan, chosenPlanTitle);
+    clickedPlan = chosenPlan;
     elementInnerHTML(people, 0);
     elementInnerHTML(noOfPeople, 0);
     elementInnerHTML(startDate, "");
+    elementInnerHTML(duration, "");
     elementInnerHTML(monthlyCost, 0);
-    closePopup.onclick = () => {
-        addNRemoveClass(chosenPlan, "view-none", "view");
-        addNRemoveClass(bookingPopup, "view-none", "view");
-
-    };
-    // addNRemoveClass(header, "view", "view-none");
-
 }
-// ----------------------commonFunctionsForelementInnerHTML--------------------------------
+// ----------------------commonFunctionsForElementInnerHTML--------------------------------
 const elementInnerHTML = (element, innerContents) => {
     element.innerHTML = innerContents;
 };
-
 // ---------------ShowingPopup--------------------------------
 
 document.onclick = (event) => {
@@ -165,162 +158,64 @@ document.onclick = (event) => {
         addNRemoveClass(stepTwo, null, "completed");
         addNRemoveClass(stepThree, null, "completed");
         addNRemoveClass(stepFour, null, "completed");
-        // ----------chosenPlanOverview---------
-        // addNRemoveClass(chosenPlanOverview, "view-none", "view");
-        // ---------reviewPaymentDetailsBackBtnNSubmitBtn--------------------------------
-        // addNRemoveClass(reviewPaymentDetailsBackBtn, "view-none", null)
-        // addNRemoveClass(submit, "view-none", null);
-        // --------------PrivateOfficePopupHide--------------------------------
-        // addNRemoveClass(privateOfficePopup, "view-none", "view");
-        // --------------TeamOfficeSuitePopupHide--------------------------------
-        // addNRemoveClass(teamOfficeSuitePopup, "view-none", "view");
-        // --------------HybridOfficePopupHide--------------------------------
-        // addNRemoveClass(hybridOfficePopup, "view-none", "view");
-        // --------------DayOfficePopupHide--------------------------------
-        // addNRemoveClass(dayOfficePopup, "view-none", "view");
-        // --------------DedicatedDeskPopupHide--------------------------------
-        // addNRemoveClass(dedicatedDeskPopup, "view-none", "view");
-        // --------------DayPassPopupHide--------------------------------
-        // addNRemoveClass(dayPassPopup, "view-none", "view");
-        // --------------FlexibleDeskPopupHide--------------------------------
-        // addNRemoveClass(flexibleDeskPopup, "view-none", "view");
-        // --------------VirtualOfficePopupHide--------------------------------
-        // addNRemoveClass(virtualOfficePopup, "view-none", "view");
-        // --------------ConferenceRoomPopupHide--------------------------------
-        // addNRemoveClass(conferenceRoomPopup, "view-none", "view");
-        // --------------EventSpacePopupHide--------------------------------
-        // addNRemoveClass(eventSpacePopup, "view-none", "view");
-        // --------------PodcastStudioPopupHide--------------------------------
-        // addNRemoveClass(podcastStudioPopup, "view-none", "view");
-        // --------------ZoomCallRoomPopupHide--------------------------------
-        // addNRemoveClass(zoomCallRoomPopup, "view-none", "view");
-        // --------------ColorBurstRoomPopupHide--------------------------------
-        // addNRemoveClass(colorBurstRoomPopup, "view-none", "view");
-        // --------------AlapRoomPopupHide--------------------------------
-        // addNRemoveClass(alapRoomPopup, "view-none", "view");
-        // --------------AlochonaRoomPopupHide--------------------------------
-        // addNRemoveClass(alochonaRoomPopup, "view-none", "view");
 
         // --------------showingRequiredPlanInPopup--------------------------------
         if (buttonId === "privateOffice") {
             clickedChosenPlan(privateOfficePopup, "Private Office");
-            // addNRemoveClass(privateOfficePopup, "view", "view-none");
-            // addNRemoveClass(stepOne, "active", null);
-            // elementInnerHTML(planTypeName, "Private Office");
-            // elementInnerHTML(bookedPlan, "Private Office");
-            // addNRemoveClass(personalDetails, "view-none", "view");
         } else if (buttonId === "teamOfficeSuite") {
             clickedChosenPlan(teamOfficeSuitePopup, "Team Office Suite");
-            // addNRemoveClass(teamOfficeSuitePopup, "view", "view-none");
-            // addNRemoveClass(stepOne, "active", null);
-            // elementInnerHTML(planTypeName, "Team Office Suite");
-            // elementInnerHTML(bookedPlan, "Team Office Suite");
         }
         else if (buttonId === "hybridOffice") {
             clickedChosenPlan(hybridOfficePopup, "Hybrid Office");
-            // addNRemoveClass(hybridOfficePopup, "view", "view-none");
-            // addNRemoveClass(stepOne, "active", null);
-            // elementInnerHTML(planTypeName, "Hybrid Office");
-            // elementInnerHTML(bookedPlan, "Hybrid Office");
         }
         else if (buttonId === "dayOffice") {
             clickedChosenPlan(dayOfficePopup, "Day Office");
-            // addNRemoveClass(dayOfficePopup, "view", "view-none");
-            // addNRemoveClass(stepOne, "active", null);
-            // elementInnerHTML(planTypeName, "Day Office");
-            // elementInnerHTML(bookedPlan, "Day Office");
         }
         else if (buttonId === "dedicatedDesk") {
             clickedChosenPlan(dedicatedDeskPopup, "Dedicated Desk");
-            // addNRemoveClass(dedicatedDeskPopup, "view", "view-none");
-            // addNRemoveClass(stepOne, "active", null);
-            // elementInnerHTML(planTypeName, "Dedicated Desk");
-            // elementInnerHTML(bookedPlan, "Dedicated Desk");
         }
         else if (buttonId === "dayPass") {
             clickedChosenPlan(dayPassPopup, "Day Pass");
-            // addNRemoveClass(dayPassPopup, "view", "view-none");
-            // addNRemoveClass(stepOne, "active", null);
-            // elementInnerHTML(planTypeName, "Day Pass");
-            // elementInnerHTML(bookedPlan, "Day Pass");
         }
         else if (buttonId === "flexibleDesk") {
             clickedChosenPlan(flexibleDeskPopup, "Flexible Desk");
-            // addNRemoveClass(flexibleDeskPopup, "view", "view-none");
-            // addNRemoveClass(stepOne, "active", null);
-            // elementInnerHTML(planTypeName, "Flexible Desk");
-            // elementInnerHTML(bookedPlan, "Flexible Desk");
         }
         else if (buttonId === "virtualOffice") {
             clickedChosenPlan(virtualOfficePopup, "Virtual Office");
-            // addNRemoveClass(virtualOfficePopup, "view", "view-none");
-            // addNRemoveClass(stepOne, "active", null);
-            // elementInnerHTML(planTypeName, "Virtual Office");
-            // elementInnerHTML(bookedPlan, "Virtual Office");
         }
         else if (buttonId === "conferenceRoom") {
             clickedChosenPlan(conferenceRoomPopup, "Conference Room");
-            // addNRemoveClass(conferenceRoomPopup, "view", "view-none");
-            // addNRemoveClass(stepOne, "active", null);
-            // elementInnerHTML(planTypeName, "Conference Room");
-            // elementInnerHTML(bookedPlan, "Conference Room");
         }
         else if (buttonId === "eventSpace") {
             clickedChosenPlan(eventSpacePopup, "Event Space");
-            // addNRemoveClass(eventSpacePopup, "view", "view-none");
-            // addNRemoveClass(stepOne, "active", null);
-            // elementInnerHTML(planTypeName, "Event Space");
-            // elementInnerHTML(bookedPlan, "Event Space");
         }
         else if (buttonId === "podcastStudio") {
             clickedChosenPlan(podcastStudioPopup, "Podcast Studio");
-            // addNRemoveClass(podcastStudioPopup, "view", "view-none");
-            // addNRemoveClass(stepOne, "active", null);
-            // elementInnerHTML(planTypeName, "Podcast Studio");
-            // elementInnerHTML(bookedPlan, "Podcast Studio");
         }
         else if (buttonId === "zoomCallRoom") {
             clickedChosenPlan(zoomCallRoomPopup, "Zoom Call Room");
-            // addNRemoveClass(zoomCallRoomPopup, "view", "view-none");
-            // addNRemoveClass(stepOne, "active", null);
-            // elementInnerHTML(planTypeName, "Zoom Call Room");
-            // elementInnerHTML(bookedPlan, "Zoom Call Room");
         }
         else if (buttonId === "colorBurstRoom") {
             clickedChosenPlan(colorBurstRoomPopup, "Color Burst Room");
-            // addNRemoveClass(colorBurstRoomPopup, "view", "view-none");
-            // addNRemoveClass(stepOne, "active", null);
-            // elementInnerHTML(planTypeName, "Color Burst Room");
-            // elementInnerHTML(bookedPlan, "Color Burst Room");
         }
         else if (buttonId === "alapRoom") {
             clickedChosenPlan(alapRoomPopup, "Alap Room");
-            // addNRemoveClass(alapRoomPopup, "view", "view-none");
-            // addNRemoveClass(stepOne, "active", null);
-            // elementInnerHTML(planTypeName, "Alap Room");
-            // elementInnerHTML(bookedPlan, "Alap Room");
         }
         else if (buttonId === "alochonaRoom") {
             clickedChosenPlan(alochonaRoomPopup, "Alochona Room");
-            // addNRemoveClass(alochonaRoomPopup, "view", "view-none");
-            // addNRemoveClass(stepOne, "active", null);
-            // elementInnerHTML(planTypeName, "Alochona Room");
-            // elementInnerHTML(bookedPlan, "Alochona Room");
         }
     }
 };
 
 // ------------------GoToNextChosenPlanOverviewAfterPlanSelectionStart------------------------
-
+let checkedRadioInput;
 let checkedRadioValue = null;
 allRadioInputs.forEach(function (radio) {
     radio.addEventListener("change", function () {
-        // console.log(this.value);
+        checkedRadioInput = this;
         checkedRadioValue = Number(this.value);
-        console.log(checkedRadioValue);
         let percentageOfTaxVat = Math.floor(checkedRadioValue / 100 * 15);
         let totalValue = checkedRadioValue + percentageOfTaxVat;
-        console.log(totalValue);
         elementInnerHTML(monthlyCost, checkedRadioValue);
         elementInnerHTML(subTotal, checkedRadioValue);
         elementInnerHTML(taxVat, percentageOfTaxVat);
@@ -328,9 +223,6 @@ allRadioInputs.forEach(function (radio) {
         elementInnerHTML(subsequentSubTotal, checkedRadioValue);
         elementInnerHTML(subsequentTaxVat, percentageOfTaxVat);
         elementInnerHTML(subsequentTotal, totalValue);
-
-        console.log(this.id);
-        console.log(this.checked);
         var label = document.querySelector('label[for=' + this.id + ']');
         var labelText = label.innerHTML;
         elementInnerHTML(duration, labelText);
@@ -356,18 +248,6 @@ allRadioInputs.forEach(function (radio) {
             addNRemoveClass(chosenPlanOverview, "view-none", "view");
             addNRemoveClass(this.closest(".office"), "view", "view-none");
         };
-        closePopup.onclick = () => {
-            this.checked = false;
-            elementInnerHTML(people, 0);
-            elementInnerHTML(startDate, "");
-            elementInnerHTML(duration, "");
-            addNRemoveClass(stepOne, null, "active");
-            addNRemoveClass(stepTwo, null, "active");
-            addNRemoveClass(stepOne, null, "completed");
-            addNRemoveClass(stepTwo, null, "completed");
-            addNRemoveClass(bookingPopup, "view-none", "view");
-            console.log(this.checked);
-        };
     });
 });
 
@@ -380,31 +260,20 @@ increment.onclick = () => {
     if (noOfPeopleParseInt > 9) {
         addNRemoveClass(zero, "view-none", null);
     }
-    console.log(typeof (noOfPeopleParseInt));
     elementInnerHTML(noOfPeople, noOfPeopleParseInt);
     elementInnerHTML(people, noOfPeople.innerHTML);
-
-
-    console.log(checkedRadioValue);
     const singlePersonCost = checkedRadioValue;
-    console.log(singlePersonCost);
     let totalMonthlyCost = singlePersonCost * noOfPeopleParseInt;
-    console.log(totalMonthlyCost);
     elementInnerHTML(monthlyCost, totalMonthlyCost);
     let percentageOfTaxVat = Math.floor(totalMonthlyCost / 100 * 15);
-        let totalValue = totalMonthlyCost + percentageOfTaxVat;
-        console.log(totalValue);
-        elementInnerHTML(subTotal, totalMonthlyCost);
-        elementInnerHTML(taxVat, percentageOfTaxVat);
-        elementInnerHTML(total, totalValue);
-        elementInnerHTML(subsequentSubTotal, totalMonthlyCost);
-        elementInnerHTML(subsequentTaxVat, percentageOfTaxVat);
-        elementInnerHTML(subsequentTotal, totalValue);
-
-
-
+    let totalValue = totalMonthlyCost + percentageOfTaxVat;
+    elementInnerHTML(subTotal, totalMonthlyCost);
+    elementInnerHTML(taxVat, percentageOfTaxVat);
+    elementInnerHTML(total, totalValue);
+    elementInnerHTML(subsequentSubTotal, totalMonthlyCost);
+    elementInnerHTML(subsequentTaxVat, percentageOfTaxVat);
+    elementInnerHTML(subsequentTotal, totalValue);
     elementInnerHTML(bookedForPeople, noOfPeople.innerHTML);
-    console.log(noOfPeople.innerHTML);
 };
 decrement.onclick = () => {
     let noOfPeopleParseInt = parseInt(noOfPeople.innerHTML);
@@ -416,16 +285,14 @@ decrement.onclick = () => {
     }
     if (noOfPeopleParseInt < 1) {
         elementInnerHTML(noOfPeople, 1);
-    elementInnerHTML(monthlyCost, checkedRadioValue);
+        elementInnerHTML(monthlyCost, checkedRadioValue);
     }
     else {
         elementInnerHTML(noOfPeople, noOfPeopleParseInt);
         totalMonthlyCost = singlePersonCost * noOfPeopleParseInt;
-    console.log(totalMonthlyCost);
-    elementInnerHTML(monthlyCost, totalMonthlyCost);
-    let percentageOfTaxVat = Math.floor(totalMonthlyCost / 100 * 15);
+        elementInnerHTML(monthlyCost, totalMonthlyCost);
+        let percentageOfTaxVat = Math.floor(totalMonthlyCost / 100 * 15);
         let totalValue = totalMonthlyCost + percentageOfTaxVat;
-        console.log(totalValue);
         elementInnerHTML(subTotal, totalMonthlyCost);
         elementInnerHTML(taxVat, percentageOfTaxVat);
         elementInnerHTML(total, totalValue);
@@ -435,14 +302,6 @@ decrement.onclick = () => {
     }
     elementInnerHTML(people, noOfPeople.innerHTML);
     elementInnerHTML(bookedForPeople, noOfPeople.innerHTML);
-
-
-    console.log(checkedRadioValue);
-    console.log(singlePersonCost);
-    
-    
-
-    console.log(noOfPeople.innerHTML);
 };
 elementInnerHTML(bookedForPeople, noOfPeople.innerHTML);
 chosenPlanContinueBtn.onclick = () => {
@@ -451,11 +310,7 @@ chosenPlanContinueBtn.onclick = () => {
     addNRemoveClass(stepThree, "active", null);
     addNRemoveClass(stepTwo, "completed", "active");
 };
-
-
-
 // ------------------ChosenPlanOverviewEnd------------------------
-
 // ------------------PersonalDetailsStart-------------------------
 personalDetailsBackBtn.onclick = () => {
     addNRemoveClass(stepTwo, "active", "completed");
@@ -525,7 +380,6 @@ personalDetailsContinueBtn.onclick = (e) => {
     elementInnerHTML(contactEmail, email.value);
     elementInnerHTML(contactNumber, phone.value);
     elementInnerHTML(bookerName, memberName);
-
     addNRemoveClass(personalDetails, "view-none", "view");
     addNRemoveClass(reviewPaymentDetails, "view", "view-none");
     addNRemoveClass(stepFour, "active", "completed");
@@ -538,12 +392,8 @@ personalDetailsContinueBtn.onclick = (e) => {
 
 // ---------------------ReviewPaymentDetailsStart-----------------
 
-
-
-
 // Event listener for Pay Now option
 payNow.addEventListener('click', () => {
-    console.log(payNow.value);
     elementInnerHTML(bookingStatus, payNow.value);
     // Create popup
     const popup = document.createElement('div');
@@ -568,23 +418,11 @@ payNow.addEventListener('click', () => {
     popup.addEventListener('click', () => {
         bookingPopup.removeChild(popup);
     });
-    closePopup.onclick = () => {
-        payNow.checked = false;
-        addNRemoveClass(bookingPopup, "view-none", "view");
-    };
-
 });
-// Event listener for Pay on Arrival option
+
 payOnArrival.addEventListener('click', () => {
     elementInnerHTML(bookingStatus, payOnArrival.value);
-    console.log(payOnArrival.value);
-    closePopup.onclick = () => {
-        payOnArrival.checked = false;
-        addNRemoveClass(bookingPopup, "view-none", "view");
-    };
 });
-
-
 
 reviewPaymentDetailsBackBtn.onclick = () => {
     addNRemoveClass(reviewPaymentDetails, "view-none", "view");
@@ -593,28 +431,46 @@ reviewPaymentDetailsBackBtn.onclick = () => {
     addNRemoveClass(stepFour, null, "active");
 };
 reviewPaymentDetailsBookingSummaryBtn.onclick = () => {
-    addNRemoveClass(reviewPaymentDetails, "view-none", "view");
-    addNRemoveClass(header, "view-none", "view");
-    addNRemoveClass(bookingSummary, "view", "view-none");
+    if (payNow.checked !== true && payOnArrival.checked !== true) {
+        addNRemoveClass(paymentRadioInput, "view", "view-none");
+        setTimeout(function () {
+            addNRemoveClass(paymentRadioInput, "view-none", "view");
+        }, 1000);
+    }
+    else {
+        addNRemoveClass(paymentRadioInput, "view-none", null);
+        addNRemoveClass(reviewPaymentDetails, "view-none", "view");
+        addNRemoveClass(header, "view-none", "view");
+        addNRemoveClass(bookingSummary, "view", "view-none");
+    }
 };
 // ---------------------ReviewPaymentDetailsEnd---------------------
 // ---------------------BookingSummaryStart-------------------
 
 // ---------------------BookingSummaryEnd---------------------
 
-console.log(bookedForPeople.innerHTML);
-
 // ---------------functionOfClosePopup--------------------------------
 date.addEventListener('change', () => {
     elementInnerHTML(startDate, date.value);
-    console.log(startDate.innerHTML);
     elementInnerHTML(bookingDate, date.value);
 });
-
-
-
 closePopup.onclick = () => {
+    addNRemoveClass(stepOne, null, "active");
+    addNRemoveClass(stepTwo, null, "active");
+    addNRemoveClass(stepOne, null, "completed");
+    addNRemoveClass(stepTwo, null, "completed");
+    addNRemoveClass(clickedPlan, "view-none", "view");
+    if (payNow.checked === true) {
+        payNow.checked = false;
+    }
+    if (payOnArrival.checked === true) {
+        payOnArrival.checked = false;
+    }
+    addNRemoveClass(paymentRadioInput, "view-none", null);
     addNRemoveClass(bookingPopup, "view-none", "view");
+    if(checkedRadioInput.checked === true) {
+    checkedRadioInput.checked = false;
+    }
 };
 
 
