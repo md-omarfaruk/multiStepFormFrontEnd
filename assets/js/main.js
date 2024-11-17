@@ -119,30 +119,7 @@ const addNRemoveClass = (element, addClass, removeClass) => {
 };
 let clickedPlan;
 const clickedChosenPlan = (chosenPlan, chosenPlanTitle) => {
-    addNRemoveClass(chosenPlan, "view", "view-none");
-    addNRemoveClass(stepOne, "active", null);
-    elementInnerHTML(planTypeName, chosenPlanTitle);
-    elementInnerHTML(bookedPlan, chosenPlanTitle);
-    clickedPlan = chosenPlan;
-    elementInnerHTML(people, 0);
-    elementInnerHTML(noOfPeople, 0);
-    elementInnerHTML(startDate, "");
-    elementInnerHTML(duration, "");
-    elementInnerHTML(monthlyCost, 0);
-}
-// ----------------------commonFunctionsForElementInnerHTML--------------------------------
-const elementInnerHTML = (element, innerContents) => {
-    element.innerHTML = innerContents;
-};
-// ---------------ShowingPopup--------------------------------
-
-document.onclick = (event) => {
-    // Check if the clicked element is a button
-    if (event.target.tagName === "BUTTON") {
-        const buttonId = event.target.id;
-        // Show only the relevant Popup based on button clicked
-
-        // Hide both Popups initially
+    // Hide both Popups initially
         // ------FullPopupBody-------------
         addNRemoveClass(bookingPopup, null, "view-none");
         addNRemoveClass(chosenPlanOverview, "view-none", "view");
@@ -159,53 +136,125 @@ document.onclick = (event) => {
         addNRemoveClass(stepThree, null, "completed");
         addNRemoveClass(stepFour, null, "completed");
 
-        // --------------showingRequiredPlanInPopup--------------------------------
-        if (buttonId === "privateOffice") {
-            clickedChosenPlan(privateOfficePopup, "Private Office");
-        } else if (buttonId === "teamOfficeSuite") {
-            clickedChosenPlan(teamOfficeSuitePopup, "Team Office Suite");
-        }
-        else if (buttonId === "hybridOffice") {
-            clickedChosenPlan(hybridOfficePopup, "Hybrid Office");
-        }
-        else if (buttonId === "dayOffice") {
-            clickedChosenPlan(dayOfficePopup, "Day Office");
-        }
-        else if (buttonId === "dedicatedDesk") {
-            clickedChosenPlan(dedicatedDeskPopup, "Dedicated Desk");
-        }
-        else if (buttonId === "dayPass") {
-            clickedChosenPlan(dayPassPopup, "Day Pass");
-        }
-        else if (buttonId === "flexibleDesk") {
-            clickedChosenPlan(flexibleDeskPopup, "Flexible Desk");
-        }
-        else if (buttonId === "virtualOffice") {
-            clickedChosenPlan(virtualOfficePopup, "Virtual Office");
-        }
-        else if (buttonId === "conferenceRoom") {
-            clickedChosenPlan(conferenceRoomPopup, "Conference Room");
-        }
-        else if (buttonId === "eventSpace") {
-            clickedChosenPlan(eventSpacePopup, "Event Space");
-        }
-        else if (buttonId === "podcastStudio") {
-            clickedChosenPlan(podcastStudioPopup, "Podcast Studio");
-        }
-        else if (buttonId === "zoomCallRoom") {
-            clickedChosenPlan(zoomCallRoomPopup, "Zoom Call Room");
-        }
-        else if (buttonId === "colorBurstRoom") {
-            clickedChosenPlan(colorBurstRoomPopup, "Color Burst Room");
-        }
-        else if (buttonId === "alapRoom") {
-            clickedChosenPlan(alapRoomPopup, "Alap Room");
-        }
-        else if (buttonId === "alochonaRoom") {
-            clickedChosenPlan(alochonaRoomPopup, "Alochona Room");
-        }
-    }
+
+
+    addNRemoveClass(chosenPlan, "view", "view-none");
+    addNRemoveClass(stepOne, "active", null);
+    elementInnerHTML(planTypeName, chosenPlanTitle);
+    elementInnerHTML(bookedPlan, chosenPlanTitle);
+    clickedPlan = chosenPlan;
+    elementInnerHTML(people, 0);
+    elementInnerHTML(noOfPeople, 0);
+    elementInnerHTML(startDate, "");
+    elementInnerHTML(duration, "");
+    elementInnerHTML(monthlyCost, 0);
+}
+// ----------------------commonFunctionsForElementInnerHTML--------------------------------
+const elementInnerHTML = (element, innerContents) => {
+    element.innerHTML = innerContents;
 };
+// ---------------ShowingPopup--------------------------------
+privateOffice.onclick = () => {
+            clickedChosenPlan(privateOfficePopup, "Private Office");
+}
+teamOfficeSuite.onclick = () => {
+    clickedChosenPlan(teamOfficeSuitePopup, "Team Office Suite");
+}
+hybridOffice.onclick = () => {
+    clickedChosenPlan(hybridOfficePopup, "Hybrid Office");
+}
+dayOffice.onclick = () => {
+    clickedChosenPlan(dayOfficePopup, "Day Office");
+}
+dedicatedDesk.onclick = () => {
+    clickedChosenPlan(dedicatedDeskPopup, "Dedicated Desk");
+}
+dayPass.onclick = () => {
+    clickedChosenPlan(dayPassPopup, "Day Pass");
+}
+flexibleDesk.onclick = () => {
+    clickedChosenPlan(flexibleDeskPopup, "Flexible Desk");
+}
+virtualOffice.onclick = () => {
+    clickedChosenPlan(virtualOfficePopup, "Virtual Office");
+}
+conferenceRoom.onclick = () => {
+    clickedChosenPlan(conferenceRoomPopup, "Conference Room");
+}
+eventSpace.onclick = () => {
+    clickedChosenPlan(eventSpacePopup, "Event Space");
+}
+podcastStudio.onclick = () => {
+    clickedChosenPlan(podcastStudioPopup, "Podcast Studio");
+}
+zoomCallRoom.onclick = () => {
+    clickedChosenPlan(zoomCallRoomPopup, "Zoom Call Room");
+}
+colorBurstRoom.onclick = () => {
+    clickedChosenPlan(colorBurstRoomPopup, "Color Burst Room");
+}
+alapRoom.onclick = () => {
+    clickedChosenPlan(alapRoomPopup, "Alap Room");
+}
+alochonaRoom.onclick = () => {
+    clickedChosenPlan(alochonaRoomPopup, "Alochona Room");
+}
+// document.onclick = (event) => {
+    // Check if the clicked element is a button
+    // if (event.target.tagName === "BUTTON") {
+    //     const buttonId = event.target.id;
+        // Show only the relevant Popup based on button clicked
+
+        
+
+        // --------------showingRequiredPlanInPopup--------------------------------
+        // if (buttonId === "privateOffice") {
+        //     clickedChosenPlan(privateOfficePopup, "Private Office");
+        // } else 
+//         if (buttonId === "teamOfficeSuite") {
+//             clickedChosenPlan(teamOfficeSuitePopup, "Team Office Suite");
+//         }
+//         else if (buttonId === "hybridOffice") {
+//             clickedChosenPlan(hybridOfficePopup, "Hybrid Office");
+//         }
+//         else if (buttonId === "dayOffice") {
+//             clickedChosenPlan(dayOfficePopup, "Day Office");
+//         }
+//         else if (buttonId === "dedicatedDesk") {
+//             clickedChosenPlan(dedicatedDeskPopup, "Dedicated Desk");
+//         }
+//         else if (buttonId === "dayPass") {
+//             clickedChosenPlan(dayPassPopup, "Day Pass");
+//         }
+//         else if (buttonId === "flexibleDesk") {
+//             clickedChosenPlan(flexibleDeskPopup, "Flexible Desk");
+//         }
+//         else if (buttonId === "virtualOffice") {
+//             clickedChosenPlan(virtualOfficePopup, "Virtual Office");
+//         }
+//         else if (buttonId === "conferenceRoom") {
+//             clickedChosenPlan(conferenceRoomPopup, "Conference Room");
+//         }
+//         else if (buttonId === "eventSpace") {
+//             clickedChosenPlan(eventSpacePopup, "Event Space");
+//         }
+//         else if (buttonId === "podcastStudio") {
+//             clickedChosenPlan(podcastStudioPopup, "Podcast Studio");
+//         }
+//         else if (buttonId === "zoomCallRoom") {
+//             clickedChosenPlan(zoomCallRoomPopup, "Zoom Call Room");
+//         }
+//         else if (buttonId === "colorBurstRoom") {
+//             clickedChosenPlan(colorBurstRoomPopup, "Color Burst Room");
+//         }
+//         else if (buttonId === "alapRoom") {
+//             clickedChosenPlan(alapRoomPopup, "Alap Room");
+//         }
+//         else if (buttonId === "alochonaRoom") {
+//             clickedChosenPlan(alochonaRoomPopup, "Alochona Room");
+//         }
+//     }
+// };
 
 // ------------------GoToNextChosenPlanOverviewAfterPlanSelectionStart------------------------
 let checkedRadioInput;
@@ -250,10 +299,8 @@ allRadioInputs.forEach(function (radio) {
         };
     });
 });
-
 // ------------------GoToNextChosenPlanOverviewAfterPlanSelectionEnd------------------------
 // ------------------ChosenPlanOverviewStart------------------------
-
 increment.onclick = () => {
     let noOfPeopleParseInt = parseInt(noOfPeople.innerHTML);
     noOfPeopleParseInt++;
@@ -387,11 +434,9 @@ personalDetailsContinueBtn.onclick = (e) => {
     }
 
 };
-
 // ------------------PersonalDetailsEnd---------------------------
 
 // ---------------------ReviewPaymentDetailsStart-----------------
-
 // Event listener for Pay Now option
 payNow.addEventListener('click', () => {
     elementInnerHTML(bookingStatus, payNow.value);
@@ -460,17 +505,14 @@ closePopup.onclick = () => {
     addNRemoveClass(stepOne, null, "completed");
     addNRemoveClass(stepTwo, null, "completed");
     addNRemoveClass(clickedPlan, "view-none", "view");
-    if (payNow.checked === true) {
         payNow.checked = false;
-    }
-    if (payOnArrival.checked === true) {
-        payOnArrival.checked = false;
-    }
+        payOnArrival.checked = false;   
     addNRemoveClass(paymentRadioInput, "view-none", null);
     addNRemoveClass(bookingPopup, "view-none", "view");
-    if(checkedRadioInput.checked === true) {
-    checkedRadioInput.checked = false;
-    }
+    if(checkedRadioInput?.checked === true) {
+        checkedRadioInput.checked = false;
+        }
+    
 };
 
 
